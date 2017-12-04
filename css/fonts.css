@@ -1,0 +1,44 @@
+/*--------------------------
+FACIT
+--------------------------*/
+@font-face{
+    font-family: 'Facit-Light';
+    src: url("../fonts/Facit-Light.woff2") format("woff2"), url("../fonts/Facit-Light.woff") format("woff");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Facit-Regular';
+    src: url("../fonts/Facit-Regular.woff2") format("woff2"), url("../fonts/Facit-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face{
+    font-family: 'Facit-Semibold';
+    src: url("../fonts/Facit-Semibold.woff2") format("woff2"), url("../fonts/Facit-Semibold.woff") format("woff");
+    font-style: normal;
+    font-weight: 600;
+}
+/*--------------------------
+GESTA
+--------------------------*/
+@font-face{
+    font-family: 'Gesta-Light';
+    src: url("../fonts/GestaW01-Light.woff2") format("woff2"), url("../fonts/GestaW01-Light.woff") format("woff");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Gesta-Regular';
+    src: url("../fonts/GestaW01-Regular.woff2") format("woff2"), url("../fonts/GestaW01-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+/*--------------------------
+PAGE ELEMENTS
+--------------------------*/
+body{
+    font: 300 16px/26px 'Gesta-Light', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
