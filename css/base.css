@@ -1,0 +1,43 @@
+body{
+    box-sizing: border-box;
+    background: #F6F8FA;
+}
+/*--------------------------
+GRIDS
+--------------------------*/
+.wrapper{
+    width: calc(100% - 120px);
+    max-width: 1160px;
+    margin: 0 auto;
+}
+.flex-grid{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.grid-1{
+    width: calc((100% - 80px) / 3);
+}
+.grid-2{
+    width: calc(((100% - 80px) / 3) * 2);
+}
+/*--------------------------
+HEADERS
+--------------------------*/
+.header--big, .header--small{
+    width: 100%;
+}
+.header--big{
+
+}
+.header--small{
+
+}
+/*--------------------------
+BUTTONS & LINKS
+--------------------------*/

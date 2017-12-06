@@ -41,4 +41,8 @@ body{
     font: 300 16px/26px 'Gesta-Light', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 1px;
+}
+h1{
+    font: 600 64px/84px 'Facit-Semibold', sans-serif;
 }
