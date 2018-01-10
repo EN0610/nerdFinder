@@ -49,6 +49,7 @@ NAV
     margin: 0 auto;
     width: calc(100% - 80px);
     max-width: 1185px;
+    height: 70px;
 }
 .nerd-finder-logo{
     width: 133px;
@@ -70,6 +71,30 @@ NAV
 }
 .nav__item a:hover{
     color: #414B6B;
+}
+.nav__icon{
+    display: inline-block;
+    line-height: 70px;
+    vertical-align: top;
+}
+.nav__messages-icon{
+    margin: 0 0 0 30px;
+    color: #414B6B;
+    font-size: 21px;
+    cursor: pointer;
+}
+.nav__user-profile{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin: 15px 10px 15px 30px;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.nav__drop-down-icon{
+    color: #5E7991;
+    cursor: pointer;
 }
 /*--------------------------
 HEADERS

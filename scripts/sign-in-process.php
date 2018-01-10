@@ -76,16 +76,16 @@
             $_SESSION['profilePicURL'] = $profilepic;
             $_SESSION['firstName'] = $firstname;
             // Checking User Type
-            if ($usertypeid == 3) {
-                // Client user
-                $_SESSION['userType'] = 3;
+            if ($usertypeid == 1) {
+                // Admin user
+                $_SESSION['userType'] = 1;
 
             } else if($usertypeid == 2){
                 // Nerd user
                 $_SESSION['userType'] = 2;
             } else{
-                // Admin user
-                $_SESSION['userType'] = 1;
+                // Client user
+                $_SESSION['userType'] = 3;
             }
             // Redirecting user back to homepage as signed in
             header('Location: ../index.php');

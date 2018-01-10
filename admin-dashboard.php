@@ -20,8 +20,8 @@
         $greeting = "evening";
     } 
     // Getting signed in users first naem to personalise greeting
-    if (isset($_SESSION['firstname'])){
-        $firstname = $_SESSION['firstname'];
+    if (isset($_SESSION['firstName'])){
+        $firstname = $_SESSION['firstName'];
     } else{
         $firstname = '';
     }
