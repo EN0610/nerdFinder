@@ -1,0 +1,36 @@
+.grid-1{
+    margin: 80px auto 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 360px;
+    min-width: 320px;
+}
+.nerd-finder-logo{
+    width: 50%;
+    margin: 60px auto 20px auto;
+    float: none;
+}
+.copyright{
+    text-align: center;
+}
+.error-message{
+    margin: 6px 0 0 0;
+    font: 300 14px/14px 'Gesta-Regular', sans-serif;
+    height: 20px;
+    color: #FF737E;
+}
+.text-link{
+    font-size: 12px;
+}
+h3{
+    margin: 10px 0 5px 0;
+}
+input[type='text'], input[type='password']{
+    margin: 0 auto;
+    text-align: center;
+}
+input[type='submit']{
+    margin: 30px 0 60px 0;
+    padding: 3px 45px 0 45px;
+}
