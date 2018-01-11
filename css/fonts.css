@@ -54,7 +54,7 @@ h2{
     color: #414B6B;
     letter-spacing: 1px;
 }
-h3, .nav__item{
+h3, .nav__item, .nav__admin-text{
     font: 400 14px/32px 'Facit-Regular', sans-serif;
     text-transform: uppercase;
     color: #5E7991;

@@ -3,6 +3,7 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
+    if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 1)){
 
     /*--------------------------
     GREETING
@@ -41,10 +42,10 @@
     <aside class="admin-tools">
         <ul>
             <li class="admin-tools__tool"><span class="icon-arrow-left admin-tools__link-icon"></span></li>
-            <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-speech admin-tools__link-icon"></span>Go to forum</a></li>
-            <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-calendar admin-tools__link-icon"></span>Manage events</a></li>
             <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-eyeglass admin-tools__link-icon"></span>Monitor nerds</a></li>
             <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-briefcase admin-tools__link-icon"></span>Check projects</a></li>
+            <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-calendar admin-tools__link-icon"></span>Manage events</a></li>
+            <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-speech admin-tools__link-icon"></span>Go to forum</a></li>
             <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-eye admin-tools__link-icon"></span>Track users</a></li>
             <li class="admin-tools__tool"><a class="admin-tools__link" href=""><span class="icon-graph admin-tools__link-icon"></span>View analytics</a></li>
         </ul>
@@ -97,5 +98,12 @@
         </section>
         <p class="copyright">© Nerd Finder, 2017. All rights reserved.</p>
     </section>
+    <?php require_once('elements/footer--small.php');?>
 </body>
 </html>
+<?php 
+    }
+    else{
+            
+    }
+?>

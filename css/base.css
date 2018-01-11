@@ -1,13 +1,32 @@
 /*--------------------------
 
-Description: 
-CSS Naming Convention: BEM (Block, Element, Modifier)
-Documentation: http://getbem.com/naming/
+Description: Monolithic base stylesheet for Nerd Finder to be included on every page
 
+CSS Naming Convention: BEM (Block, Element, Modifier)
+Naming Convention Documentation: http://getbem.com/naming/
+
+--------------------------*/
+/*--------------------------
+ANIMATIONS
+--------------------------*/
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*--------------------------
+GLOBAL
 --------------------------*/
 body{
     box-sizing: border-box;
     background: #F6F8FA;
+    overflow-y: scroll;
+}
+.hide{
+    display: none;
 }
 /*--------------------------
 GRIDS
@@ -78,7 +97,7 @@ NAV
     vertical-align: top;
 }
 .nav__messages-icon{
-    margin: 0 0 0 30px;
+    margin: 0 30px;
     color: #414B6B;
     font-size: 21px;
     cursor: pointer;
@@ -87,7 +106,7 @@ NAV
     border-radius: 100%;
     height: 40px;
     width: 40px;
-    margin: 15px 10px 15px 30px;
+    margin: 15px 10px 15px 0;
     display: inline-block;
     cursor: pointer;
     opacity: 0.9;
@@ -95,6 +114,43 @@ NAV
 .nav__drop-down-icon{
     color: #5E7991;
     cursor: pointer;
+}
+.nav__admin{
+    border-left: 1px solid #FF9673;
+    float: left;
+    height: 25px;
+    margin: 22.5px 0 22.5px 25px;
+    padding: 0 0 0 25px;
+}
+.nav__admin-text{
+    color: #FF9673;
+    line-height: 25px;
+    position: relative;
+    top: -2px;
+}
+.nav__user-area{
+    display: inline-block;
+    cursor: pointer;
+    height: 70px;
+}
+.nav__drop-down{
+    position: relative;
+    top: -5px;
+    z-index: 1000;
+    width: 150px;
+    float: right;
+    clear: both;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 12.5px 25px;
+    animation: fadeIn 0.3s forwards;
+}
+.nav__drop-down-list-item{
+    color: #5E7991;
+    font: 400 14px/40px 'Gesta-Regular', sans-serif;
+}
+.nav__drop-down-list-item:hover{
+    color: #414B6B;
 }
 /*--------------------------
 HEADERS

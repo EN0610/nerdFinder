@@ -50,6 +50,6 @@
     <section></section>
     <section></section>
     <section></section>
-    <?php require_once('elements/footer.php') ?>
+    <?php require_once('elements/footer--big.php') ?>
 </body>
 </html>

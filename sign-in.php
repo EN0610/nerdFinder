@@ -47,9 +47,6 @@
             </form>
         </article>
     </div>
-    <p class="copyright">© Nerd Finder, 2017. All rights reserved.</p>
-    <form action="scripts/sign-out-process.php">
-        <input type="submit" value="END SESSION">
-    </form>
+    <?php require_once('elements/footer--small.php');?>
 </body>
 </html>
