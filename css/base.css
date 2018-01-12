@@ -142,8 +142,9 @@ NAV
     height: 70px;
 }
 .nav__drop-down{
-    position: relative;
-    top: -5px;
+    position: fixed;
+    top: 65px;
+    right: 40px;
     z-index: 1000;
     width: 165px;
     float: right;
@@ -296,4 +297,10 @@ FOOTER
     color: #5E7991;
     display: block;
     text-align: left;
+}
+@media all and (min-device-width: 1265px) and (min-width: 1265px) {
+    .nav__drop-down{
+        /* POSITIONING DROPDOWN */
+        right: calc(((100% - 1265px) / 2 ) + 40px);
+    }
 }
