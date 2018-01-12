@@ -6,7 +6,7 @@ TEXT
     color: #5E7991;
 }
 /*--------------------------
-LAYOUT
+SIDEBAR
 --------------------------*/
 .admin-tools{
     width: 20%;
@@ -37,6 +37,9 @@ LAYOUT
     position: relative;
     top: 4px;
 }
+/*--------------------------
+MAIN INTERFACE
+--------------------------*/
 .admin-interface{
     box-sizing: border-box;
     width: 80%;
@@ -72,23 +75,46 @@ hr{
 .copyright{
     margin: 10px 0 0 0;
 }
+/*--------------------------
+MAIN INTERFACE SECTIONS
+--------------------------*/
 table{
-    width: 100%;
-    margin: 10px 0;
+    width: calc(100% - 50px);
+    margin: 10px 25px;
     font-size: 14px;
     color: #5E7991;
+    box-sizing: border-box;
 }
-td{
+.stats td{
     line-height: 50px;
     box-sizing: border-box;
 }
-td:nth-child(1){
+.stats td:nth-child(1){
     text-align: left;
     width: calc(100% - 60px);
-    padding: 0 0 0 25px;
 }
-td:nth-child(2){
+.stats td:nth-child(2){
     text-align: right;
     width: 60px;
-    padding: 0 25px 0 0;
+}
+.stats__small-text{
+    line-height: 22px !important;
+    padding: 0 0 14px 0;
+}
+.tech-issue{
+    line-height: 22px;
+    padding: 14px 0 14px 20px;
+}
+.tech-issue__icon{
+    color: #FF737E;
+    position: relative;
+    top: 3px;
+}
+.project-reject-icon{
+    color: #FF737E;
+    font-size: 16px;
+}
+.project-approve-icon{
+    color: #5AD6AD;
+    font-size: 16px;
 }

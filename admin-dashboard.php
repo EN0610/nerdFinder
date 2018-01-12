@@ -3,6 +3,8 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
+    //
+    require_once('scripts/admin-content.php');
 
     /*--------------------------
     GREETING
@@ -58,40 +60,43 @@
             <article class="soft-box admin-interface__content">
                 <h5>Overview</h5>
                 <hr>
-                <table>
+                <table class="stats">
                     <tr>
                         <td>Total number of nerds</td>
-                        <td></td>
+                        <td><?php echo($NerdCalc);?></td>
                     </tr>
                     <tr>
                         <td>Total number of clients</td>
-                        <td></td>
+                        <td><?php echo($clientCalc);?></td>
                     </tr>
                     <tr>
                         <td>Total number of project listings</td>
-                        <td></td>
+                        <td><?php echo($projectCalc);?></td>
                     </tr>
                     <tr>
                         <td>Projects with nerds</td>
-                        <td></td>
+                        <td><?php echo($projectWithNerdCalc);?></td>
                     </tr>
                     <tr>
                         <td>Projects awaiting a nerd</td>
-                        <td></td>
+                        <td><?php echo($projectNoNerdCalc);?></td>
                     </tr>
                 </table>
             </article>
             <article class="soft-box admin-interface__content">
                 <h5>Technical updates</h5>
                 <hr>
+                <?php echo($techIssues);?>
             </article>
             <article class="soft-box admin-interface__content">
                 <h5>Project requests</h5>
                 <hr>
+                <?php echo($projects);?>
             </article>
             <article class="soft-box admin-interface__content">
                 <h5>Forum comments</h5>
                 <hr>
+                <?php echo($comments);?>
             </article>
         </section>
             <?php require_once('elements/footer--small.php');?>

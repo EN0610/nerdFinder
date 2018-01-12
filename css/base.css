@@ -250,6 +250,10 @@ CALL TO ACTIONS
     text-decoration: none;
     letter-spacing: 1.5px;
 }
+.text-link:hover{
+    color: #FF737E;
+    border-color: #FFB3B9;
+}
 /*--------------------------
 EFFECTS
 --------------------------*/
