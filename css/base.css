@@ -82,13 +82,21 @@ NAV
 }
 .nav__item{
     display: inline-block;
-    padding: 0 0 0 30px;
+    margin: 0 0 0 30px;
     line-height: 70px;
 }
 .nav__item a{
     color: #5E7991;
 }
 .nav__item a:hover{
+    color: #414B6B;
+}
+.nav__item--current{
+    border-bottom: #414B6B 3px solid;
+    line-height: 64px;
+    margin: 3px 0 0 30px;
+}
+.nav__item--current a{
     color: #414B6B;
 }
 .nav__icon{
@@ -137,7 +145,7 @@ NAV
     position: relative;
     top: -5px;
     z-index: 1000;
-    width: 150px;
+    width: 165px;
     float: right;
     clear: both;
     text-align: left;

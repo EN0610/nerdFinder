@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-    <?php require_once('elements/nav.php') ?>
+    <?php require_once('elements/nav.php'); ?>
     <header class="header header--big">
         <article class="wrapper">
             <h1 class="header__heading grid-2">Hire experts to create your apps, websites, software &amp; games</h1>
@@ -50,6 +50,6 @@
     <section></section>
     <section></section>
     <section></section>
-    <?php require_once('elements/footer--big.php') ?>
+    <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>

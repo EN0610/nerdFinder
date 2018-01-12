@@ -3,7 +3,6 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
-    if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 1)){
 
     /*--------------------------
     GREETING
@@ -38,7 +37,10 @@
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-    <?php require_once('elements/nav.php') ?>
+    <?php require_once('elements/nav.php'); ?>
+    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 1)){
+        // ADMIN SIGNED IN
+    ?>
     <aside class="admin-tools">
         <ul>
             <li class="admin-tools__tool"><span class="icon-arrow-left admin-tools__link-icon"></span></li>
@@ -77,10 +79,6 @@
                         <td>Projects awaiting a nerd</td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td>Available nerds</td>
-                        <td></td>
-                    </tr>
                 </table>
             </article>
             <article class="soft-box admin-interface__content">
@@ -96,14 +94,14 @@
                 <hr>
             </article>
         </section>
-        <p class="copyright">© Nerd Finder, 2017. All rights reserved.</p>
+            <?php require_once('elements/footer--small.php');?>
+        <?php
+            }
+            else{
+                // NON ADMIN
+
+            }
+        ?>
     </section>
-    <?php require_once('elements/footer--small.php');?>
 </body>
 </html>
-<?php 
-    }
-    else{
-            
-    }
-?>

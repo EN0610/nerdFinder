@@ -37,9 +37,9 @@
             <div class="nerd-finder-logo"><?php echo file_get_contents("img/Nerd-Finder-Logo.svg"); ?></div>
             <form action="scripts/sign-in-process.php" method="get">
                 <h3>Username</h3>
-                <input type="text" name="username" value="<?php echo($username)?>">
+                <input type="text" name="username" value="<?php echo($username);?>">
                 <h3>Password</h3>
-                <input type="password" name="password" value="<?php echo($password)?>"><br>
+                <input type="password" name="password" value="<?php echo($password);?>"><br>
                 <p class="error-message"><?php echo($errorMessage)?></p>
                 <a class="text-link" href="sign-up.php">Create account</a>&nbsp;&nbsp;
                 <a class="text-link" href="forgotten-password.php">Forgotten password</a><br>

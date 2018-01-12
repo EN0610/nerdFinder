@@ -11,10 +11,10 @@
                 <a href="admin-dashboard.php" class="nav__admin-text">Admin interface</a>
             </aside>
             <ul class="nav__item-list">
-                <li class="nav__item"><a href="">Find nerds</a></li>
-                <li class="nav__item"><a href="">Find projects</a></li>
-                <li class="nav__item"><a href="">Meetups</a></li>
-                <li class="nav__item"><a href="">Forum</a></li>
+                <li class="nav__item"><a href="find-nerds.php">Find nerds</a></li>
+                <li class="nav__item"><a href="find-projects.php">Find projects</a></li>
+                <li class="nav__item"><a href="meetups.php">Meetups</a></li>
+                <li class="nav__item"><a href="forum.php">Forum</a></li>
             </ul>
             <span class="nav__icon nav__messages-icon icon-envelope"></span>
             <section class="nav__user-area">
@@ -23,7 +23,7 @@
             </section>
             <section class="soft-box nav__drop-down shadow--dark hide">
                 <ul>
-                    <li><a class="nav__drop-down-list-item" href="">View profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="admin-dashboard.php">Admin dashboard</a></li>
                     <li><a class="nav__drop-down-list-item" href="">Edit profile</a></li>
                     <li><a class="nav__drop-down-list-item" href="scripts/sign-out-process.php">Sign out</a></li>
                 </ul>
@@ -35,16 +35,23 @@ CONTENT;
             $nav = <<<CONTENT
 
             <ul class="nav__item-list">
-                <li class="nav__item"><a href="">How it works</a></li>
-                <li class="nav__item"><a href="">Find projects</a></li>
-                <li class="nav__item"><a href="">Go premium</a></li>
-                <li class="nav__item"><a href="">Meetups</a></li>
-                <li class="nav__item"><a href="">Forum</a></li>
+                <li class="nav__item"><a href="index.php">How it works</a></li>
+                <li class="nav__item"><a href="find-projects.php">Find projects</a></li>
+                <li class="nav__item"><a href="go-premium.php">Go premium</a></li>
+                <li class="nav__item"><a href="meetups.php">Meetups</a></li>
+                <li class="nav__item"><a href="forum.php">Forum</a></li>
             </ul>
             <span class="nav__icon nav__messages-icon icon-envelope"></span>
             <section class="nav__user-area">
                 <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="User profile picture">
                 <span class="nav__icon nav__drop-down-icon icon-arrow-down"></span>
+            </section>
+            <section class="soft-box nav__drop-down shadow--dark hide">
+                <ul>
+                    <li><a class="nav__drop-down-list-item" href="profile.php">View profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="edit-profile.php">Edit profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="scripts/sign-out-process.php">Sign out</a></li>
+                </ul>
             </section>
 
 CONTENT;
@@ -53,17 +60,24 @@ CONTENT;
             $nav = <<<CONTENT
 
             <ul class="nav__item-list">
-                <li class="nav__item"><a href="">How it works</a></li>
-                <li class="nav__item"><a href="">Find nerds</a></li>
-                <li class="nav__item"><a href="">Go premium</a></li>
-                <li class="nav__item"><a href="">Meetups</a></li>
-                <li class="nav__item"><a href="">Forum</a></li>
+                <li class="nav__item"><a href="index.php">How it works</a></li>
+                <li class="nav__item"><a href="find-nerds.php">Find nerds</a></li>
+                <li class="nav__item"><a href="go-premium.php">Go premium</a></li>
+                <li class="nav__item"><a href="meetups.php">Meetups</a></li>
+                <li class="nav__item"><a href="forum.php">Forum</a></li>
             </ul>
             <a class="button button--nav button--secondary-red" href="sign-in.php">New project</a>
             <span class="nav__icon nav__messages-icon icon-envelope"></span>
             <section class="nav__user-area">
                 <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="User profile picture">
                 <span class="nav__icon nav__drop-down-icon icon-arrow-down"></span>
+            </section>
+            <section class="soft-box nav__drop-down shadow--dark hide">
+                <ul>
+                    <li><a class="nav__drop-down-list-item" href="profile.php">View profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="edit-profile.php">Edit profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="scripts/sign-out-process.php">Sign out</a></li>
+                </ul>
             </section>
 
 CONTENT;
@@ -74,11 +88,11 @@ CONTENT;
         $nav = <<<CONTENT
 
         <ul class="nav__item-list">
-            <li class="nav__item"><a href="">How it works</a></li>
-            <li class="nav__item"><a href="">Find nerds</a></li>
-            <li class="nav__item"><a href="">Go premium</a></li>
-            <li class="nav__item"><a href="">Meetups</a></li>
-            <li class="nav__item"><a href="">Forum</a></li>
+            <li class="nav__item"><a href="index.php">How it works</a></li>
+            <li class="nav__item"><a href="find-nerds.php">Find nerds</a></li>
+            <li class="nav__item"><a href="go-premium.php">Go premium</a></li>
+            <li class="nav__item"><a href="meetups.php">Meetups</a></li>
+            <li class="nav__item"><a href="forum.php">Forum</a></li>
         </ul>
         <a class="button button--nav button--secondary-red" href="sign-in.php">Sign in</a>
 
