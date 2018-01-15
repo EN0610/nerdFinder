@@ -5,8 +5,9 @@
     session_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <?php require_once('scripts/analytics-tracking.php');?>
     <title>Hire Experts to Create Amazing Ideas | Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">

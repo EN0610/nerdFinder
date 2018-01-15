@@ -23,8 +23,9 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <?php require_once('scripts/analytics-tracking.php');?>
     <title>Sign in to Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/fonts.css">

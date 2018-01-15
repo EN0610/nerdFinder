@@ -6,6 +6,28 @@
     require_once('database-connection.php');
 
     /*--------------------------
+    GREETING
+    --------------------------*/
+    // Setting timezone to London
+    date_default_timezone_set('Europe/London');
+    // Getting the current time (Hour)
+    $time = date('H', time());
+    // Change Welcome greeting based on time of day
+    if ($time < "12") {
+        $greeting = "morning";
+    } else if ($time >= "12" && $time < "17") {
+        $greeting = "afternoon";
+    } else {
+        $greeting = "evening";
+    } 
+    // Getting signed in users first naem to personalise greeting
+    if (isset($_SESSION['firstName'])){
+        $userFirstname = $_SESSION['firstName'];
+    } else{
+        $userFirstname = '';
+    }
+
+    /*--------------------------
     OVERVIEW
     --------------------------*/
 
@@ -98,7 +120,7 @@ CONTENT;
         
     } else{
         // No technical issues in the database
-        $techIssues = '<table><tr><td>No issues</td></tr></table>';
+        $techIssues = '<table class="moderation-empty"><tr><td>No issues to report</td></tr></table>';
     }
 
     /*--------------------------
@@ -121,19 +143,34 @@ CONTENT;
 
             $projectid = $row['projectid'];
             $projectname = $row['projectname'];
-            $firstname = $row['firstname'];
-            $lastname = $row['lastname'];
+            $clientfirstname = $row['firstname'];
+            $clientlastname = $row['lastname'];
             $posted = $row['posted'];
 
             $projects .= <<<CONTENT
 
             <table class="stats">
                 <tr>
-                    <td><a class="text-link" href="project.php?projectid=$projectid" target="_blank">$projectname</a></td>
-                    <td><a class="icon-close project-reject-icon" href="scripts/reject-project-process.php"></a>&nbsp;&nbsp;<a class="icon-check project-approve-icon" href="scripts/approve-project-process.php"></a></td>
+                    <td>
+                        <a class="text-link" href="project.php?projectid=$projectid" target="_blank">$projectname</a>
+                    </td>
+                    <td>
+                        <form id="project-reject-$projectid" class="approval-control" action="scripts/reject-project-process.php" method="post">
+                            <input type="hidden" name="projectname" value="$projectname">
+                            <input type="hidden" name="projectid" value="$projectid">
+                            <a class="icon-close reject-icon" onclick="document.getElementById('project-reject-$projectid').submit();"></a>
+                        </form>&nbsp;
+                        <form id="project-approval-$projectid" class="approval-control" action="scripts/approve-project-process.php" method="post">
+                            <input type="hidden" name="projectname" value="$projectname">
+                            <input type="hidden" name="projectid" value="$projectid">
+                            <a class="icon-check approve-icon" onclick="document.getElementById('project-approval-$projectid').submit();"></a>
+                        </form>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="stats__small-text">By $firstname $lastname &nbsp;&nbsp;&nbsp;&nbsp; Posted: $posted</td>
+                    <td class="stats__small-text">
+                        By $clientfirstname $clientlastname &nbsp;&nbsp;&nbsp;&nbsp; Posted: $posted
+                    </td>
                     <td></td>
                 </tr>
             </table>
@@ -144,14 +181,14 @@ CONTENT;
 
     } else{
         // No projects awaiting approval
-        $projects = '<table><tr><td>No projects awaiting approval</td></tr></table>';
+        $projects = '<table class="moderation-empty"><tr><td>No projects awaiting approval</td></tr></table>';
     }
 
     /*--------------------------
     NEW COMMENT MODERATION
     --------------------------*/
 
-    $unaprovedComments = "SELECT commentcontent, postid, approved
+    $unaprovedComments = "SELECT commentid, commentcontent, postid, approved
                           FROM nf_comments INNER JOIN nf_users
                           ON (nf_comments.userid = nf_users.userid)
                           WHERE approved = 0
@@ -165,6 +202,7 @@ CONTENT;
 
         while ($row = mysqli_fetch_assoc($unaprovedCommentsResults)) {
 
+            $commentid = $row['commentid'];
             $commentcontent = $row['commentcontent'];
             $postid = $row['postid'];
 
@@ -172,8 +210,19 @@ CONTENT;
 
             <table class="stats">
                 <tr>
-                    <td class="stats__small-text">"$commentcontent"<br><br><a class="text-link" href="forum-post.php?postid=$postid" target="_blank">View post</a></td>
-                    <td><a class="icon-close project-reject-icon" href="scripts/reject-comment-process.php"></a>&nbsp;&nbsp;<a class="icon-check project-approve-icon" href="scripts/approve-comment-process.php"></a></td>
+                    <td class="stats__small-text">"$commentcontent"<br><br>                        
+                        <a class="text-link" href="forum-post.php?postid=$postid" target="_blank">View post</a>
+                    </td>
+                    <td>
+                        <form id="comment-reject-$commentid" class="approval-control" action="scripts/reject-comment-process.php" method="post">
+                            <input type="hidden" name="commentid" value="$commentid">
+                            <a class="icon-close reject-icon" onclick="document.getElementById('comment-reject-$commentid').submit();"></a>
+                        </form>&nbsp;
+                        <form id="comment-approval-$commentid" class="approval-control" action="scripts/approve-comment-process.php" method="post">
+                            <input type="hidden" name="commentid" value="$commentid">
+                            <a class="icon-check approve-icon" onclick="document.getElementById('comment-approval-$commentid').submit();"></a>
+                        </form>
+                    </td>
                 </tr>
             </table>
             <hr>
@@ -183,9 +232,52 @@ CONTENT;
 
     } else{
         //
-        $comments = '<table><tr><td>No comments awaiting moderation</td></tr></table>';
+        $comments = '<table class="moderation-empty"><tr><td>No comments awaiting moderation</td></tr></table>';
+    }
+
+    /*--------------------------
+    FEEDBACK MECHANISM
+    --------------------------*/
+
+    $feedback = '';
+
+    if (isset($_SESSION['admin-feedback'], $_SESSION['feedback-message'])){
+
+        if (($_SESSION['admin-feedback']) === 1){
+
+            $message = $_SESSION['feedback-message'];
+            // Positive Feedback
+            $feedback = <<<CONTENT
+            
+            <aside class="feedback positive-feedback">
+                <span class="icon-check feedback-icon"></span>
+                <h5 class="feedback-message">$message</h5>
+                <a href="scripts/close-admin-feedback-process.php">
+                    <img class="icon-exit" src="img/icon-exit.svg" alt="close">
+                </a>
+            </aside>
+CONTENT;
+            
+        } else if (($_SESSION['admin-feedback']) === 2){
+
+            $message = $_SESSION['feedback-message'];
+            // Negative Feedback
+            $feedback = <<<CONTENT
+
+            <aside class="feedback negative-feedback">
+                <span class="icon-exclamation feedback-icon"></span>
+                <h5 class="feedback-message">$message</h5>
+                <a href="scripts/close-admin-feedback-process.php">
+                    <img class="icon-exit" src="img/icon-exit.svg" alt="close">
+                </a>
+            </aside>
+CONTENT;
+        } else{
+
+            // No Feeback
+            $feedback = '';
+
+        }
     }
 
     mysqli_close($conn);
-
-?>

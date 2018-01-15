@@ -1,5 +1,6 @@
 /*--------------------------
 
+Created by: EN0610 Group 4 (Nerd Finder)
 Description: Monolithic base stylesheet for Nerd Finder to be included on every page
 
 CSS Naming Convention: BEM (Block, Element, Modifier)
@@ -27,6 +28,9 @@ body{
 }
 .hide{
     display: none;
+}
+.center-text{
+    text-align: center;
 }
 /*--------------------------
 GRIDS
@@ -63,6 +67,7 @@ NAV
     top: 0;
     left: 0;
     text-align: right;
+    z-index: 1100;
 }
 .nav__wrapper{
     margin: 0 auto;
@@ -129,12 +134,15 @@ NAV
     height: 25px;
     margin: 22.5px 0 22.5px 25px;
     padding: 0 0 0 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .nav__admin-text{
     color: #FF9673;
     line-height: 25px;
     position: relative;
-    top: -2px;
 }
 .nav__user-area{
     display: inline-block;

@@ -1,5 +1,9 @@
 <?php
-    $profilePicURL = $_SESSION['profilePicURL'];
+    if (isset($_SESSION['profilePicURL'])){
+        $profilePicURL = $_SESSION['profilePicURL'];
+    } else{
+        $profilePicURL = '';
+    }
 
     if (isset($_SESSION['signedIn'])){
         // User signed in
@@ -102,7 +106,7 @@ CONTENT;
 
 <nav class="nav shadow--dark">
     <section class="nav__wrapper">
-        <div class="nerd-finder-logo" ><a href="index.php"><?php echo file_get_contents("img/Nerd-Finder-Logo.svg"); ?></a></div>
+        <div class="nerd-finder-logo" ><a href="index.php"><span class="hide">Nerd Finder</span><?php echo file_get_contents("img/Nerd-Finder-Logo.svg"); ?></a></div>
         <?php echo($nav);?>
     </section>
 </nav>

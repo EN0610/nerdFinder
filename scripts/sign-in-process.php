@@ -42,7 +42,7 @@
     APPLYING SIGN IN FORM ENTRIES TO DATABASE
     ----------------------------------------------------*/
 
-    $signInSQL = "SELECT userpassword, usertypeid, profilepic, firstname FROM nf_users WHERE username = ?";
+    $signInSQL = "SELECT userpassword, userid, usertypeid, profilepic, firstname FROM nf_users WHERE username = ?";
     // Preparing the SQL statement and DB connection for querying
     $stmt = mysqli_prepare($conn, $signInSQL);
     // Error checking
@@ -58,7 +58,7 @@
     // Executing the preapred statement with the entered form data
     mysqli_stmt_execute($stmt);
     // Putting the results of the executed prepared statement into a variable for usage
-    mysqli_stmt_bind_result($stmt, $hashedPassword, $usertypeid, $profilepic, $firstname);
+    mysqli_stmt_bind_result($stmt, $hashedPassword, $userid, $usertypeid, $profilepic, $firstname);
     // Checking results
 
     /*----------------------------------------------------
@@ -73,6 +73,7 @@
             $_SESSION['password'] = $password;
             $_SESSION['signedIn'] = true;
             $_SESSION['errorMessage'] = '';
+            $_SESSION['userid'] = $userid;
             $_SESSION['profilePicURL'] = $profilepic;
             $_SESSION['firstName'] = $firstname;
             // Checking User Type
@@ -113,3 +114,4 @@
     mysqli_stmt_close($stmt);
     // Closing database connection to save requests to and from database
     mysqli_close($conn);
+?>
