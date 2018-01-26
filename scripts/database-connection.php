@@ -1,4 +1,6 @@
 <?php
+	/* CREATED BY HARRY */
+	
     // connecting to the database
     $conn = mysqli_connect('localhost', 'root', 'root', 'NerdFinder');
     // if no connection then echo the errors onto the screen

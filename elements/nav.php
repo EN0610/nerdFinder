@@ -59,7 +59,7 @@ CONTENT;
             </section>
 
 CONTENT;
-        } else{
+        } else {
             // Client user
             $nav = <<<CONTENT
 

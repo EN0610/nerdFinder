@@ -1,5 +1,6 @@
 <?php
-    
+    /* CREATED BY HARRY */
+
     // Setting the development enviroment to show errors
     require_once('set-environment.php');
     // Connecting to the Database

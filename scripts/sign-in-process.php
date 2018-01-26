@@ -1,5 +1,6 @@
 <?php 
-
+    /* CREATED BY HARRY */
+    
     // Defining path to session data folder where all session data will be saved/found
     require_once('session-save-path.php');
     // Resuming current session
@@ -94,7 +95,6 @@
         } else{
             // Username correct but password incorrect
             $_SESSION['username'] = $username;
-            $_SESSION['signedIn'] = false;
             $_SESSION['errorMessage'] = 'Incorrect password';
             // PASSWORD HINT
             header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -102,7 +102,6 @@
 
     } else{
         // Username not correct
-        $_SESSION['signedIn'] = false;
         $_SESSION['errorMessage'] = 'Incorrect username';
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
