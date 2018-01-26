@@ -1,0 +1,188 @@
+/*--------------------------
+ANIMATIONS
+--------------------------*/
+@keyframes flyIn{
+
+    0%{
+        bottom: -100px
+    }
+    100%{
+        bottom: 50px;
+    }
+}
+@keyframes flyOut{
+    0%{
+        bottom: 50px
+    }
+    100%{
+        bottom: -100px;
+    }
+}
+/*--------------------------
+TEXT
+--------------------------*/
+.admin-interface__heading{
+    padding: 60px 0 50px 0;
+    color: #5E7991;
+}
+.icon-exit{
+    color: #fff;
+    float: right;
+    width: 14px;
+    padding: 18px 0 18px 25px;
+    cursor: pointer;
+}
+/*--------------------------
+SIDEBAR
+--------------------------*/
+.admin-tools{
+    width: 20%;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    background: #414B6B;
+    height: calc(100% - 70px);
+    padding: 65px 40px;
+    color: #fff;
+    box-sizing: border-box;
+}
+.admin-tools__tool{
+    width: 100%;
+    margin: 0 0 40px 0;
+    cursor: pointer;
+}
+.admin-tools__link{
+    font: 400 14px/21px 'Facit-Light', sans-serif;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.admin-tools__link-icon{
+    font-size: 21px;
+    padding: 0 20px 0 0;
+    color: #fff;
+    position: relative;
+    top: 4px;
+}
+/*--------------------------
+MAIN INTERFACE
+--------------------------*/
+.admin-interface{
+    box-sizing: border-box;
+    width: 80%;
+    margin: 70px 0 0 20%;
+    padding: 0 50px 70px 50px;
+}
+hr{
+    border: none;
+    background: #F4F4F4;
+    height: 1px;
+    width: 100%;
+    margin: 0;
+}
+.admin-interface__content-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.admin-interface__content{
+    margin: 0 0 40px 0;
+}
+.admin-interface__content:nth-child(2n+1){
+    width: calc(65% - 50px);
+}
+.admin-interface__content:nth-child(2n+2){
+    width: 35%;
+}
+.copyright{
+    margin: 10px 0 0 0;
+}
+/*--------------------------
+MAIN INTERFACE SECTIONS
+--------------------------*/
+table{
+    width: calc(100% - 50px);
+    margin: 10px 25px;
+    font-size: 14px;
+    color: #5E7991;
+    box-sizing: border-box;
+}
+.moderation-empty{
+    margin: 20px 25px;
+}
+.stats td{
+    line-height: 50px;
+    box-sizing: border-box;
+}
+.stats td:nth-child(1){
+    text-align: left;
+    width: calc(100% - 60px);
+}
+.stats td:nth-child(2){
+    text-align: right;
+    width: 60px;
+}
+.stats__small-text{
+    line-height: 22px !important;
+    padding: 0 0 14px 0;
+}
+.tech-issue{
+    line-height: 22px;
+    padding: 14px 0 14px 20px;
+}
+.tech-issue__icon{
+    color: #FF737E;
+    position: relative;
+    top: 3px;
+}
+.reject-icon{
+    color: #FF737E;
+    font-size: 16px;
+    cursor: pointer;
+}
+.approve-icon{
+    color: #5AD6AD;
+    font-size: 16px;
+    cursor: pointer;
+}
+.approval-control{
+    width: 16px;
+    display: inline-block;
+}
+/*--------------------------
+FEEDBACK MECHANISM
+--------------------------*/
+.feedback{
+    position: fixed;
+    left: calc(20% + 50px);
+    width: 45%;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.15);
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0 25px;
+    user-select: none;
+    animation: flyIn 0.2s forwards;
+}
+.positive-feedback{
+    background: #5AD6AD;
+}
+.negative-feedback{
+    background: #FF737E;
+}
+.feedback-message{
+    color: #fff;
+    margin: 0 0 0 10px;
+    display: inline-block;
+    padding: 0;
+}
+.feedback-icon{
+    position: relative;
+    top: 3px;
+}

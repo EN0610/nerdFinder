@@ -1,0 +1,318 @@
+/*--------------------------
+
+Created by: EN0610 Group 4 (Nerd Finder)
+Description: Monolithic base stylesheet for Nerd Finder to be included on every page
+
+CSS Naming Convention: BEM (Block, Element, Modifier)
+Naming Convention Documentation: http://getbem.com/naming/
+
+--------------------------*/
+/*--------------------------
+ANIMATIONS
+--------------------------*/
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*--------------------------
+GLOBAL
+--------------------------*/
+body{
+    box-sizing: border-box;
+    background: #F6F8FA;
+    overflow-y: scroll;
+}
+.hide{
+    display: none;
+}
+.center-text{
+    text-align: center;
+}
+/*--------------------------
+GRIDS
+--------------------------*/
+.wrapper{
+    width: calc(100% - 120px);
+    max-width: 1145px;
+    margin: 0 auto;
+}
+.flex-grid{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.grid-1{
+    width: calc((100% - 80px) / 3);
+}
+.grid-2{
+    width: calc(((100% - 80px) / 3) * 2);
+}
+/*--------------------------
+NAV
+--------------------------*/
+.nav{
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: right;
+    z-index: 1100;
+}
+.nav__wrapper{
+    margin: 0 auto;
+    width: calc(100% - 80px);
+    max-width: 1185px;
+    height: 70px;
+}
+.nerd-finder-logo{
+    width: 133px;
+    margin: 24px 0 17px 0;
+    display: block;
+    float: left;
+}
+.nav__item-list{
+    display: inline-block;
+    vertical-align: top;
+}
+.nav__item{
+    display: inline-block;
+    margin: 0 0 0 30px;
+    line-height: 70px;
+}
+.nav__item a{
+    color: #5E7991;
+}
+.nav__item a:hover{
+    color: #414B6B;
+}
+.nav__item--current{
+    border-bottom: #414B6B 3px solid;
+    line-height: 64px;
+    margin: 3px 0 0 30px;
+}
+.nav__item--current a{
+    color: #414B6B;
+}
+.nav__icon{
+    display: inline-block;
+    line-height: 70px;
+    vertical-align: top;
+}
+.nav__messages-icon{
+    margin: 0 30px;
+    color: #414B6B;
+    font-size: 21px;
+    cursor: pointer;
+}
+.nav__user-profile{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin: 15px 10px 15px 0;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.nav__drop-down-icon{
+    color: #5E7991;
+    cursor: pointer;
+}
+.nav__admin{
+    border-left: 1px solid #FF9673;
+    float: left;
+    height: 25px;
+    margin: 22.5px 0 22.5px 25px;
+    padding: 0 0 0 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.nav__admin-text{
+    color: #FF9673;
+    line-height: 25px;
+    position: relative;
+}
+.nav__user-area{
+    display: inline-block;
+    cursor: pointer;
+    height: 70px;
+}
+.nav__drop-down{
+    position: fixed;
+    top: 65px;
+    right: 40px;
+    z-index: 1000;
+    width: 165px;
+    float: right;
+    clear: both;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 12.5px 25px;
+    animation: fadeIn 0.3s forwards;
+}
+.nav__drop-down-list-item{
+    color: #5E7991;
+    font: 400 14px/40px 'Gesta-Regular', sans-serif;
+}
+.nav__drop-down-list-item:hover{
+    color: #414B6B;
+}
+/*--------------------------
+HEADERS
+--------------------------*/
+.header{
+    margin: 70px 0 0 0;
+    width: 100%;
+}
+.header--big{
+    padding-bottom: 100px;
+    background: #ff9673 url('../img/homepage-cover.jpg');
+    background-size: cover;
+}
+.header__heading{
+    padding-bottom: 50px;
+}
+/*--------------------------
+CONTAINERS
+--------------------------*/
+.soft-box{
+   background: #fff;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
+}
+/*--------------------------
+CALL TO ACTIONS
+--------------------------*/
+.button{
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 50px;
+    font: 400 16px/45px 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    border-radius: 25px;
+    border: none;
+    padding: 4px 25px 0 25px;
+    /* HOVER EFFECTS */
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.button:hover, .button:focus, .button:active{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+.button--primary-white{
+    border: 1px solid #fff;
+    background: #fff;
+    color: #FF9673;
+}
+.button--primary-green{
+    background: #5AD6AD;
+    color: #fff;
+}
+.button--secondary-white{
+    border: 1px solid #fff;
+    color: #fff;
+}
+.button--secondary-red{
+    border: 1px solid #FF737E;
+    color: #FF737E;
+}
+.button--secondary-green{
+    border: 1px solid #5AD6AD;
+    color: #5AD6AD;
+}
+.button--nav{
+    height: 40px;
+    line-height: 40px;
+    padding: 1px 20px 0 20px;
+    border-radius: 20px;
+    margin: 16px 0 0 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+.text-link{
+    color: #FF9673;;
+    border-bottom: 0.5px solid #FFC6B3;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}
+.text-link:hover{
+    color: #FF737E;
+    border-color: #FFB3B9;
+}
+/*--------------------------
+EFFECTS
+--------------------------*/
+.shadow--light{
+    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
+}
+.shadow--dark{
+    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.15);
+}
+.background-gradient{
+    background: #ff9673;
+    background: -moz-linear-gradient(45deg, #ff9673 0%, #ff737e 100%);
+    background: -webkit-linear-gradient(45deg, #ff9673 0%,#ff737e 100%);
+    background: linear-gradient(45deg, #ff9673 0%,#ff737e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9673', endColorstr='#ff737e',GradientType=1 )
+    color: #fff;
+}
+/*--------------------------
+FORM ELEMENTS
+--------------------------*/
+input{
+    height: 36px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+input:focus{
+    outline:0;
+}
+input[type='text'], input[type='password']{
+    background: #fff;
+    border: solid 1px #F0F4F8;
+    border-radius: 20px;
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    font: 400 14px/36px 'Facit-Regular', sans-serif;
+    color: #5E7991;
+    letter-spacing: 1px;
+}
+/*--------------------------
+FOOTER
+--------------------------*/
+.copyright{
+    color: #5E7991;
+    display: block;
+    text-align: left;
+}
+@media all and (min-device-width: 1265px) and (min-width: 1265px) {
+    .nav__drop-down{
+        /* POSITIONING DROPDOWN */
+        right: calc(((100% - 1265px) / 2 ) + 40px);
+    }
+}
