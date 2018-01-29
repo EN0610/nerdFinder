@@ -128,7 +128,7 @@ CONTENT;
     NEW PROJECTS REQUESTS
     --------------------------*/
 
-    $unapprovedProjects = "SELECT projectid, projectname, firstname, lastname, posted, approved 
+    $unapprovedProjects = "SELECT projectid, projectname, username, posted, approved 
                            FROM nf_projects INNER JOIN nf_users
                            ON (nf_projects.clientid = nf_users.userid)
                            WHERE approved = 0
@@ -144,8 +144,7 @@ CONTENT;
 
             $projectid = $row['projectid'];
             $projectname = $row['projectname'];
-            $clientfirstname = $row['firstname'];
-            $clientlastname = $row['lastname'];
+            $clientusername = $row['username'];
             $posted = $row['posted'];
 
             $projects .= <<<CONTENT
@@ -170,7 +169,7 @@ CONTENT;
                 </tr>
                 <tr>
                     <td class="stats__small-text">
-                        By $clientfirstname $clientlastname &nbsp;&nbsp;&nbsp;&nbsp; Posted: $posted
+                        By $clientusername &nbsp;&nbsp;&nbsp;&nbsp; Posted: $posted
                     </td>
                     <td></td>
                 </tr>
@@ -186,10 +185,31 @@ CONTENT;
     }
 
     /*--------------------------
+    USER RESTRICTION
+    --------------------------*/
+
+    $userDropdownSQL = "SELECT userid, firstname, lastname, username FROM nf_users ORDER BY firstname";
+    $userDropdownSQLResults = mysqli_query($conn, $userDropdownSQL) or die (mysqli_error($conn));
+    $usersDropDown = '';
+
+    if (mysqli_num_rows($userDropdownSQLResults) > 0){
+        // At least one row
+        while ($row = mysqli_fetch_assoc($userDropdownSQLResults)) {
+            //
+            $userid = $row['userid'];
+            $username = $row['username'];
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+
+            $usersDropDown .= "<option value='$userid'>$firstname $lastname ($username)</option>";            
+        }
+    }
+
+    /*--------------------------
     NEW COMMENT MODERATION
     --------------------------*/
 
-    $unaprovedComments = "SELECT commentid, commentcontent, postid, approved
+    $unaprovedComments = "SELECT firstname, lastname, username, commentid, commentcontent, postid, approved
                           FROM nf_comments INNER JOIN nf_users
                           ON (nf_comments.userid = nf_users.userid)
                           WHERE approved = 0
@@ -203,6 +223,9 @@ CONTENT;
 
         while ($row = mysqli_fetch_assoc($unaprovedCommentsResults)) {
 
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+            $username = $row['username'];
             $commentid = $row['commentid'];
             $commentcontent = $row['commentcontent'];
             $postid = $row['postid'];
@@ -211,8 +234,11 @@ CONTENT;
 
             <table class="stats">
                 <tr>
-                    <td class="stats__small-text">"$commentcontent"<br><br>                        
-                        <a class="text-link" href="forum-post.php?postid=$postid" target="_blank">View post</a>
+                    <td class="stats__small-text">
+                        <p class="admin-interface__text">"$commentcontent"</p>
+                        <br>
+                        <a class="text-link" href="forum-post.php?postid=$postid" target="_blank">
+                        View comment by $username </a>
                     </td>
                     <td>
                         <form id="comment-reject-$commentid" class="approval-control" action="scripts/reject-comment-process.php" method="post">
@@ -236,6 +262,25 @@ CONTENT;
         $comments = '<table class="moderation-empty"><tr><td>No comments awaiting moderation</td></tr></table>';
     }
 
+    /*--------------------------
+    FORUM POSTS
+    --------------------------*/
+    
+    $postsDropdownSQL = "SELECT postid, postcontent, forumname FROM nf_posts INNER JOIN nf_forums ON (nf_posts.forumid = nf_forums.forumid) ORDER BY posttime DESC";
+    $postsDropdownSQLResults = mysqli_query($conn, $postsDropdownSQL) or die (mysqli_error($conn));
+    $postsDropdown = '';
+
+    if (mysqli_num_rows($postsDropdownSQLResults) > 0){
+        // At least one row
+        while ($row = mysqli_fetch_assoc($postsDropdownSQLResults)) {
+            //
+            $postid = $row['postid'];
+            $postcontent = $row['postcontent'];
+            $forumname = $row['forumname'];
+
+            $postsDropdown .= "<option value='$postid'>$postcontent ($forumname)</option>";            
+        }
+    }
     /*--------------------------
     FEEDBACK MECHANISM
     --------------------------*/

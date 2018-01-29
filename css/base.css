@@ -21,10 +21,14 @@ ANIMATIONS
 /*--------------------------
 GLOBAL
 --------------------------*/
+html{
+    height: 100%;
+}
 body{
     box-sizing: border-box;
     background: #F6F8FA;
     overflow-y: scroll;
+    height: 100%;
 }
 .hide{
     display: none;
@@ -67,12 +71,11 @@ NAV
     top: 0;
     left: 0;
     text-align: right;
-    z-index: 1100;
+    z-index: 1000;
 }
 .nav__wrapper{
     margin: 0 auto;
     width: calc(100% - 80px);
-    max-width: 1185px;
     height: 70px;
 }
 .nerd-finder-logo{
@@ -231,6 +234,10 @@ CALL TO ACTIONS
     background: #5AD6AD;
     color: #fff;
 }
+.button--primary-red{
+    background: #FF737E;
+    color: #fff;
+}
 .button--secondary-white{
     border: 1px solid #fff;
     color: #fff;
@@ -257,6 +264,7 @@ CALL TO ACTIONS
     border-bottom: 0.5px solid #FFC6B3;
     text-decoration: none;
     letter-spacing: 1.5px;
+    cursor: pointer;
 }
 .text-link:hover{
     color: #FF737E;
@@ -282,14 +290,14 @@ EFFECTS
 /*--------------------------
 FORM ELEMENTS
 --------------------------*/
-input{
+input, select{
     height: 36px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     box-sizing: border-box;
 }
-input:focus{
+input:focus, select:focus{
     outline:0;
 }
 input[type='text'], input[type='password']{
@@ -301,6 +309,43 @@ input[type='text'], input[type='password']{
     font: 400 14px/36px 'Facit-Regular', sans-serif;
     color: #5E7991;
     letter-spacing: 1px;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+select{
+    width: 100%;
+    background: #fff;
+    border: solid 1px #F0F4F8;
+    border-radius: 20px !important;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font: 400 14px/36px 'Facit-Light', sans-serif;
+    letter-spacing: 1px;
+    color: #414B6B;
+}
+.select-icon{
+    pointer-events: none;
+    position: relative;
+    float: right;
+    right: 19px;
+    bottom: 43px;
+    color: #AEBCC8;
+    font-size: 12px;
+    width: 13px;
+    height: 12px;
+    background: #fff;
+    padding: 0 0 0 10px;
+    box-sizing: content-box;
+    display: inline;
+}
+/*--------------------------
+MESSAGES
+--------------------------*/
+.sent-messages{
+    background: #5AD6AD;
+}
+.recieved-messages{
+    background: #5E7991;
 }
 /*--------------------------
 FOOTER
@@ -310,9 +355,48 @@ FOOTER
     display: block;
     text-align: left;
 }
-@media all and (min-device-width: 1265px) and (min-width: 1265px) {
-    .nav__drop-down{
-        /* POSITIONING DROPDOWN */
-        right: calc(((100% - 1265px) / 2 ) + 40px);
-    }
+/*--------------------------
+MODALS
+--------------------------*/
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #222738;
+    opacity: 0.5;
+    z-index: 1100;
+    cursor: pointer;
+}
+.modal{
+    background: #fff;
+    width: 40%;
+    padding: 40px;
+    box-sizing: border-box;
+    z-index: 1101;
+    position: fixed;
+    top: 120px;
+    left: 30%;
+    border-radius: 16px;
+}
+#modal__input{
+    font: 600 24px/32px 'Facit-Semibold', sans-serif;
+    color: #414B6B; 
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 0;
+    width: calc(100% - 32px);
+    padding: 0;
+    margin: 0 0 40px 0;
+    overflow: auto;
+}
+#modal__input::placeholder{
+    color: #D2DEEA;
+}
+.icon-exit-dark{
+    float: right;
+    width: 14px;
+    line-height: 32px;
+    cursor: pointer;
 }
