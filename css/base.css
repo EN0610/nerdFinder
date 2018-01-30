@@ -195,6 +195,13 @@ CONTAINERS
    border-radius: 10px;
    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
 }
+.soft-box--padded{
+    box-sizing: border-box;
+    padding: 40px;
+}
+.main{
+    margin: 60px auto;
+}
 /*--------------------------
 CALL TO ACTIONS
 --------------------------*/
@@ -338,6 +345,9 @@ select{
     box-sizing: content-box;
     display: inline;
 }
+.bulleted-list{
+    list-style: disc inside;
+}
 /*--------------------------
 MESSAGES
 --------------------------*/
@@ -355,8 +365,42 @@ FOOTER
     display: block;
     text-align: left;
 }
+.copyright__big-footer{
+    margin: 60px 0 0 0;
+}
+.footer{
+    width: 100%;
+    background: #fff;
+    padding: 60px 0;
+}
+.footer__heading{
+    color: #5E7991;
+    user-select: none;
+}
+.footer__column{
+    width: 15%;
+}
+.footer__social-icon{
+    display: block;
+    float: left;
+    width: 40px;
+    max-width: 40px;
+    margin: 0 0 0 calc((100% - 120px) / 2);
+}
+.footer__social-icon:first-child{
+    margin: 0;
+}
+.footer__link{
+    margin: 16px 0;
+}
+.footer__link a{
+    color: #5E7991;
+}
+.footer__link a:hover{
+    border-bottom: 0.5px solid #B1C8DE;
+}
 /*--------------------------
-MODALS
+MODAL
 --------------------------*/
 .overlay{
     position: fixed;
@@ -399,4 +443,20 @@ MODALS
     width: 14px;
     line-height: 32px;
     cursor: pointer;
+}
+
+@media all and (max-width: 600px) {
+
+    .grid-1{
+        width: 100%;
+    }
+    .grid-2{
+        width: 100%;
+    }
+    /*--------------------------
+    FOOTER
+    --------------------------*/
+    .footer__column{
+        width: 30%;
+    }
 }

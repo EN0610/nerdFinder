@@ -49,7 +49,7 @@ h1{
     color: #fff;
     padding: 70px 0 0 0;
 }
-h2{
+h2, .footer__heading{
     font: 600 24px/32px 'Facit-Semibold', sans-serif;
     color: #414B6B;
     letter-spacing: 1px;
@@ -64,6 +64,7 @@ h4{
     font: 300 24px/32px 'Facit-Light', sans-serif;
     color: #fff;
     letter-spacing: 1px;
+    padding: 20px 0 70px 0;
 }
 h5{
     font: 400 14px/50px 'Gesta-Regular', sans-serif;
