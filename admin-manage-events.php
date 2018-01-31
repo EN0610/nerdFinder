@@ -36,16 +36,17 @@
         <section class="admin-interface__content-wrapper">
 
         </section>
-        <?php
+        <?php require_once('elements/footer--small.php');
+        
             }
             else{
                 // NON ADMIN
-                echo('<p class="center-text">You must be signed in as an admin to access this page</p>
-                     <p class="center-text">Click the SIGN IN button in the navigation bar above to sign in');
+                echo('<h2 class="center-text sign-in-required">You must be signed in as an admin to access this page</h2>
+                      <p class="center-text">Click the SIGN IN button in the navigation bar above</p>
+                    ');
 
             }
         ?>
-            <?php require_once('elements/footer--small.php');?>
     </section>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

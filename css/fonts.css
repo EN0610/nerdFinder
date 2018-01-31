@@ -42,6 +42,7 @@ body, p{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 1px;
+    color: #5E7991;
 }
 h1{
     font: 600 64px/82px 'Facit-Semibold', sans-serif;
@@ -57,7 +58,6 @@ h2, .footer__heading{
 h3, .nav__item, .nav__admin-text{
     font: 400 14px/32px 'Facit-Regular', sans-serif;
     text-transform: uppercase;
-    color: #5E7991;
     letter-spacing: 1.5px;
 }
 h4{
@@ -68,6 +68,5 @@ h4{
 }
 h5{
     font: 400 14px/50px 'Gesta-Regular', sans-serif;
-    color: #5E7991;
     padding: 0 25px;
 }

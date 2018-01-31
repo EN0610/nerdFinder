@@ -60,6 +60,10 @@ GRIDS
 .grid-2{
     width: calc(((100% - 80px) / 3) * 2);
 }
+.sign-in-required{
+    margin: 140px auto 20px auto;
+    color: #5E7991;
+}
 /*--------------------------
 NAV
 --------------------------*/
@@ -277,6 +281,9 @@ CALL TO ACTIONS
     color: #FF737E;
     border-color: #FFB3B9;
 }
+.center-button{
+    margin: 40px auto 0 auto;
+}
 /*--------------------------
 EFFECTS
 --------------------------*/
@@ -347,6 +354,14 @@ select{
 }
 .bulleted-list{
     list-style: disc inside;
+    line-height: 32px;
+}
+.full-width-form{
+    padding: 20px 0 0 0;
+}
+.full-width-form__field{
+    width: 100% !important;
+    margin: 5px 0 20px 0 !important;
 }
 /*--------------------------
 MESSAGES

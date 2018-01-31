@@ -24,7 +24,7 @@
     </header>
     <section class="soft-box wrapper main soft-box--padded">
         <h2>£10 per month</h2>
-            <form class="flex-grid">
+            <form class="flex-grid full-width-form">
                 <article class="grid-1">
                     <h3>What's included</h3>
                     <ul class="bulleted-list">
@@ -34,17 +34,17 @@
                 </article>
                 <article class="grid-1">
                     <h3>Card number</h3>
-                    <input type="text" name="card-number">
+                    <input class="full-width-form__field" type="text" name="card-number">
                     <h3>Name of card</h3>
-                    <input type="text" name="name">
+                    <input class="full-width-form__field" type="text" name="name">
                 </article>
                 <article class="grid-1">
                     <h3>Security code</h3>
-                    <input type="text" name="security-code">
+                    <input class="full-width-form__field" type="text" name="security-code">
                     <h3>Expiration Date</h3>
-                    <input type="text" name="expiration">
+                    <input class="full-width-form__field" type="text" name="expiration">
                 </article>
-                <input class="button button--primary-green" type="submit" name="" value="Pay by card">
+                <input class="button button--primary-green center-button" type="submit" name="" value="Pay by card">
             </form>
     </section>
     <?php require_once('elements/footer--big.php'); ?>
