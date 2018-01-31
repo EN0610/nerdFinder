@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
         echo "<br> Rate: ". $row["hourlyrate"]. " - Name: ". $row["firstname"]. " " . $row["lastname"] . "<br>";
     }
 } else {
-    echo "0 results";
+    echo "This isn't the Nerd you are looking for";
 }
 
 $conn->close();

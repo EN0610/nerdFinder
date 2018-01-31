@@ -23,7 +23,7 @@
             <a class="button button--secondary-white" href="">Become a Nerd</a>
         </article>
     </header>
-    <h3>Check your criteria</h3>
+    <h3>Nerds just for you</h3>
 	<?php require_once('scripts/nerd-search.php'); ?>
     <form action="scripts/nerd-search.php" method="post">
         <label>Website</label>
