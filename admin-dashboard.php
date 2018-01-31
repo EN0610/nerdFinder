@@ -109,7 +109,7 @@
             else{
                 // NON ADMIN
                 echo('<h2 class="center-text sign-in-required">You must be signed in as an admin to access this page</h2>
-                      <p class="center-text">Click the SIGN IN button in the navigation bar above</p>
+                      <p class="center-text">Click the SIGN IN button in the navigation bar above an sign in with your admin username to continue</p>
                     ');
 
             }
