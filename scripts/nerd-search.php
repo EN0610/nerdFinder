@@ -1,36 +1,27 @@
 <?php
-$searchCondition = '';
-
-if($_POST['check1'] == ){
-    $searchCondition .= ' AND specialismid = 1';
+$conn = mysqli_connect('localhost', 'root', '', 'nerdFinder');
+// if no connection then echo the errors onto the screen
+if (!$conn) {
+    echo ("<p>Connection failed:".mysqli_connect_error()."</p>\n");
 }
+// Remove special character errors
+mysqli_set_charset($conn,"utf8");
 
 $sql = "SELECT * 
-        FROM nf_users INNER JOIN nf_userspecialisms 
-        ON (nf_users.userid = nf_userspecialisms.userid)
-        WHERE usertypeid = 2 AND $searchCondition";
+            FROM nf_users INNER JOIN nf_userspecialisms 
+            ON (nf_users.userid = nf_userspecialisms.userid)
+            WHERE usertypeid = 2";
+$result = $conn->query($sql);
 
-$result = mysqli_query($sql) or die(mysqli_error());
-if (mysqli_num_rows($result) == 0)
-{
-    echo "ERROR <br><br>";
-}
-else
-{
-    echo"<table>
-    <td>portfolioimg1</td>
-    <td>firstname</td>
-    <td>secondname</td>
-    <td>hourlyrate</td>
-    </table>
-   ";
-    while($row = mysqli_fetch_assoc( $result ))
-    {
-        echo "<td>" . $row['portfolioimg1'] . " </td>";
-        echo "<td>" . $row['firstname'] . " </td>";
-        echo "<td>" . $row['secondname'] . " </td>";
-        echo "<td>" . $row['hourlyrate'] . " </td>";
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> Rate: ". $row["hourlyrate"]. " - Name: ". $row["firstname"]. " " . $row["lastname"] . "<br>";
     }
-    echo "</table>";
+} else {
+    echo "0 results";
 }
+
+$conn->close();
+
 
