@@ -24,6 +24,7 @@
         </article>
     </header>
     <h3>Check your criteria</h3>
+	<?php require_once('scripts/nerd-search.php'); ?>
     <form action="scripts/nerd-search.php" method="post">
         <label>Website</label>
         <input id="checkBox1" type="checkbox" name="Websites">
@@ -34,6 +35,8 @@
         <label>Software</label>
         <input id="checkBox1" type="checkbox" name="Software">
     </form>
+
+
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>
