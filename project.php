@@ -10,7 +10,7 @@
     // Connecting to the Database
     require_once('scripts/database-connection.php');
     // Pulling clicked on project from request stream AND validating
-    $projectid = isset($_REQUEST['projectid']) ? $_REQUEST['projectid'] : null;
+    $projectid = isset($_REQUEST['projectid']) ? $_REQUEST['projectid'] : 1;
     $projectid = filter_var($projectid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $projectid = filter_var($projectid, FILTER_SANITIZE_SPECIAL_CHARS);
     $projectid = trim($projectid);
@@ -84,7 +84,7 @@
         <article class="grid__row">
             <img class="grid__row-image" src="<?php echo('img/projects/' . $inspirationimg1); ?>" alt="Project Inspiration Image 1"><img class="grid__row-image" src="<?php echo('img/projects/' . $inspirationimg2); ?>" alt="Project Inspiration Image 2"><img class="grid__row-image" src="<?php echo('img/projects/' . $inspirationimg3); ?>" alt="Project Inspiration Image 3">
         </article>
-        <form action="scripts/project-show-interest.php" method="get">
+        <form action="scripts/project-show-interest.php" method="get" class="grid__row">
             <!-- PREPARING VARIABLES FOR MESSAGE -->
             <input type="hidden" name="projectid" value="<?php echo($projectid);?>">
             <input type="hidden" name="projectname" value="<?php echo($projectname);?>">

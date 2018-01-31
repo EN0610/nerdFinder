@@ -266,7 +266,9 @@ CONTENT;
     FORUM POSTS
     --------------------------*/
     
-    $postsDropdownSQL = "SELECT postid, postcontent, forumname FROM nf_posts INNER JOIN nf_forums ON (nf_posts.forumid = nf_forums.forumid) ORDER BY posttime DESC";
+    $postsDropdownSQL = "SELECT postid, postcontent
+                         FROM nf_posts 
+                         ORDER BY posttime DESC";
     $postsDropdownSQLResults = mysqli_query($conn, $postsDropdownSQL) or die (mysqli_error($conn));
     $postsDropdown = '';
 
@@ -276,9 +278,8 @@ CONTENT;
             //
             $postid = $row['postid'];
             $postcontent = $row['postcontent'];
-            $forumname = $row['forumname'];
 
-            $postsDropdown .= "<option value='$postid'>$postcontent ($forumname)</option>";            
+            $postsDropdown .= "<option value='$postid'>$postcontent</option>";            
         }
     }
     /*--------------------------

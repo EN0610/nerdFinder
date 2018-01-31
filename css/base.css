@@ -329,7 +329,7 @@ input, select{
     -moz-appearance: none;
     appearance: none;
 }
-input:focus, select:focus{
+input:focus, select:focus, textarea:focus{
     outline:0;
 }
 input[type='text'], input[type='password']{
@@ -479,7 +479,8 @@ MODAL
     width: calc(100% - 32px);
     padding: 0;
     margin: 0 0 40px 0;
-    overflow: auto;
+    overflow-y: auto;
+    resize: none;
 }
 #modal__input::placeholder{
     color: #D2DEEA;
@@ -499,7 +500,6 @@ MODAL
     }
     .grid-3-1{
         width: 100%;
-        margin: 40px 0 0 0;
     }
     /*--------------------------
     FOOTER
