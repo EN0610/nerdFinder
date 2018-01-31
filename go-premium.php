@@ -22,7 +22,7 @@
             <h4>Forget about £25 processing fee on projects</h4>
         </article>
     </header>
-    <section class="soft-box wrapper main soft-box--padded">
+    <section class="soft-box soft-box--padded wrapper main">
         <h2>£10 per month</h2>
             <form class="flex-grid full-width-form">
                 <article class="grid-1">
