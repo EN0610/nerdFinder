@@ -20,7 +20,7 @@
         <article class="wrapper">
             <h1 class="header__heading grid-2">Hire experts to create your apps, websites, software &amp; games</h1>
             <a class="button button--primary-white" href="sign-up-client.php">Hire Nerds</a>&nbsp;&nbsp;
-            <a class="button button--secondary-white" href="">Become a Nerd</a>
+            <a class="button button--secondary-white" href="sign-up-nerd.php">Become a Nerd</a>
         </article>
     </header>
     <section id="how-it-works">

@@ -1,4 +1,6 @@
 <?php
+	/* CREATED BY JACK */
+
     // connecting to the database
     $conn = mysqli_connect('localhost', 'root', '', 'nerdfinder');
     // if no connection then echo the errors onto the screen
