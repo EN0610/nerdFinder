@@ -38,7 +38,6 @@
           <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
           <label for="experience">Experience<span>*</span>:</label>
           <input type="text" name="experience" id="experience" accesskey="9" tabindex="9">
-
           <label for="specialism">Specialism<span>*</span>:</label>
           <select name="specialismid">
             <option value="1">Websites</option>
@@ -46,13 +45,10 @@
             <option value="3">Tablet Apps</option>
             <option value="4">Software</option>
           </select><span class="icon-arrow-down select-icon"></span>
-
           <label for="rate">Hourly Rate<span>*</span>:</label>
           <input type="text" name="rate" id="rate" accesskey="10" tabindex="10">
-
           <label for="nerdcv">Upload CV<span>*</span>:</label>
           <input type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
-
           <label for="portfolioimg1">Portfolio Images<span>*</span>:</label>
           <input type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11">
         </section>
@@ -62,7 +58,7 @@
     <input type="submit" value="BECOME A NERD" accesskey="6" tabindex="6">
     </form>
 
-    <!-- <?php require_once('elements/nav.php'); ?> -->
+    <?php require_once('elements/nav.php'); ?>
     <?php require_once('elements/footer--small.php'); ?>
 </body>
 </html>
