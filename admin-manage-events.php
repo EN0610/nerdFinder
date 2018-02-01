@@ -43,7 +43,7 @@
             }
             else{
                 // NON ADMIN
-                echo('<h2 class="center-text sign-in-required">You must be signed in as an admin to access this page</h2>
+                echo('<h2 class="center-text grey-text no-access">You must be signed in as an admin to access this page</h2>
                       <p class="center-text">Click the SIGN IN button in the navigation bar above and sign in with your admin username to continue</p>
                     ');
 

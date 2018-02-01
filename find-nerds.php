@@ -3,6 +3,8 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
+    // Script for searching for nerds
+    require_once('scripts/nerd-search.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +26,6 @@
         </article>
     </header>
     <h3>Nerds just for you</h3>
-	<?php require_once('scripts/nerd-search.php'); ?>
     <form action="scripts/nerd-search.php" method="post">
         <label>Website</label>
         <input id="checkBox1" type="checkbox" name="Websites">
@@ -35,8 +36,9 @@
         <label>Software</label>
         <input id="checkBox1" type="checkbox" name="Software">
     </form>
-
-
+    <section>
+        <?php echo($nerds);?>
+    </section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>
