@@ -37,10 +37,16 @@
           <input type="text" name="passwordhint" id="passwordhint" accesskey="7" tabindex="7">
           <label for="profilepic">Profile Picture<span>*</span>:</label>
           <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
-
-
           <label for="experience">Experience<span>*</span>:</label>
           <input type="text" name="experience" id="experience" accesskey="9" tabindex="9">
+
+          <label for="specialism">Specialism<span>*</span>:</label>
+          <select name="specialismid">
+            <option value="1">Websites</option>
+            <option value="2">Mobile Apps</option>
+            <option value="3">Tablet Apps</option>
+            <option value="4">Software</option>
+          </select><span class="icon-arrow-down select-icon"></span>
 
           <label for="rate">Hourly Rate<span>*</span>:</label>
           <input type="text" name="rate" id="rate" accesskey="10" tabindex="10">
@@ -50,7 +56,6 @@
 
           <label for="portfolioimg1">Portfolio Images<span>*</span>:</label>
           <input type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11">
-         <!-- <input type="submit" value="Upload Image" name="submit"> -->
         </section>
     </fieldset>
     </section>

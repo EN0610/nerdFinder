@@ -31,9 +31,9 @@
                     </ul> -->
                 </article>
                 <article class="grid-1">
-                    <h3>You're all signed up</h3>
-                    <h3>You can now begin using your account</h3>
-                    <input class="button button--primary-green center-button" type="submit" name="" value="Sign in" href="sign-in.php">
+                    <h3>You're all set up</h3>
+                    <h3>You can now sign in to your account</h3>
+                    <a class="button button--secondary-green" href="sign-in.php">Sign in</a>
                 </article>
                 <article class="grid-1">
                     <!-- <h3>Security code</h3>
