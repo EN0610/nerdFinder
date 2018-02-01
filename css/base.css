@@ -339,6 +339,11 @@ input[type='text'], input[type='password']{
     letter-spacing: 1px;
     padding: 0 20px;
 }
+input[type='checkbox']{
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+}
 select{
     width: 100%;
     background: #fff;
