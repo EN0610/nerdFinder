@@ -19,9 +19,27 @@
       // NERD SIGNED IN
   ?>
 
-  <h2>
-    Hello world, i am a nerd
-  </h2>
+  <header class="header background-gradient">
+      <section class="header--small wrapper">
+          <a class="header--small__link" href="javascript:history.back()"><span class="icon-arrow-left"></span>&nbsp;&nbsp;&nbsp;Back</a>
+      </section>
+  </header>
+  <section class="soft-box soft-box--padded wrapper main">
+      <h2>Nerd User</h2>
+              <article class="grid-1">
+                  <h3>What's included</h3>
+                  <ul class="bulleted-list">
+                      <li>Free project processing</li>
+                      <li>Priority ranking in searches</li>
+                  </ul>
+              </article>
+              <article class="grid-1">
+
+              </article>
+              <article class="grid-1">
+
+              </article>
+  </section>
 
     <?php require_once('elements/nav.php'); ?>
     <?php require_once('elements/footer--big.php');
