@@ -76,10 +76,6 @@ GRIDS
 .grid__row-image:last-child{
     margin: 0;
 }
-.sign-in-required{
-    margin: 140px auto 20px auto;
-    color: #5E7991;
-}
 /*--------------------------
 NAV
 --------------------------*/
@@ -100,7 +96,8 @@ NAV
 }
 .nerd-finder-logo{
     width: 133px;
-    margin: 24px 0 17px 0;
+    height: 21px;
+    margin: 24px 0 25px 0;
     display: block;
     float: left;
 }
@@ -343,6 +340,11 @@ input[type='text'], input[type='password']{
     letter-spacing: 1px;
     padding: 0 20px;
 }
+input[type='checkbox']{
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+}
 select{
     width: 100%;
     background: #fff;
@@ -398,11 +400,25 @@ MAIN COMPONTENTS
 /*--------------------------
 MESSAGES
 --------------------------*/
-.sent-messages{
+.user-message{
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    width: 75%;
+    margin: 20px 0;
+}
+.user-message__sent{
     background: #5AD6AD;
 }
-.recieved-messages{
+.user-message__recieved{
     background: #5E7991;
+    margin-left: 25%;
+}
+.user-message:first-child{
+    margin-top: 0;
+}
+.user-message:last-child{
+    margin-bottom: 0;
 }
 /*--------------------------
 FOOTER

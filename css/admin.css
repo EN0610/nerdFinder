@@ -36,6 +36,15 @@ TEXT
     line-height: 24px;
     color: #5E7991;
 }
+.grey-text{
+    color: #5E7991;
+}
+.light-grey-text{
+    color: #D2DEEA;
+}
+.no-access{
+    margin: 140px auto 20px auto;
+}
 /*--------------------------
 SIDEBAR
 --------------------------*/
