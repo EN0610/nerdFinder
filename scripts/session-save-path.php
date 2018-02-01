@@ -1,5 +1,6 @@
 <?php
-	/* CREATED BY HARRY */
+	/* CREATED BY JACK */
 
 	ini_set("session.save_path", "/xampp/htdocs/xampp/sessionData");
+
 ?>

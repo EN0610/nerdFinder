@@ -32,11 +32,10 @@
         // Changing the session variable of admin-feedback to approved
         $_SESSION['admin-feedback'] = 2;
         //
-        $_SESSION['feedback-message'] = $projectname . ' not approved, try again';
+        $_SESSION['feedback-message'] = $projectname . ' not approved, system error';
     }
 
+    mysqli_close($conn);
     // Sending user back to the admin dashboard
     header('Location: ../admin-dashboard.php');
-
-    mysqli_close($conn);
 ?>

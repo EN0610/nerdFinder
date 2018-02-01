@@ -26,11 +26,15 @@ TEXT
     color: #5E7991;
 }
 .icon-exit{
-    color: #fff;
     float: right;
     width: 14px;
     padding: 18px 0 18px 25px;
     cursor: pointer;
+}
+.admin-interface__text{
+    font-size: 14px;
+    line-height: 24px;
+    color: #5E7991;
 }
 /*--------------------------
 SIDEBAR
@@ -93,10 +97,10 @@ hr{
 .admin-interface__content{
     margin: 0 0 40px 0;
 }
-.admin-interface__content:nth-child(2n+1){
+.admin-interface__content:nth-child(odd){
     width: calc(65% - 50px);
 }
-.admin-interface__content:nth-child(2n+2){
+.admin-interface__content:nth-child(even){
     width: 35%;
 }
 .copyright{
@@ -185,4 +189,24 @@ FEEDBACK MECHANISM
 .feedback-icon{
     position: relative;
     top: 3px;
+}
+/*--------------------------
+FORMS
+--------------------------*/
+select{
+    margin: 15px 0 20px 0;
+}
+.user-finder{
+    padding: 35px;
+}
+.user-finder__button{
+    margin: 25px 0 0 0;
+}
+.padded-box{
+    padding: 35px;
+    box-sizing: border-box;
+}
+.padded-box--small{
+    padding: 17px 25px;
+    box-sizing: border-box;
 }

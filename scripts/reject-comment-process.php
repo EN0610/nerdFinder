@@ -30,11 +30,10 @@
         // Changing the session variable of admin-feedback to approved
         $_SESSION['admin-feedback'] = 2;
         //
-        $_SESSION['feedback-message'] = 'Comment not rejected, contact site support';
+        $_SESSION['feedback-message'] = 'Comment not rejected, system error';
     }
 
+    mysqli_close($conn);
     // Sending user back to the admin dashboard
     header('Location: ../admin-dashboard.php');
-
-    mysqli_close($conn);
 ?>
