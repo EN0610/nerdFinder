@@ -17,8 +17,12 @@ $company = $_POST['company'];
 $jobtitle = $_POST['jobtitle'];
 $businessarea = $_POST['businessarea'];
 
+$hashedpassword = password_hash($userpassword, PASSWORD_BCRYPT, array(
+    'cost' => 11
+));
+
 $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, company, jobtitle, businessarea)
-VALUES (null, '3', '$firstname', '$lastname', '$email', '$username', '$dob', '$userpassword', '$passwordhint', '0', '0', '$profilepic', '$company', '$jobtitle', '$businessarea')";
+VALUES (null, '3', '$firstname', '$lastname', '$email', '$username', '$dob', '$hashedpassword', '$passwordhint', '0', '0', '$profilepic', '$company', '$jobtitle', '$businessarea')";
 if (mysqli_query($conn, $sql)) {
     header('Location: ../congratulations.php');
 } else {
