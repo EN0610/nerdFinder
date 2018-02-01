@@ -36,13 +36,21 @@
           <label for="passwordhint">Password Hint<span>*</span>:</label>
           <input type="text" name="passwordhint" id="passwordhint" accesskey="7" tabindex="7">
           <label for="profilepic">Profile Picture<span>*</span>:</label>
-          <input type="text" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
-          <label for="company">Company<span>*</span>:</label>
-          <input type="text" name="company" id="company" accesskey="9" tabindex="9">
-          <label for="jobtitle">Job Title<span>*</span>:</label>
-          <input type="text" name="jobtitle" id="jobtitle" accesskey="10" tabindex="10">
-          <label for="businessarea">Business Area<span>*</span>:</label>
-          <input type="text" name="businessarea" id="businessarea" accesskey="11" tabindex="11">
+          <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
+
+
+          <label for="experience">Experience<span>*</span>:</label>
+          <input type="text" name="experience" id="experience" accesskey="9" tabindex="9">
+
+          <label for="rate">Hourly Rate<span>*</span>:</label>
+          <input type="text" name="rate" id="rate" accesskey="10" tabindex="10">
+
+          <label for="nerdcv">Upload CV<span>*</span>:</label>
+          <input type="text" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
+
+          <label for="portfolioimg1">Portfolio Images<span>*</span>:</label>
+          <input type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11">
+         <input type="submit" value="Upload Image" name="submit">
         </section>
     </fieldset>
     </section>

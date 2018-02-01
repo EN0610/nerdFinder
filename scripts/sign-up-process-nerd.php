@@ -13,12 +13,15 @@ $dob = $_POST['dob'];
 $userpassword = $_POST['userpassword'];
 $passwordhint = $_POST['passwordhint'];
 $profilepic = $_POST['profilepic'];
-$company = $_POST['company'];
-$jobtitle = $_POST['jobtitle'];
-$businessarea = $_POST['businessarea'];
+$experience = $_POST['experience'];
+$rate = $_POST['rate'];
+$nerdcv = $_POST['nerdcv'];
+$portfolioimg1 = $_POST['portfolioimg1'];
+$portfolioimg2 = $_POST['portfolioimg2'];
+$portfolioimg3 = $_POST['portfolioimg3'];
 
-$sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, company, jobtitle, businessarea)
-VALUES (null, '3', '$firstname', '$lastname', '$email', '$username', '$dob', '$userpassword', '$passwordhint', '0', '0', '$profilepic', '$company', '$jobtitle', '$businessarea')";
+$sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, experience, hourlyrate, nerdcv, portfolioimg1, portfolioimg2, portfolioimg3)
+VALUES (null, '2', '$firstname', '$lastname', '$email', '$username', '$dob', '$userpassword', '$passwordhint', '0', '0', '$profilepic', '$experience', '$rate', '$nerdcv', '$portfolioimg1', '$portfolioimg2', '$portfolioimg3')";
 if (mysqli_query($conn, $sql)) {
     header('Location: ../index.php');
 } else {
