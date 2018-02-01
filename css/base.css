@@ -96,7 +96,8 @@ NAV
 }
 .nerd-finder-logo{
     width: 133px;
-    margin: 24px 0 17px 0;
+    height: 21px;
+    margin: 24px 0 25px 0;
     display: block;
     float: left;
 }
