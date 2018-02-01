@@ -16,7 +16,7 @@
 </head>
 <body>
   <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 2)){
-      // ADMIN SIGNED IN
+      // NERD SIGNED IN
   ?>
 
   <h2>
@@ -25,8 +25,8 @@
 
     <?php require_once('elements/nav.php'); ?>
     <?php require_once('elements/footer--big.php');
-        }
-        else{
+    }
+      else {
             // NON NERD OR CLIENT
             require_once('elements/nav.php'); ?>
             <header class="header background-gradient">
@@ -41,7 +41,7 @@
             </section>
             <?php require_once('elements/footer--big.php');
             echo('<h2 class="center-text sign-in-required">You must be signed in as a Nerd or a Client to access this page</h2><p class="center-text">Click the SIGN IN button in the navigation bar above and sign in with your Nerd or Client username to continue</p>');
-          }
+        }
             ?>
 
 </body>
