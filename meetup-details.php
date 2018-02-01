@@ -4,7 +4,7 @@
     // Resuming current session
     session_start();
     //
-    require_once('event-individual');
+    require_once('scripts/event-individual.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@
 <br>
 <br>
     <table>
-      <?php echo($events);?>
+      <?php echo($eventdetails);?>
     </table>
 
     <?php require_once('elements/footer--big.php'); ?>
