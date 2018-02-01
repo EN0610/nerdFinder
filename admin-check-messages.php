@@ -38,7 +38,6 @@
         <section class="admin-interface__content-wrapper">
             <article class="soft-box admin-interface__content padded-box">
                 <?php echo($pageContent);?>
-                <input type="checkbox" name="">
             </article>
             <article class="soft-box admin-interface__content">
                 <form class="user-finder" action="scripts/admin-update-message-script.php" method="post">
@@ -49,9 +48,8 @@
                     <h2 class="user-finder__heading">To</h2>
                     <select name="userid2">
                         <?php echo($usersDropDown2);?>
-
                     </select><span class="icon-arrow-down select-icon"></span>
-                    <input class="button button--primary-green user-finder__button" type="submit" name="view-messages" value="View Messages" >
+                    <input class="button button--primary-green user-finder__button" type="submit" value="View Messages" >
                 </form>
             </article>
         </section>
