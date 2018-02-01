@@ -18,9 +18,7 @@
     <?php require_once('elements/nav.php'); ?>
     <header class="header header--big">
         <article class="wrapper">
-            <h1 class="header__heading grid-2">Hire experts to create your apps, websites, software &amp; games</h1>
-            <a class="button button--primary-white" href="sign-up-client.php">Hire Nerds</a>&nbsp;&nbsp;
-            <a class="button button--secondary-white" href="">Become a Nerd</a>
+            <h1 class="header__heading grid-2">Congratulations!</h1>
         </article>
     </header>
     <section>
