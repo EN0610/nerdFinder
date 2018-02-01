@@ -25,7 +25,6 @@ html{
     height: 100%;
 }
 body{
-    box-sizing: border-box;
     background: #F6F8FA;
     overflow-y: scroll;
     height: 100%;
@@ -59,6 +58,27 @@ GRIDS
 }
 .grid-2{
     width: calc(((100% - 80px) / 3) * 2);
+}
+.grid-3-2{
+    width: calc((100% - 120px) * 0.66);
+}
+.grid-3-1{
+    width: calc((100% - 120px) * 0.33);
+}
+.grid__row{
+    margin: 0 0 30px 0;
+}
+.grid__row-image{
+    display: inline-block;
+    width: calc((100% - 80px) / 3);
+    margin: 0 40px 0 0;
+}
+.grid__row-image:last-child{
+    margin: 0;
+}
+.sign-in-required{
+    margin: 140px auto 20px auto;
+    color: #5E7991;
 }
 /*--------------------------
 NAV
@@ -161,7 +181,6 @@ NAV
     float: right;
     clear: both;
     text-align: left;
-    box-sizing: border-box;
     padding: 12.5px 25px;
     animation: fadeIn 0.3s forwards;
 }
@@ -184,6 +203,12 @@ HEADERS
     background: #ff9673 url('../img/homepage-cover.jpg');
     background-size: cover;
 }
+.header--small{
+    line-height: 70px;
+}
+.header--small__link{
+    color: #fff;
+}
 .header__heading{
     padding-bottom: 50px;
 }
@@ -195,12 +220,17 @@ CONTAINERS
    border-radius: 10px;
    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
 }
+.soft-box--padded{
+    padding: 40px;
+}
+.main{
+    margin: 60px auto;
+}
 /*--------------------------
 CALL TO ACTIONS
 --------------------------*/
 .button{
     cursor: pointer;
-    box-sizing: border-box;
     height: 50px;
     font: 400 16px/45px 'Facit-Regular', sans-serif;
     text-transform: uppercase;
@@ -270,6 +300,9 @@ CALL TO ACTIONS
     color: #FF737E;
     border-color: #FFB3B9;
 }
+.center-button{
+    margin: 40px auto 0 auto;
+}
 /*--------------------------
 EFFECTS
 --------------------------*/
@@ -295,9 +328,8 @@ input, select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    box-sizing: border-box;
 }
-input:focus, select:focus{
+input:focus, select:focus, textarea:focus{
     outline:0;
 }
 input[type='text'], input[type='password']{
@@ -309,7 +341,6 @@ input[type='text'], input[type='password']{
     font: 400 14px/36px 'Facit-Regular', sans-serif;
     color: #5E7991;
     letter-spacing: 1px;
-    box-sizing: border-box;
     padding: 0 20px;
 }
 select{
@@ -317,7 +348,6 @@ select{
     background: #fff;
     border: solid 1px #F0F4F8;
     border-radius: 20px !important;
-    box-sizing: border-box;
     padding: 0 20px;
     font: 400 14px/36px 'Facit-Light', sans-serif;
     letter-spacing: 1px;
@@ -338,6 +368,33 @@ select{
     box-sizing: content-box;
     display: inline;
 }
+.bulleted-list{
+    list-style: disc inside;
+    line-height: 32px;
+}
+.full-width-form{
+    padding: 20px 0 0 0;
+}
+.full-width-form__field{
+    width: 100% !important;
+    margin: 5px 0 20px 0 !important;
+}
+.icon-arrow-left{
+    position: relative;
+    top: 3px;
+}
+/*--------------------------
+MAIN COMPONTENTS
+--------------------------*/
+.user-profile-name{
+    display: inline-block;
+    vertical-align: top;
+    font: 400 14px/70px 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #414B6B;
+    margin: 0 0 0 5px;
+}
 /*--------------------------
 MESSAGES
 --------------------------*/
@@ -355,8 +412,42 @@ FOOTER
     display: block;
     text-align: left;
 }
+.copyright__big-footer{
+    margin: 60px 0 0 0;
+}
+.footer{
+    width: 100%;
+    background: #fff;
+    padding: 60px 0;
+}
+.footer__heading{
+    color: #5E7991;
+    user-select: none;
+}
+.footer__column{
+    width: 15%;
+}
+.footer__social-icon{
+    display: block;
+    float: left;
+    width: 40px;
+    max-width: 40px;
+    margin: 0 0 0 calc((100% - 120px) / 2);
+}
+.footer__social-icon:first-child{
+    margin: 0;
+}
+.footer__link{
+    margin: 16px 0;
+}
+.footer__link a{
+    color: #5E7991;
+}
+.footer__link a:hover{
+    border-bottom: 0.5px solid #B1C8DE;
+}
 /*--------------------------
-MODALS
+MODAL
 --------------------------*/
 .overlay{
     position: fixed;
@@ -373,7 +464,6 @@ MODALS
     background: #fff;
     width: 40%;
     padding: 40px;
-    box-sizing: border-box;
     z-index: 1101;
     position: fixed;
     top: 120px;
@@ -389,7 +479,8 @@ MODALS
     width: calc(100% - 32px);
     padding: 0;
     margin: 0 0 40px 0;
-    overflow: auto;
+    overflow-y: auto;
+    resize: none;
 }
 #modal__input::placeholder{
     color: #D2DEEA;
@@ -399,4 +490,40 @@ MODALS
     width: 14px;
     line-height: 32px;
     cursor: pointer;
+}
+@media all and (max-width: 900px) {
+    /*--------------------------
+    GRIDS
+    --------------------------*/
+    .grid-3-2{
+        width: 100%;
+    }
+    .grid-3-1{
+        width: 100%;
+    }
+    /*--------------------------
+    FOOTER
+    --------------------------*/
+    .footer__column{
+        width: 30%;
+        margin: 20px 0;
+    }
+}
+@media all and (max-width: 600px) {
+
+    /*--------------------------
+    GRIDS
+    --------------------------*/
+    .grid-1{
+        width: 100%;
+    }
+    .grid-2{
+        width: 100%;
+    }
+    /*--------------------------
+    FOOTER
+    --------------------------*/
+    .footer__column{
+        width: 100%;
+    }
 }
