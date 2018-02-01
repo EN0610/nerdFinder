@@ -21,8 +21,12 @@
   // $portfolioimg2 = $_POST['portfolioimg2'];
   // $portfolioimg3 = $_POST['portfolioimg3'];
 
+  $hashedpassword = password_hash($userpassword, PASSWORD_BCRYPT, array(
+    'cost' => 11
+  ));
+
   $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, experience, hourlyrate, nerdcv, portfolioimg1, specialismid)
-  VALUES (null, '2', '$firstname', '$lastname', '$email', '$username', '$dob', '$userpassword', '$passwordhint', '0', '0', '$profilepic', '$experience', '$rate', '$nerdcv', '$portfolioimg1', '$specialismid')";
+  VALUES (null, '2', '$firstname', '$lastname', '$email', '$username', '$dob', '$hashedpassword', '$passwordhint', '0', '0', '$profilepic', '$experience', '$rate', '$nerdcv', '$portfolioimg1', '$specialismid')";
   if (mysqli_query($conn, $sql)) {
       header('Location: ../congratulations.php');
   } else {
