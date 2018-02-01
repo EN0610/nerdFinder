@@ -23,7 +23,7 @@
             <a class="button button--secondary-white" href="">Become a Nerd</a>
         </article>
     </header>
-    <section>
+    <section id="how-it-works">
         <h2></h2>
         <hr>
         <article>
@@ -50,7 +50,7 @@
     </section>
     <section></section>
     <section></section>
-    <section></section>
+    <section id="case-study"></section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>

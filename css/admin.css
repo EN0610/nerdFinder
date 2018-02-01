@@ -210,3 +210,57 @@ select{
     padding: 17px 25px;
     box-sizing: border-box;
 }
+/*--------------------------
+MEETUP EVENTS
+--------------------------*/
+.meetup-event{
+    width: 100%;
+    padding: 40px;
+}
+.meetup-event h3{
+    line-height: 60px;
+}
+.meetup-event__modify{
+    display: inline-block;
+    margin: 0 15px 0 0;
+}
+.new-meetup{
+    vertical-align: middle;
+    position: relative;
+    bottom: 14px; 
+}
+.meetup-heading{
+    display: inline-block;
+    width: calc(100% - 167px);
+}
+.meetup__margin{
+    margin: 0 0 60px 0;
+}
+@media all and (max-width: 1265px) {
+    /* RWD FRIENDLY */
+    .admin-tools__link-text{
+        display: none;
+    }
+    .admin-tools__link-icon{
+        padding: 0;
+    }
+    .admin-tools{
+        width: 105px;
+    }
+    .admin-interface{
+        width: calc(100% - 122.5px);
+        margin-left: 105px;
+    }
+}
+@media all and (max-width: 900px) {
+    
+    .admin-interface__content, .admin-interface__content:nth-child(odd), .admin-interface__content:nth-child(even){
+        width: 100%;
+    }
+    .meetup-heading{
+        width: 100%;
+    }
+    .new-meetup{
+        margin: 0 0 40px 0;
+    }
+}

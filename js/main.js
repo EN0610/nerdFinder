@@ -34,11 +34,12 @@ MODAL CONTROL
 
 var showModal = document.getElementById('show-modal');
 var postIdSelectElement = document.getElementById('update-post-id')
-var postIdToUpdate = postIdSelectElement.options[postIdSelectElement.selectedIndex].value;
 var updatePostIdField = document.getElementById('modal__post-id');
+var postField = document.getElementById('modal__input');
 var modal = document.getElementsByClassName('modal')[0];
 var overlay = document.getElementsByClassName('overlay')[0];
 var exitIcon = document.getElementsByClassName('icon-exit-dark')[0];
+
 // If showModal (object) is not undefined...
 if (typeof showModal !== "undefined") {
     // on showModal id click show modal and overlay
@@ -46,8 +47,11 @@ if (typeof showModal !== "undefined") {
 
         if (typeof updatePostIdField !== "undefined") {
             // If update post modal not add new post
+            var postId = postIdSelectElement.options[postIdSelectElement.selectedIndex].value;
+            var postContent = postIdSelectElement.options[postIdSelectElement.selectedIndex].text;
             // Insert the value of the dropdown option into the hidden modal field 'modal__post-id'
-            updatePostIdField.setAttribute("value", postIdToUpdate);
+            postField.innerHTML = postContent;
+            updatePostIdField.setAttribute("value", postId);
         }
         //
         overlay.classList.remove('hide');

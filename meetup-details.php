@@ -4,7 +4,7 @@
     // Resuming current session
     session_start();
     //
-    require_once('scripts/show-events-script.php');
+    require_once('event-individual');
 ?>
 <!DOCTYPE html>
 <html lang="en">

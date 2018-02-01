@@ -98,21 +98,19 @@
                         <?php echo($postsDropdown); ?>
                     </select><span class="icon-arrow-down select-icon"></span>
                     <a class="text-link" onclick="document.getElementById('delete-forum-post').submit();">Delete</a>&nbsp;&nbsp;&nbsp;
-                    <span id="show-modal" class="text-link" href="">Edit post</span>
+                    <span id="show-modal" class="text-link">Edit post</span>
                 </form>
             </article>
         </section>
         <?php echo($feedback);?>
-        <?php
+        <?php require_once('elements/footer--small.php');
+
             }
             else{
                 // NON ADMIN
-                echo('<p class="center-text">You must be signed in as an admin to access this page</p>
-                     <p class="center-text">Click the SIGN IN button in the navigation bar above to sign in');
-
+                echo('<h2 class="center-text sign-in-required">You must be signed in as an admin to access this page</h2><p class="center-text">Click the SIGN IN button in the navigation bar above and sign in with your admin username to continue</p>');
             }
         ?>
-            <?php require_once('elements/footer--small.php');?>
     </section>
     <div class="overlay hide"></div>
     <section class="modal hide">
@@ -120,7 +118,7 @@
             <?php echo file_get_contents("img/icon-exit-dark.svg"); ?>
         </span>
         <form action="scripts/update-forum-post.php" method="post">
-            <input id="modal__input" type="text" name="postcontent" placeholder="New post">
+            <textarea id="modal__input" type="text" name="postcontent" placeholder="Post content" rows="3"></textarea>
             <input id="modal__post-id" type="hidden" name="postid">
             <input class="button button--primary-green" type="submit" name="submit" value="Update post">
         </form>
