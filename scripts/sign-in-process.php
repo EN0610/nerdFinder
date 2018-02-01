@@ -1,6 +1,6 @@
-<?php 
+<?php
     /* CREATED BY HARRY */
-    
+
     // Defining path to session data folder where all session data will be saved/found
     require_once('session-save-path.php');
     // Resuming current session
@@ -91,7 +91,7 @@
             }
             // Redirecting user back to homepage as signed in
             header('Location: ../index.php');
-            
+
         } else{
             // Username correct but password incorrect
             $_SESSION['username'] = $username;

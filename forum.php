@@ -3,6 +3,8 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
+    // get the relevant script
+    require_once('scripts/Show-forum-posts.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,10 @@
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
+    <br><br><br><br><br>
+    <table>
+      <?php echo($posts);?>
+    </table>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>
