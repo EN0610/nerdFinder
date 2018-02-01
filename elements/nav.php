@@ -93,7 +93,6 @@ CONTENT;
 
         <ul class="nav__item-list">
             <li class="nav__item"><a href="index.php#how-it-works">How it works</a></li>
-            <li class="nav__item"><a href="find-nerds.php">Find nerds</a></li>
             <li class="nav__item"><a href="go-premium.php">Go premium</a></li>
             <li class="nav__item"><a href="meetups.php">Meetups</a></li>
             <li class="nav__item"><a href="forum.php">Forum</a></li>
