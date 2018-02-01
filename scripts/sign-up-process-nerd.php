@@ -23,7 +23,7 @@ $portfolioimg3 = $_POST['portfolioimg3'];
 $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, experience, hourlyrate, nerdcv, portfolioimg1, portfolioimg2, portfolioimg3)
 VALUES (null, '2', '$firstname', '$lastname', '$email', '$username', '$dob', '$userpassword', '$passwordhint', '0', '0', '$profilepic', '$experience', '$rate', '$nerdcv', '$portfolioimg1', '$portfolioimg2', '$portfolioimg3')";
 if (mysqli_query($conn, $sql)) {
-    header('Location: ../index.php');
+    header('Location: ../congratulations.php');
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

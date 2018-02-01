@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <form id = "feedback" action="scripts/sign-up-process.php" method="post">
+    <form id = "feedback" action="scripts/sign-up-process-nerd.php" method="post">
     <section>
     <fieldset>
       <legend>Sign Up</legend>
@@ -46,17 +46,16 @@
           <input type="text" name="rate" id="rate" accesskey="10" tabindex="10">
 
           <label for="nerdcv">Upload CV<span>*</span>:</label>
-          <input type="text" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
+          <input type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
 
           <label for="portfolioimg1">Portfolio Images<span>*</span>:</label>
           <input type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11">
-         <input type="submit" value="Upload Image" name="submit">
+         <!-- <input type="submit" value="Upload Image" name="submit"> -->
         </section>
     </fieldset>
     </section>
 
-    <input type="submit" value="Send it!" accesskey="6" tabindex="6">
-    <input type="reset" value="Reset Form" accesskey="7" tabindex="7">
+    <input type="submit" value="BECOME A NERD" accesskey="6" tabindex="6">
     </form>
 
     <!-- <?php require_once('elements/nav.php'); ?> -->
