@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-
     <form id = "feedback" action="scripts/sign-up-process-nerd.php" method="post">
     <section>
     <fieldset>
@@ -30,9 +29,9 @@
           <label for="username">Username<span>*</span>:</label>
           <input type="text" name="username" id="username" required  accesskey="4" tabindex="4">
           <label for="dob">DOB<span>*</span>:</label>
-          <input type="date" name="dob" id="dob" accesskey="5" tabindex="5">
+          <input type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
           <label for="userpassword">Password<span>*</span>:</label>
-          <input type="text" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
+          <input type="password" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
           <label for="passwordhint">Password Hint<span>*</span>:</label>
           <input type="text" name="passwordhint" id="passwordhint" accesskey="7" tabindex="7">
           <label for="profilepic">Profile Picture<span>*</span>:</label>
