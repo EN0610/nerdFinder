@@ -1,57 +1,77 @@
 <?php
-   // Defining path to session data folder where all session data will be saved/found
-   require_once('scripts/session-save-path.php');
-   // Resuming current session
-   session_start();
+    // Defining path to session data folder where all session data will be saved/found
+    require_once('scripts/session-save-path.php');
+    // Resuming current session
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <?php require_once('scripts/analytics-tracking.php');?>
-   <title>| Nerd Finder</title>
-   <link rel="stylesheet" href="css/reset.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-   <link rel="stylesheet" href="css/fonts.css">
-   <link rel="stylesheet" href="css/base.css">
+    <?php require_once('scripts/analytics-tracking.php');?>
+    <title>Sign Up | Nerd Finder</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
+  <header class="header background-gradient">
+      <article class="wrapper">
+          <h1>Sign up</h1>
+          <h4>Work on amazing projects</h4>
+      </article>
+  </header>
 
-   <form id = "feedback" action="scripts/sign-up-process-client.php" method="post">
-   <section>
-   <fieldset>
-     <legend>Sign Up</legend>
-       <section>
-         <label for="firstname">First Name<span>*</span>:</label>
-         <input type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
-         <label for="lastname">Last Name<span>*</span>:</label>
-         <input type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
-         <label for="email">Email<span>*</span>:</label>
-         <input type="email" name="email" id="email" required  accesskey="3" tabindex="3">
-         <label for="username">Username<span>*</span>:</label>
-         <input type="text" name="username" id="username" required  accesskey="4" tabindex="4">
-         <label for="dob">DOB<span>*</span>:</label>
-         <input type="date" name="dob" id="dob" accesskey="5" tabindex="5">
-         <label for="userpassword">Password<span>*</span>:</label>
-         <input type="text" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
-         <label for="passwordhint">Password Hint<span>*</span>:</label>
-         <input type="text" name="passwordhint" id="passwordhint" accesskey="7" tabindex="7">
-         <label for="profilepic">Profile Picture<span>*</span>:</label>
-         <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
-         <label for="company">Company<span>*</span>:</label>
-         <input type="text" name="company" id="company" accesskey="9" tabindex="9">
-         <label for="jobtitle">Job Title<span>*</span>:</label>
-         <input type="text" name="jobtitle" id="jobtitle" accesskey="10" tabindex="10">
-         <label for="businessarea">Business Area<span>*</span>:</label>
-         <input type="text" name="businessarea" id="businessarea" accesskey="11" tabindex="11">
-       </section>
-   </fieldset>
-   </section>
+    <form id = "feedback" action="scripts/sign-up-process-client.php" method="post">
+    <section>
+    <fieldset>
+      <section class = "soft-box soft-box--padded wrapper main">
+        <h2>Profile</h2>
 
-   <input type="submit" value="Send it!" accesskey="6" tabindex="6">
-   <input type="reset" value="Reset Form" accesskey="7" tabindex="7">
-   </form>
+        <h3>Username</h3>
+        <input type="text" name="username" id="username" required  accesskey="4" tabindex="4">
 
-   <!-- <?php require_once('elements/nav.php'); ?> -->
-   <?php require_once('elements/footer--small.php'); ?>
+        <h3>Email</h3>
+        <input type="email" name="email" id="email" required  accesskey="3" tabindex="3">
+
+        <h3>Password</h3>
+        <input type="password" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
+
+        <h3>Password Hint</h3>
+        <input type="text" name="passwordhint" id="passwordhint" required accesskey="7" tabindex="7">
+
+        <h3>DOB</h3>
+        <input type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
+      </section>
+
+      <section class = "soft-box soft-box--padded wrapper main">
+        <h3>Firstname</h3>
+        <input type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
+
+        <h3>Lastname</h3>
+        <input type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
+
+        <h3>Profile picture</h3>
+        <img class = "nav__user-profile" src="img/profile-pics/no-image.jpg" alt="Profile Picture">
+        <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
+
+        <h3>Company</h3>
+        <input type="text" name="company" id="company" accesskey="9" tabindex="9">
+
+        <h3>Job Title</h3>
+        <input type="text" name="jobtitle" id="jobtitle" accesskey="10" tabindex="10">
+
+        <h3>business Area</h3>
+        <input type="text" name="businessarea" id="businessarea" accesskey="11" tabindex="11">
+
+        <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="12" tabindex="12">
+      </section>
+    </fieldset>
+    </section>
+
+    </form>
+
+    <?php require_once('elements/nav.php'); ?>
+    <?php require_once('elements/footer--small.php'); ?>
 </body>
 </html>
