@@ -27,17 +27,19 @@
   <section class="soft-box soft-box--padded wrapper main">
       <h2>Nerd User</h2>
               <article class="grid-1">
-                  <h3>What's included</h3>
-                  <ul class="bulleted-list">
-                      <li>Free project processing</li>
-                      <li>Priority ranking in searches</li>
-                  </ul>
+                <!-- User Profile Picture -->
               </article>
               <article class="grid-1">
-
+                <!-- Username -->
               </article>
               <article class="grid-1">
-
+                <!-- User Specialiasm -->
+              </article>
+              <article class="grid-1">
+                <!-- Years of Experience -->
+              </article>
+              <article class="grid-1">
+                <!-- Hourly Rate -->
               </article>
   </section>
 
