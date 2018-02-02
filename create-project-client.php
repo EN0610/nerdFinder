@@ -19,32 +19,35 @@
     <header class="header background-gradient">
         <article class="wrapper">
             <h1>Create a new project</h1>
-            <h2>Out with the old, in with the new</h2>
+            <h4>Out with the old, in with the new</h4>
         </article>
     </header>
     <section class="soft-box soft-box--padded wrapper main">
-            <form class="flex-grid full-width-form">
                 <article class="grid-1">
                     <h3>Project details</h3>
-                    <form id = "feedback" action="scripts/sign-up-process-client.php" method="post">
-                      <label for="projectname">NAME</label>
+                    <form id = "feedback" action="scripts/create-project-process.php" method="post">
+                      <h3 for="projectname">NAME</h3>
                       <input type="text" name="projectname" id="projectname" required  accesskey="1" tabindex="1">
-                      <label for="projectdescription">DESCRIPTION</label>
+                      <h3 for="projectdescription">DESCRIPTION</h3>
                       <input type="text" name="projectdescription" id="projectdescription" required  accesskey="2" tabindex="2">
                 </article>
                 <article class="grid-1">
-                      <label for="projectspecialistarea">SPECIALIST AREA</label>
+                      <h3 for="projectspecialistarea">SPECIALIST AREA</h3>
                       <input type="text" name="projectspecialistarea" id="projectspecialistarea" required  accesskey="3" tabindex="3">
-                      <label for="projectdeadline">DEADLINE</label>
+                      <h3 for="projectdeadline">DEADLINE</h3>
                       <input type="date" name="projectdeadline" id="projectdeadline" required  accesskey="4" tabindex="4">
-                      <label for="projectbudget">BUDGET</label>
+                      <h3 for="projectbudget">BUDGET</h3>
                       <input type="text" name="projectbudget" id="projectbudget" required  accesskey="5" tabindex="5">
                 </article>
                 <article class="grid-1">
-                  <label for="projectinspiration">Profile Picture</label>
-                  <input type="file" name="projectinspiration" id="projectinspiration" accesskey="6" tabindex="6">
-
+                  <h3 for="inspirationimg1">Inspiration Image 1</h3>
+                  <input type="file" name="inspirationimg1" id="inspirationimg1" accesskey="6" tabindex="6">
+                  <h3 for="inspirationimg2">Inspiration Image 2</h3>
+                  <input type="file" name="inspirationimg2" id="inspirationimg2" accesskey="7" tabindex="7">
+                  <h3 for="inspirationimg3">Inspiration Image 3</h3>
+                  <input type="file" name="inspirationimg3" id="inspirationimg3" accesskey="8" tabindex="8">
                 </article>
+                <input type="submit" value="CREATE PROJECT" class="button button--primary-green center-button" accesskey="12" tabindex="12">
             </form>
     </section>
     <?php require_once('elements/footer--big.php'); ?>

@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <form id = "feedback" action="scripts/sign-up-process.php" method="post">
+    <form id = "feedback" action="scripts/sign-up-process-nerd.php" method="post">
     <section>
     <fieldset>
       <legend>Sign Up</legend>

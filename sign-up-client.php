@@ -24,34 +24,36 @@
   </header>
 
   <section class="soft-box soft-box--padded wrapper main">
-    <form id = "feedback" action="scripts/sign-up-process-client.php" method="post">
+    <form id = "feedback" action="scripts/sign-up-process-client.php" method="post" enctype="multipart/form-data">
       <h3>Profile</h3>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required  accesskey="1" tabindex="1">
-      <label for="userpassword">Password</label>
-      <input type="text" name="userpassword" id="userpassword" required  accesskey="2" tabindex="2">
-      <label for="passwordhint">Password Hint</label>
-      <input type="text" name="passwordhint" id="passwordhint" accesskey="3" tabindex="3">
-      <label for="dob">DATE OF BIRTH</label>
-      <input type="date" name="dob" id="dob" accesskey="4" tabindex="4">
+      <h3 for="username">Username</h3>
+      <input type="text" name="username" id="username" required  accesskey="1" tabindex="1">
+      <h3 for="email">Email</h3>
+      <input type="email" name="email" id="email" required  accesskey="2" tabindex="2">
+      <h3>Password</h3>
+      <input type="password" name="userpassword" id="userpassword" required  accesskey="3" tabindex="3">
+      <h3 for="passwordhint">Password Hint</h3>
+      <input type="text" name="passwordhint" id="passwordhint" required accesskey="4" tabindex="4">
+      <h3 for="dob">DATE OF BIRTH</h3>
+      <input type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
   </section>
 
   <section class="soft-box soft-box--padded wrapper main">
     <h3>About you</h3>
     <label for="profilepic">Profile Picture</label>
-    <input type="file" name="profilepic" id="profilepic" accesskey="5" tabindex="5">
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" id="firstname" required  accesskey="6" tabindex="6">
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname" required  accesskey="7" tabindex="7">
-    <label for="company">Company</label>
-    <input type="text" name="company" id="company" accesskey="8" tabindex="8">
-    <label for="jobtitle">Job Title</label>
-    <input type="text" name="jobtitle" id="jobtitle" accesskey="9" tabindex="9">
-    <label for="businessarea">Business Area</label>
-    <input type="text" name="businessarea" id="businessarea" accesskey="10" tabindex="10">
+    <input type="file" name="profilepic" id="profilepic" accesskey="6" tabindex="6">
+    <h3 for="firstname">First Name</h3>
+    <input type="text" name="firstname" id="firstname" required  accesskey="7" tabindex="7">
+    <h3 for="lastname">Last Name</h3>
+    <input type="text" name="lastname" id="lastname" required  accesskey="8" tabindex="8">
+    <h3 for="company">Company</h3>
+    <input type="text" name="company" id="company" accesskey="9" tabindex="9">
+    <h3 for="jobtitle">Job Title</h3>
+    <input type="text" name="jobtitle" id="jobtitle" accesskey="10" tabindex="10">
+    <h3 for="businessarea">Business Area</h3>
+    <input type="text" name="businessarea" id="businessarea" accesskey="11" tabindex="11">
 
-    <input type="submit" value="HIRE NERDS" class="button button--primary-green center-button" accesskey="6" tabindex="6">
+    <input type="submit" value="HIRE NERDS" class="button button--primary-green center-button" accesskey="12" tabindex="12">
     </form>
   </section>
   <?php require_once('elements/footer--big.php'); ?>
