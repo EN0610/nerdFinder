@@ -15,51 +15,74 @@
     <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
+  <header class="header background-gradient">
+      <article class="wrapper">
+          <h1>Sign up</h1>
+          <h4>Work on amazing projects</h4>
+      </article>
+  </header>
 
     <form id = "feedback" action="scripts/sign-up-process-nerd.php" method="post">
     <section>
     <fieldset>
-      <legend>Sign Up</legend>
-        <section>
-          <label for="firstname">First Name<span>*</span>:</label>
-          <input type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
-          <label for="lastname">Last Name<span>*</span>:</label>
-          <input type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
-          <label for="email">Email<span>*</span>:</label>
-          <input type="email" name="email" id="email" required  accesskey="3" tabindex="3">
-          <label for="username">Username<span>*</span>:</label>
-          <input type="text" name="username" id="username" required  accesskey="4" tabindex="4">
-          <label for="dob">DOB<span>*</span>:</label>
-          <input type="date" name="dob" id="dob" accesskey="5" tabindex="5">
-          <label for="userpassword">Password<span>*</span>:</label>
-          <input type="text" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
-          <label for="passwordhint">Password Hint<span>*</span>:</label>
-          <input type="text" name="passwordhint" id="passwordhint" accesskey="7" tabindex="7">
-          <label for="profilepic">Profile Picture<span>*</span>:</label>
-          <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
+      <section class = "soft-box soft-box--padded wrapper main">
+        <h2>Profile</h2>
 
+        <h3>Username</h3>
+        <input type="text" name="username" id="username" required  accesskey="4" tabindex="4">
 
-          <label for="experience">Experience<span>*</span>:</label>
-          <input type="text" name="experience" id="experience" accesskey="9" tabindex="9">
+        <h3>Email</h3>
+        <input type="email" name="email" id="email" required  accesskey="3" tabindex="3">
 
-          <label for="rate">Hourly Rate<span>*</span>:</label>
-          <input type="text" name="rate" id="rate" accesskey="10" tabindex="10">
+        <h3>Password</h3>
+        <input type="password" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
 
-          <label for="nerdcv">Upload CV<span>*</span>:</label>
-          <input type="text" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
+        <h3>Password Hint</h3>
+        <input type="text" name="passwordhint" id="passwordhint" required accesskey="7" tabindex="7">
 
-          <label for="portfolioimg1">Portfolio Images<span>*</span>:</label>
-          <input type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11">
-         <input type="submit" value="Upload Image" name="submit">
-        </section>
+        <h3>DOB</h3>
+        <input type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
+      </section>
+
+      <section class = "soft-box soft-box--padded wrapper main">
+        <h3>Firstname</h3>
+        <input type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
+        <h3>Lastname</h3>
+        <input type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
+
+        <h3>Profile picture</h3>
+        <img class = "nav__user-profile" src="img/profile-pics/no-image.jpg" alt="Profile Picture">
+        <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
+
+        <h3>Years of experience</h3>
+        <input type="text" name="experience" id="experience" accesskey="9" tabindex="9">
+
+        <h3>Specialiasm</h3>
+        <select name="specialismid" required>
+          <option value=""> </option>
+          <option value="1">Websites</option>
+          <option value="2">Mobile Apps</option>
+          <option value="3">Tablet Apps</option>
+          <option value="4">Software</option>
+        </select><span class="icon-arrow-down select-icon"></span>
+
+        <h3>Hourly rate</h3>
+        <input type="text" name="rate" id="rate" accesskey="10" tabindex="10">
+
+        <h3>Upload CV</h3>
+        <input type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
+
+        <h3>Portfolio images</h3>
+        <input type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11">
+
+        <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="12" tabindex="12">
+      </section>
     </fieldset>
     </section>
 
-    <input type="submit" value="Send it!" accesskey="6" tabindex="6">
-    <input type="reset" value="Reset Form" accesskey="7" tabindex="7">
     </form>
 
-    <!-- <?php require_once('elements/nav.php'); ?> -->
+    <?php require_once('elements/nav.php'); ?>
     <?php require_once('elements/footer--small.php'); ?>
 </body>
 </html>
