@@ -60,11 +60,13 @@
                     </article>
                 </section>
                 <form class="meetup-event__modify" id="edit-event-$eventid">
-                    <input type="hidden" value="$eventid">
+                    <input type="hidden" value="$eventid" name="eventid">
+                    <input type="hidden" value="$eventname" name="eventname">
                     <a class="text-link" onclick="document.getElementById('edit-event-$eventid').submit();">Edit</a>
                 </form>
-                <form class="meetup-event__modify" id="delete-event-$eventid">
-                    <input type="hidden" value="$eventid">
+                <form class="meetup-event__modify" id="delete-event-$eventid" method="post" action="scripts/admin-delete-event.php">
+                    <input type="hidden" value="$eventid" name="eventid">
+                    <input type="hidden" value="$eventname" name="eventname">
                     <a class="text-link" onclick="document.getElementById('delete-event-$eventid').submit();">Delete</a>
                 </form>
             </section>
@@ -78,10 +80,55 @@ EVENT;
         $eventList = <<<NOEVENTS
 
         <section class="meetup-event">
-            
+            <h2 class="light-grey-text">No events in database</h2>
         </section>
 
 NOEVENTS;
 
     }
-?>
+    /*--------------------------
+    FEEDBACK MECHANISM
+    --------------------------*/
+
+    $feedback = '';
+
+    if (isset($_SESSION['admin-feedback'], $_SESSION['feedback-message'])){
+
+        if (($_SESSION['admin-feedback']) === 1){
+
+            $message = $_SESSION['feedback-message'];
+            // Positive Feedback
+            $feedback = <<<CONTENT
+            
+            <aside class="feedback positive-feedback">
+                <span class="icon-check feedback-icon"></span>
+                <h5 class="feedback-message">$message</h5>
+                <a href="scripts/close-admin-feedback-process.php">
+                    <img class="icon-exit" src="img/icon-exit.svg" alt="close">
+                </a>
+            </aside>
+CONTENT;
+            
+        } else if (($_SESSION['admin-feedback']) === 2){
+
+            $message = $_SESSION['feedback-message'];
+            // Negative Feedback
+            $feedback = <<<CONTENT
+
+            <aside class="feedback negative-feedback">
+                <span class="icon-exclamation feedback-icon"></span>
+                <h5 class="feedback-message">$message</h5>
+                <a href="scripts/close-admin-feedback-process.php">
+                    <img class="icon-exit" src="img/icon-exit.svg" alt="close">
+                </a>
+            </aside>
+CONTENT;
+        } else{
+
+            // No Feeback
+            $feedback = '';
+
+        }
+    }
+
+    mysqli_close($conn);

@@ -1,4 +1,5 @@
 <?php
+
 $conn = mysqli_connect('localhost', 'root', '', 'nerdFinder');
 // if no connection then echo the errors onto the screen
 if (!$conn) {
@@ -8,9 +9,10 @@ if (!$conn) {
 mysqli_set_charset($conn,"utf8");
 
 $sql = "SELECT * 
-            FROM nf_users INNER JOIN nf_userspecialisms 
-            ON (nf_users.userid = nf_userspecialisms.userid)
-            WHERE usertypeid = 3";
+        FROM nf_users INNER JOIN nf_userspecialisms 
+        ON (nf_users.userid = nf_userspecialisms.userid)
+        WHERE usertypeid = 3";
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

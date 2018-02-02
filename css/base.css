@@ -251,6 +251,7 @@ CALL TO ACTIONS
 .button:hover, .button:focus, .button:active{
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
+    outline: none;
 }
 .button--primary-white{
     border: 1px solid #fff;
@@ -406,6 +407,7 @@ MESSAGES
     border-radius: 10px;
     width: 75%;
     margin: 20px 0;
+    font: 400 14px/22px 'Gesta-Regular', sans-serif;
 }
 .user-message__sent{
     background: #5AD6AD;

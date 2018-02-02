@@ -12,6 +12,13 @@
     // Getting the Id of the project clicked from the request stream
     $projectid = isset($_REQUEST['projectid']) ? $_REQUEST['projectid'] : null;
     $projectname = isset($_REQUEST['projectname']) ? $_REQUEST['projectname'] : null;
+    // Validating
+    $projectid = filter_var($projectid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $projectname = filter_var($projectname, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $projectid = filter_var($projectid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $projectname = filter_var($projectname, FILTER_SANITIZE_SPECIAL_CHARS);
+    $projectid = trim($projectid);
+    $projectname = trim($projectname);
     // SQL to update the project's approval status as '1', which means approved AND seen by the admin team
     $sql = "UPDATE nf_projects
             SET approved = 1
