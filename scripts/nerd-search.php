@@ -1,16 +1,9 @@
 <?php
 	require_once('database-connection.php');
-/*$conn = mysqli_connect('localhost', 'root', '', 'nerdFinder');
-// if no connection then echo the errors onto the screen
-if (!$conn) {
-    echo ("<p>Connection failed:".mysqli_connect_error()."</p>\n");
-}
-// Remove special character errors
-mysqli_set_charset($conn,"utf8");*/
 
 $sql = "SELECT * 
-            FROM nf_users INNER JOIN nf_userspecialisms 
-            ON (nf_users.userid = nf_userspecialisms.userid)
+            FROM nf_users INNER JOIN nf_usertypes
+            ON (nf_users.userid = nf_usertypes.userid)
             WHERE usertypeid = 2";
 
 $result = $conn->query($sql);
