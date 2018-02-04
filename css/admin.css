@@ -2,7 +2,6 @@
 ANIMATIONS
 --------------------------*/
 @keyframes flyIn{
-
     0%{
         bottom: -100px
     }

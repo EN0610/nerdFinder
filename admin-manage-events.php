@@ -35,7 +35,7 @@
         </ul>
     </aside>
     <section class="admin-interface">
-        <h1 class="admin-interface__heading meetup-heading">Manage Events</h1><button class="button button--primary-green new-meetup">New Meetup</button>
+        <h1 class="admin-interface__heading meetup-heading">Manage Events</h1><button id="show-modal" class="button button--primary-green new-meetup">New Meetup</button>
         <section class="admin-interface__content-wrapper soft-box meetup__margin">
             <?php echo($eventList);?>
         </section>
@@ -52,23 +52,41 @@
         ?>
     </section>
     <div class="overlay hide"></div>
-    <section class="modal hide">
+    <section class="modal modal--big hide">
         <span class="icon-exit-dark">
             <?php echo file_get_contents("img/icon-exit-dark.svg"); ?>
         </span>
-        <form action="scripts/add-event-script.php" method="post">
-            <input type="hidden" name="eventid" value="">
-            <input type="text" name="eventname" value="">
-            <textarea name="postcontent" placeholder="Post content" rows="3"></textarea>
-            <select name="eventtype">
-                <option value="1">Networking</option>
-                <option value="2">Workshop</option>
-            </select>
-            <input type="date" name="eventdate">
-            <input type="time" name="starttime">
-            <input type="time" name="endtime">
-            <input type="text" name="location">
-            <input class="button button--primary-green" type="submit" name="submit" value="Add meetup">
+        <form action="scripts/add-event-script.php" method="post" class="flex-grid">
+            <section class="grid-2-1">
+                <input type="hidden" name="eventid" value="">
+                <h3>Event name</h3>
+                <input type="text" name="eventname" value="">
+                <h3>Event Description</h3>
+                <textarea name="postcontent" placeholder="Post content" rows="3"></textarea>
+            </section>
+            <section class="grid-2-1">
+                <h3>Event type</h3>
+                <select name="eventtype">
+                    <option value="1">Networking</option>
+                    <option value="2">Workshop</option>
+                </select>
+                <span class="icon-arrow-down select-icon select-icon--small"></span>
+                <h3>Date</h3>
+                <input type="date" name="eventdate">
+                <section class="flex-grid">
+                    <article class="grid-2-1">
+                        <h3>Start time</h3>
+                        <input type="time" name="starttime">
+                    </article>
+                    <article class="grid-2-1">
+                        <h3>End time</h3>
+                        <input type="time" name="endtime">
+                    </article>
+                </section>
+                <h3>Location</h3>
+                <input type="text" name="location">
+            </section>
+            <input class="button button--primary-green center-button" type="submit" name="submit" value="Add meetup">
         </form>
     </section>
     <?php echo($feedback);?>

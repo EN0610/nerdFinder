@@ -59,6 +59,9 @@ GRIDS
 .grid-2{
     width: calc(((100% - 80px) / 3) * 2);
 }
+.grid-2-1{
+    width: calc((100% - 40px) / 2);
+}
 .grid-3-2{
     width: calc((100% - 120px) * 0.66);
 }
@@ -330,7 +333,7 @@ input, select{
 input:focus, select:focus, textarea:focus{
     outline:0;
 }
-input[type='text'], input[type='password']{
+input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea{
     background: #fff;
     border: solid 1px #F0F4F8;
     border-radius: 20px;
@@ -340,6 +343,7 @@ input[type='text'], input[type='password']{
     color: #5E7991;
     letter-spacing: 1px;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 input[type='checkbox']{
     -webkit-appearance: checkbox;
@@ -356,6 +360,12 @@ select{
     letter-spacing: 1px;
     color: #414B6B;
 }
+textarea{
+    resize: none;
+}
+textarea::placeholder{
+    color: #D2DEEA;
+}
 .select-icon{
     pointer-events: none;
     position: relative;
@@ -370,6 +380,9 @@ select{
     padding: 0 0 0 10px;
     box-sizing: content-box;
     display: inline;
+}
+.select-icon--small{
+    bottom: 23px;
 }
 .bulleted-list{
     list-style: disc inside;
@@ -488,6 +501,24 @@ MODAL
     left: 30%;
     border-radius: 16px;
 }
+.modal--big{
+    width: 70%;
+    left: 15%;
+    top: 80px;
+    position: absolute;
+}
+.modal--big input[type='text'], .modal--big input[type='password'], .modal--big input[type='date'], .modal--big input[type='time'], .modal--big textarea{
+    width: 100%;
+}
+.modal--big select{
+    margin: 0;
+}
+.modal--big h3{
+    margin: 10px 0;
+}
+.modal--big textarea{
+    height: 210px;
+}
 #modal__input{
     font: 600 24px/32px 'Facit-Semibold', sans-serif;
     color: #414B6B; 
@@ -498,10 +529,6 @@ MODAL
     padding: 0;
     margin: 0 0 40px 0;
     overflow-y: auto;
-    resize: none;
-}
-#modal__input::placeholder{
-    color: #D2DEEA;
 }
 .icon-exit-dark{
     float: right;
@@ -517,6 +544,9 @@ MODAL
         width: 100%;
     }
     .grid-3-1{
+        width: 100%;
+    }
+    .grid-2-1{
         width: 100%;
     }
     /*--------------------------
@@ -537,6 +567,11 @@ MODAL
     }
     .grid-2{
         width: 100%;
+    }
+    .modal{
+        width: 85%;
+        left: 7.5%;
+        top: 40px;
     }
     /*--------------------------
     FOOTER

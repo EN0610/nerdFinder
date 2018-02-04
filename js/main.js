@@ -28,16 +28,19 @@ MODAL CONTROL
 var showModal = document.getElementById('show-modal');
 var modal = document.getElementsByClassName('modal')[0];
 var overlay = document.getElementsByClassName('overlay')[0];
+var updatePostIdField = document.getElementById('modal__post-id');
 // If showModal (object) is not undefined...
 if (typeof showModal !== "undefined") {
     // on showModal id click show modal and overlay
     showModal.addEventListener('click', function(){
         // Pulling in variables needed to get and store value of the <select> element
-        var postIdSelectElement = document.getElementById('update-post-id')
-        var updatePostIdField = document.getElementById('modal__post-id');
-        var postField = document.getElementById('modal__input');
-
+        overlay.classList.remove('hide');
+        modal.classList.remove('hide');
+        // If updatePostIdField exists then admin-dashboard page if not then manage-events page
         if (typeof updatePostIdField !== "undefined") {
+            
+            var postIdSelectElement = document.getElementById('update-post-id')
+            var postField = document.getElementById('modal__input');
             // If update post modal not add new post
             var postId = postIdSelectElement.options[postIdSelectElement.selectedIndex].value;
             var postContent = postIdSelectElement.options[postIdSelectElement.selectedIndex].text;
@@ -45,9 +48,6 @@ if (typeof showModal !== "undefined") {
             postField.innerHTML = postContent;
             updatePostIdField.setAttribute("value", postId);
         }
-        //
-        overlay.classList.remove('hide');
-        modal.classList.remove('hide');
     });
 }
 // If overlay AND modal (objects) are not undefined...

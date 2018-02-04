@@ -1,3 +1,6 @@
+/*--------------------------
+DASHBOARD RESIZER
+--------------------------*/
 var dashboardResizer = document.getElementById('dashboardResizer');
 // If dashboard resizer button '<' is clicked then...
 dashboardResizer.addEventListener('click', function(){
@@ -21,3 +24,6 @@ dashboardResizer.addEventListener('click', function(){
         dashboardNavLinkIcons[i].classList.toggle('no-pad');
     }
 });
+/*--------------------------
+BIG MODAL CONTROL
+--------------------------*/

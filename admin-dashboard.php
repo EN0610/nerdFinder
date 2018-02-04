@@ -82,7 +82,7 @@
                         <?php echo($usersDropDown); ?>
                     </select><span class="icon-arrow-down select-icon"></span>
                     <a class="text-link" onclick="document.getElementById('lock-user-form').submit();">Lock</a>&nbsp;&nbsp;&nbsp;
-                    <a class="text-link" href="mailto:devteam@nerdfinder.com?Subject=Delete%20User%20Account">Request delete</a>
+                    <a class="text-link" href="mailto:devteam@nerdfinder.com?Subject=Delete%20User%20Account">Delete</a>
                 </form>
             </article>
             <article class="soft-box admin-interface__content">
@@ -98,8 +98,8 @@
                     <select name="post" id="update-post-id">
                         <?php echo($postsDropdown); ?>
                     </select><span class="icon-arrow-down select-icon"></span>
-                    <a class="text-link" onclick="document.getElementById('delete-forum-post').submit();">Delete</a>&nbsp;&nbsp;&nbsp;
-                    <span id="show-modal" class="text-link">Edit post</span>
+                    <span id="show-modal" class="text-link">Edit post</span>&nbsp;&nbsp;&nbsp;
+                    <a class="text-link" onclick="document.getElementById('delete-forum-post').submit();">Delete</a>
                 </form>
             </article>
         </section>
