@@ -341,7 +341,7 @@ input, select{
 input:focus, select:focus, textarea:focus{
     outline:0;
 }
-input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea{
+input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea, input[type='number']{
     background: #fff;
     border: solid 1px #F0F4F8;
     border-radius: 20px;
@@ -518,7 +518,7 @@ MODAL
 .modal--big input[type='text'], .modal--big input[type='password'], .modal--big input[type='date'], .modal--big input[type='time'], .modal--big textarea{
     width: 100%;
 }
-.modal--big select{
+.modal--big select, .select--small{
     margin: 0;
 }
 .modal--big h3{
