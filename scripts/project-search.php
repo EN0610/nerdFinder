@@ -1,4 +1,6 @@
 <?php
+/* CREATED BY JOE */
+
 require_once('database-connection.php');
 
 $sql = "SELECT * 
