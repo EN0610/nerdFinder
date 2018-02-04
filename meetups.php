@@ -18,14 +18,13 @@
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <table>
+<header class="header--big">
+<h1>Find Events</h1>
+</header>
+      <section class="wrapper_1 soft-box--padded ">
       <?php echo($events);?>
-    </table>
+    </section>
+
 
     <?php require_once('elements/footer--big.php'); ?>
 </body>

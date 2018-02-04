@@ -34,19 +34,19 @@
           }
 
           // need to retrive customer ID for the details page and not display is though
-          $eventdetails .= <<<TABLE
-              <tr>
-                  <td></td>
-                  <td>$eventname.</td>
-                  <td>$eventdate.</td>
-                  <td>$eventlocation.</td>
-                  <td>$eventdescription.</td>
-                  <td>$starttime.</td>
-                  <td>$endtime.</td>
-                  <td>$eventtype.</td>
+          $eventdetails .= <<<CONTENT
 
-              </tr>
-TABLE;
+
+                  <H1 class="header header--big header--small">$eventname.</H1>
+                  <p><span class="soft-box soft-box--padded main">$eventdate.</span></p>
+                  <p>$eventlocation.</p>
+                  <p>$eventdescription.</p>
+                  <p>$starttime.</p>
+                  <p>$endtime.</p>
+                  <p>$eventtype.</p>
+
+
+CONTENT;
         }
       }
 ?>

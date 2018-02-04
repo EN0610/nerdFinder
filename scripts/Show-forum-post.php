@@ -1,4 +1,3 @@
-
 <?php
   // Setting the development enviroment to show errors
   require_once('set-environment.php');
@@ -16,7 +15,8 @@
       // At least one row of technical issues
       while ($row = mysqli_fetch_assoc($postResults)) {
 
-          
+          $forumid = $row['forumid'];
+          $postid = $row['postid'];
           $postcontent = $row['postcontent'];
           $posttime = $row['posttime'];
 
@@ -24,7 +24,7 @@
           $post.= <<<TABLE
               <tr>
                   <td></td>
-                  <td>$postcontent.</td>
+                  <td><a href=Forum-post-individual.php?forumid={$forumid}&postid={$postid}>{$postcontent}</td>
                   <td>$posttime.</td>
 
               </tr>

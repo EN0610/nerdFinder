@@ -8,7 +8,7 @@
   $eventSQL = "SELECT * FROM nf_events ORDER BY eventname";
   $eventResults = mysqli_query($conn, $eventSQL) or die (mysqli_error($conn));
 
-  $events = '';
+
 
   if (mysqli_num_rows($eventResults) > 0){
       // At least one row of events
@@ -31,18 +31,17 @@
           }
 
           // need to retrive customer ID for the details page and not display is though
-          $events .= <<<TABLE
-              <tr>
-                  <td></td>
-                  <td>"<a href=meetup-details.php?eventid={$eventid}>{$eventname}</td>
-                  <td>$eventdate.</td>
-                  <td>$eventlocation.</td>
-                  <td>$starttime.</td>
-                  <td>$endtime.</td>
-                  <td>$eventtype.</td>
+          $events .= <<<CONTENT
+              <section class= soft-box soft-box--padded wrapper>
+                  <h1><a href=meetup-details.php?eventid={$eventid} >{$eventname}</h1>
+                  <p>$eventdate.</p>
+                  <p>$eventlocation.</p>
+                  <p>$starttime.</p>
+                  <p>$endtime.</p>
+                  <p>$eventtype.</p>
 
-              </tr>
-TABLE;
+              </section>
+CONTENT;
         }
       }
 ?>

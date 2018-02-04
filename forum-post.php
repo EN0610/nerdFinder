@@ -4,7 +4,7 @@
     // Resuming current session
     session_start();
 
-    require_once('scripts/show-forumposts.php');
+    require_once('scripts/show-forum-post.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +19,9 @@
 <body>
     <?php require_once('elements/nav.php'); ?>
     <br><br><br><br><br>
-    <table>
+    <table class="wrapper">
       <?php echo($post);?>
+
     </table>
     <?php require_once('elements/footer--big.php'); ?>
 </body>

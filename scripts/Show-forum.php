@@ -22,7 +22,7 @@
           $post.= <<<TABLE
               <tr>
                   <td></td>
-                  <td><a href=forum-post.php?forumid={$forumid}>{$forumname}</td>
+                  <td><a href=forum-post.php?forumid={$forumid} class="wrapper">{$forumname}</td>
 
 
               </tr>

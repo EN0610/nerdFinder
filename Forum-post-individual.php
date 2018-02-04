@@ -3,8 +3,10 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
-    // get the relevant script
-    require_once('scripts/Show-forum.php');
+
+    require_once('scripts/Show-forum-individual.php');
+    require_once('scripts/Show-forum-comments.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,16 +21,29 @@
 <body>
     <?php require_once('elements/nav.php'); ?>
     <header class="background-gradient">
-    <article class="wrapper">
-    <h1>Forum</h1>
-    </article>
+    <br>  
+    <h1>Question & Comments</h1>
+    <br>
     </header>
-    <table>
       <?php
-
-      echo($post);
+      echo ($post);
       ?>
-    </table>
+
+      <section class = "soft-box soft-box--padded wrapper main">
+      <form class="flex-grid full-width-form" action="scripts/Show-forum-comments.php" method="post">
+
+    <input class="full-width-form__field" type="text" name="commentcontent" required placeholder="text"><br><br>
+
+    <input  class="full-width-form__field" type="date" name="posted" required placeholder="date"><br><br>
+
+    <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Data To Database">
+
+</form>
+</section>
+
+
+        <br><br><br>
+
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>
