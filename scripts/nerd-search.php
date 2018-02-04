@@ -1,14 +1,13 @@
 <?php
-	require_once('database-connection.php');
+require_once('database-connection.php');
 
 $sql = "SELECT * 
-            FROM nf_users INNER JOIN nf_usertypes
-            ON (nf_users.userid = nf_usertypes.userid)
+            FROM nf_users 
             WHERE usertypeid = 2";
 
 $result = $conn->query($sql);
 
-$nerds = '';
+$nerds = "";
 
 if ($result->num_rows > 0) {
     // output data of each row
