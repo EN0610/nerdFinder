@@ -26,6 +26,7 @@
     ?>
     <aside class="admin-tools">
         <ul>
+            <li class="admin-tools__tool"><span id="dashboardResizer" class="icon-arrow-left admin-tools__link-icon"></span></li>
             <a class="admin-tools__link" href="admin-dashboard.php"><li class="admin-tools__tool"><span class="icon-speedometer admin-tools__link-icon"></span><span class="admin-tools__link-text">Dashboard</span></li></a>
             <a class="admin-tools__link" href="admin-manage-events.php"><li class="admin-tools__tool"><span class="icon-calendar admin-tools__link-icon"></span><span class="admin-tools__link-text">Manage events</span></li></a>
             <a class="admin-tools__link" href="admin-check-messages.php"><li class="admin-tools__tool"><span class="icon-envelope-open admin-tools__link-icon"></span><span class="admin-tools__link-text">Check Messages</span></li></a>
@@ -81,7 +82,7 @@
                         <?php echo($usersDropDown); ?>
                     </select><span class="icon-arrow-down select-icon"></span>
                     <a class="text-link" onclick="document.getElementById('lock-user-form').submit();">Lock</a>&nbsp;&nbsp;&nbsp;
-                    <a class="text-link" href="mailto:devteam@nerdfinder.com?Subject=Delete%20User%20Account">Request delete</a>
+                    <a class="text-link" href="mailto:devteam@nerdfinder.com?Subject=Delete%20User%20Account">Delete</a>
                 </form>
             </article>
             <article class="soft-box admin-interface__content">
@@ -97,8 +98,8 @@
                     <select name="post" id="update-post-id">
                         <?php echo($postsDropdown); ?>
                     </select><span class="icon-arrow-down select-icon"></span>
-                    <a class="text-link" onclick="document.getElementById('delete-forum-post').submit();">Delete</a>&nbsp;&nbsp;&nbsp;
-                    <span id="show-modal" class="text-link">Edit post</span>
+                    <span id="post-modal" class="text-link">Edit post</span>&nbsp;&nbsp;&nbsp;
+                    <a class="text-link" onclick="document.getElementById('delete-forum-post').submit();">Delete</a>
                 </form>
             </article>
         </section>
@@ -118,11 +119,13 @@
             <?php echo file_get_contents("img/icon-exit-dark.svg"); ?>
         </span>
         <form action="scripts/update-forum-post.php" method="post">
-            <textarea id="modal__input" type="text" name="postcontent" placeholder="Post content" rows="3"></textarea>
+            <textarea id="modal__input" name="postcontent" placeholder="Post content" rows="3"></textarea>
             <input id="modal__post-id" type="hidden" name="postid">
             <input class="button button--primary-green" type="submit" name="submit" value="Update post">
         </form>
     </section>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/admin-dashboard.js"></script>
 </body>
 </html>

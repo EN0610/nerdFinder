@@ -26,6 +26,7 @@
     ?>
     <aside class="admin-tools">
         <ul>
+            <li class="admin-tools__tool"><span id="dashboardResizer" class="icon-arrow-left admin-tools__link-icon"></span></li>
             <a class="admin-tools__link" href="admin-dashboard.php"><li class="admin-tools__tool"><span class="icon-speedometer admin-tools__link-icon"></span><span class="admin-tools__link-text">Dashboard</span></li></a>
             <a class="admin-tools__link" href="admin-manage-events.php"><li class="admin-tools__tool"><span class="icon-calendar admin-tools__link-icon"></span><span class="admin-tools__link-text">Manage events</span></li></a>
             <a class="admin-tools__link" href="admin-check-messages.php"><li class="admin-tools__tool"><span class="icon-envelope-open admin-tools__link-icon"></span><span class="admin-tools__link-text">Check Messages</span></li></a>
@@ -34,7 +35,7 @@
         </ul>
     </aside>
     <section class="admin-interface">
-        <h1 class="admin-interface__heading meetup-heading">Manage Events</h1><button class="button button--primary-green new-meetup">New Meetup</button>
+        <h1 class="admin-interface__heading meetup-heading">Manage Events</h1><button id="show-modal" class="button button--primary-green new-meetup">New Meetup</button>
         <section class="admin-interface__content-wrapper soft-box meetup__margin">
             <?php echo($eventList);?>
         </section>
@@ -50,6 +51,49 @@
             }
         ?>
     </section>
+    <div class="overlay hide"></div>
+    <section class="modal modal--big hide">
+        <span class="icon-exit-dark">
+            <?php echo file_get_contents("img/icon-exit-dark.svg"); ?>
+        </span>
+        <form action="scripts/manage-event-script.php" method="post" class="flex-grid" name="event-form">
+            <section class="grid-2-1">
+                <input type="hidden" name="eventid">
+                <input type="hidden" name="creatorid" value="<?php echo($_SESSION['userid']);?>">
+                <h3>Event name</h3>
+                <input type="text" name="eventname">
+                <h3>Event Description</h3>
+                <textarea name="eventdesc" placeholder="Post content" rows="3"></textarea>
+            </section>
+            <section class="grid-2-1">
+                <h3>Event type</h3>
+                <select name="eventtype">
+                    <option value="1">Networking</option>
+                    <option value="2">Workshop</option>
+                </select>
+                <span class="icon-arrow-down select-icon select-icon--small"></span>
+                <h3>Date</h3>
+                <input type="date" name="eventdate">
+                <section class="flex-grid">
+                    <article class="grid-2-1">
+                        <h3>Start time</h3>
+                        <input type="time" name="starttime">
+                    </article>
+                    <article class="grid-2-1">
+                        <h3>End time</h3>
+                        <input type="time" name="endtime">
+                    </article>
+                </section>
+                <h3>Location</h3>
+                <input type="text" name="location">
+            </section>
+            <input class="button button--primary-green center-button" type="submit" name="add" value="Add meetup">
+            <input class="button button--primary-green center-button hide" type="submit" name="update" value="Update meetup">
+        </form>
+    </section>
+    <?php echo($feedback);?>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/admin-events.js"></script>
 </body>
 </html>

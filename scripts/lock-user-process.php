@@ -11,6 +11,11 @@
     require_once('database-connection.php');
     // Getting the Id of the user chosen from the request stream
     $userid = isset($_REQUEST['user']) ? $_REQUEST['user'] : null;
+    // Validation
+    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $userid = trim($userid);
+    //
     $lockCheck = "SELECT locked
                   FROM nf_users
                   WHERE userid = $userid";
