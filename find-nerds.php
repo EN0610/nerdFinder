@@ -26,7 +26,6 @@
         </article>
     </header>
     <h3>Nerds just for you</h3>
-    <?php echo($nerds);?>
     <form action="scripts/nerd-search.php" method="post">
         <label>Website</label>
         <input id="checkBox1" type="checkbox" name="Websites">
