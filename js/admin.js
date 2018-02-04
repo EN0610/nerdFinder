@@ -24,6 +24,3 @@ dashboardResizer.addEventListener('click', function(){
         dashboardNavLinkIcons[i].classList.toggle('no-pad');
     }
 });
-/*--------------------------
-BIG MODAL CONTROL
---------------------------*/

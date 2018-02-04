@@ -126,5 +126,6 @@
     </section>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
 </body>
 </html>
