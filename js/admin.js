@@ -24,3 +24,23 @@ dashboardResizer.addEventListener('click', function(){
         dashboardNavLinkIcons[i].classList.toggle('no-pad');
     }
 });
+/*--------------------------
+CLOSING MODAL
+--------------------------*/
+var modal = document.getElementsByClassName('modal')[0];
+var overlay = document.getElementsByClassName('overlay')[0];
+// If overlay AND modal (objects) are not undefined...
+if ((typeof overlay !== "undefined") && (typeof modal !== "undefined")) {
+    // Pulling in variable for 'x' icon  
+    var exitIcon = document.getElementsByClassName('icon-exit-dark')[0];
+    // on overlay click hide overlay and modal
+    overlay.addEventListener('click', function(){
+        overlay.classList.add('hide');
+        modal.classList.add('hide');
+    });
+    // on exit icon click hide overlay and modal
+    exitIcon.addEventListener('click', function(){
+        overlay.classList.add('hide');
+        modal.classList.add('hide');
+    });
+}

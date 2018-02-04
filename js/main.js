@@ -1,4 +1,18 @@
 /*--------------------------
+MOBILE NAV
+--------------------------*/
+var mobileNavControl = document.getElementsByClassName('icon-menu')[0];
+var mobileNav = document.getElementsByClassName('nav__item-list')[0];
+//
+mobileNavControl.addEventListener('click', function(){
+
+    if (mobileNav.style.display == 'block') {
+        mobileNav.style.display = 'none';
+    } else{
+        mobileNav.style.display = 'block';
+    }
+});
+/*--------------------------
 TOGGLE NAV DROP DOWN
 --------------------------*/
 var dropDownButton = document.getElementsByClassName('nav__user-area')[0];

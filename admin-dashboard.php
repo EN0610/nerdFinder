@@ -98,7 +98,7 @@
                     <select name="post" id="update-post-id">
                         <?php echo($postsDropdown); ?>
                     </select><span class="icon-arrow-down select-icon"></span>
-                    <span id="show-modal" class="text-link">Edit post</span>&nbsp;&nbsp;&nbsp;
+                    <span id="post-modal" class="text-link">Edit post</span>&nbsp;&nbsp;&nbsp;
                     <a class="text-link" onclick="document.getElementById('delete-forum-post').submit();">Delete</a>
                 </form>
             </article>
@@ -126,6 +126,6 @@
     </section>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/admin.js"></script>
-    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/admin-dashboard.js"></script>
 </body>
 </html>

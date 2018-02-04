@@ -30,7 +30,7 @@ body{
     height: 100%;
 }
 .hide{
-    display: none;
+    display: none !important;
 }
 .center-text{
     text-align: center;
@@ -91,6 +91,7 @@ NAV
     left: 0;
     text-align: right;
     z-index: 1000;
+    user-select: none;
 }
 .nav__wrapper{
     margin: 0 auto;
@@ -190,6 +191,9 @@ NAV
 }
 .nav__drop-down-list-item:hover{
     color: #414B6B;
+}
+.icon-menu{
+    display: none;
 }
 /*--------------------------
 HEADERS
@@ -518,6 +522,9 @@ MODAL
 }
 .modal--big textarea{
     height: 210px;
+    box-sizing: border-box;
+    padding: 13px 20px;
+    line-height: 25px;
 }
 #modal__input{
     font: 600 24px/32px 'Facit-Semibold', sans-serif;
@@ -537,6 +544,31 @@ MODAL
     cursor: pointer;
 }
 @media all and (max-width: 900px) {
+
+    .icon-menu{
+        display: inline-block;
+        color: #414B6B;
+        cursor: pointer;
+    }
+    .nav__item-list{
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.15);
+        display: none;
+    }
+    .nav__item{
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-top: solid 1px #F0F4F8;
+        margin: 0;
+    }
+    .nav__admin{
+        display: none;
+    }
     /*--------------------------
     GRIDS
     --------------------------*/
@@ -559,6 +591,12 @@ MODAL
 }
 @media all and (max-width: 600px) {
 
+    .nav__messages-icon{
+        display: none;
+    }
+    .icon-menu{
+        margin: 0 30px 0 0;
+    }
     /*--------------------------
     GRIDS
     --------------------------*/

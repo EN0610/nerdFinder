@@ -56,13 +56,14 @@
         <span class="icon-exit-dark">
             <?php echo file_get_contents("img/icon-exit-dark.svg"); ?>
         </span>
-        <form action="scripts/add-event-script.php" method="post" class="flex-grid">
+        <form action="scripts/manage-event-script.php" method="post" class="flex-grid" name="event-form">
             <section class="grid-2-1">
-                <input type="hidden" name="eventid" value="">
+                <input type="hidden" name="eventid">
+                <input type="hidden" name="creatorid" value="<?php echo($_SESSION['userid']);?>">
                 <h3>Event name</h3>
-                <input type="text" name="eventname" value="">
+                <input type="text" name="eventname">
                 <h3>Event Description</h3>
-                <textarea name="postcontent" placeholder="Post content" rows="3"></textarea>
+                <textarea name="eventdesc" placeholder="Post content" rows="3"></textarea>
             </section>
             <section class="grid-2-1">
                 <h3>Event type</h3>
@@ -86,12 +87,13 @@
                 <h3>Location</h3>
                 <input type="text" name="location">
             </section>
-            <input class="button button--primary-green center-button" type="submit" name="submit" value="Add meetup">
+            <input class="button button--primary-green center-button" type="submit" name="add" value="Add meetup">
+            <input class="button button--primary-green center-button hide" type="submit" name="update" value="Update meetup">
         </form>
     </section>
     <?php echo($feedback);?>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/admin.js"></script>
-    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/admin-events.js"></script>
 </body>
 </html>

@@ -32,10 +32,10 @@
 
             if ($eventtype == 1) {
                 // Networking Event
-                $eventtype = 'Networking event';
+                $eventtypeWord = 'Networking event';
             } else if ($eventtype == 2) {
                 // Workshop Event
-                $eventtype = 'Workshop event';
+                $eventtypeWord = 'Workshop event';
             }
 
             $eventList .= <<<EVENT
@@ -44,7 +44,7 @@
                 <section class="flex-grid">
                     <article class="grid-3-2">
                         <h2>$eventname</h2>
-                        <h3>$eventtype</h3>
+                        <h3>$eventtypeWord</h3>
                         <p class="grid__row">$eventdescription</p>
                     </article>
                     <article class="grid-3-1">
@@ -59,15 +59,21 @@
                         </div>
                     </article>
                 </section>
-                <form class="meetup-event__modify" id="edit-event-$eventid">
+                <form class="meetup-event__modify" name="update-event-$eventid" method="post">
                     <input type="hidden" value="$eventid" name="eventid">
                     <input type="hidden" value="$eventname" name="eventname">
-                    <a class="text-link" onclick="document.getElementById('edit-event-$eventid').submit();">Edit</a>
+                    <input type="hidden" value="$eventtype" name="eventtype">
+                    <input type="hidden" value="$eventdescription" name="eventdescription">
+                    <input type="hidden" value="$eventdate" name="eventdate">
+                    <input type="hidden" value="$starttime" name="starttime">
+                    <input type="hidden" value="$endtime" name="endtime">
+                    <input type="hidden" value="$location" name="location">
+                    <span class="text-link" id="-update-event-$eventid" onclick="updateEvent(this.id);">Edit</span>
                 </form>
                 <form class="meetup-event__modify" id="delete-event-$eventid" method="post" action="scripts/admin-delete-event.php">
                     <input type="hidden" value="$eventid" name="eventid">
                     <input type="hidden" value="$eventname" name="eventname">
-                    <a class="text-link" onclick="document.getElementById('delete-event-$eventid').submit();">Delete</a>
+                    <span class="text-link" onclick="document.getElementById('delete-event-$eventid').submit();">Delete</span>
                 </form>
             </section>
             <hr>
