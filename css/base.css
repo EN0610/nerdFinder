@@ -295,11 +295,15 @@ CALL TO ACTIONS
     vertical-align: top;
 }
 .text-link{
-    color: #FF9673;;
+    color: #FF9673;
+    border: none;
     border-bottom: 0.5px solid #FFC6B3;
     text-decoration: none;
     letter-spacing: 1.5px;
     cursor: pointer;
+    font: 300 14px/26px 'Gesta-Light', sans-serif;
+    height: 22px;
+    padding: 0;
 }
 .text-link:hover{
     color: #FF737E;

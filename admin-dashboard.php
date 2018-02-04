@@ -76,13 +76,13 @@
             <article class="soft-box admin-interface__content ">
                 <h5>User control</h5>
                 <hr>
-                <form id="lock-user-form" action="scripts/lock-user-process.php" method="post" class="padded-box--small admin-interface__text">
+                <form id="control-user-form" action="scripts/control-user-process.php" method="post" class="padded-box--small admin-interface__text">
                     <p class="admin-interface__text">Choose user</p>
                     <select name="user">
                         <?php echo($usersDropDown); ?>
                     </select><span class="icon-arrow-down select-icon"></span>
-                    <a class="text-link" onclick="document.getElementById('lock-user-form').submit();">Lock</a>&nbsp;&nbsp;&nbsp;
-                    <a class="text-link" href="mailto:devteam@nerdfinder.com?Subject=Delete%20User%20Account">Delete</a>
+                    <input type="submit" class="text-link" name="lock" value="Lock">&nbsp;&nbsp;&nbsp;
+                    <input type="submit" class="text-link" name="delete" value="Delete">
                 </form>
             </article>
             <article class="soft-box admin-interface__content">

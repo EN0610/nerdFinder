@@ -15,6 +15,7 @@
     GETTING FORM INFORMATION & VALIDATION
     ----------------------------------------------------*/
 
+    $eventid = isset($_REQUEST['eventid']) ? $_REQUEST['eventid'] : null;
     $creatorid = isset($_REQUEST['creatorid']) ? $_REQUEST['creatorid'] : null;
     $eventname = isset($_REQUEST['eventname']) ? $_REQUEST['eventname'] : null;
     $eventdesc = isset($_REQUEST['eventdesc']) ? $_REQUEST['eventdesc'] : null;
@@ -24,6 +25,7 @@
     $endtime = isset($_REQUEST['endtime']) ? $_REQUEST['endtime'] : null;
     $location = isset($_REQUEST['location']) ? $_REQUEST['location'] : null;
     // Validation
+    $eventid = filter_var($eventid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $creatorid = filter_var($creatorid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $eventname = filter_var($eventname, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $eventdesc = filter_var($eventdesc, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
@@ -33,6 +35,7 @@
     $endtime = filter_var($endtime, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $location = filter_var($location, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     //
+    $eventid = filter_var($eventid, FILTER_SANITIZE_SPECIAL_CHARS);
     $creatorid = filter_var($creatorid, FILTER_SANITIZE_SPECIAL_CHARS);
     $eventname = filter_var($eventname, FILTER_SANITIZE_SPECIAL_CHARS);
     $eventdesc = filter_var($eventdesc, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -42,6 +45,7 @@
     $endtime = filter_var($endtime, FILTER_SANITIZE_SPECIAL_CHARS);
     $location = filter_var($location, FILTER_SANITIZE_SPECIAL_CHARS);
     //
+    $eventid = trim($eventid);
     $creatorid = trim($creatorid);
     $eventname = trim($eventname);
     $eventdesc = trim($eventdesc);
@@ -77,8 +81,6 @@
         }
     }
     if(isset($_POST["update"])) {
-        //
-        $eventid = isset($_REQUEST['eventid']) ? $_REQUEST['eventid'] : null;
         // User pressed update event button
         $updateSql = "UPDATE nf_events
                       SET eventname = '$eventname', eventtype = $eventtype, eventdescription = '$eventdesc', eventdate = '$eventdate', starttime = '$starttime', endtime = '$endtime', location = '$location'
