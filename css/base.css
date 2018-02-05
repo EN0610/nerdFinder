@@ -467,16 +467,20 @@ MESSAGES
     color: #fff;
     padding: 8px 12px;
     border-radius: 10px;
-    width: 65%;
+    width: auto;
+    max-width: 65%;
     margin: 20px 0;
     font: 400 14px/22px 'Facit-Regular', sans-serif;
 }
 .user-message__sent{
     background: #5AD6AD;
+    float: left;
+    clear: both;
 }
 .user-message__recieved{
     background: #5E7991;
     margin-left: 35%;
+    float: right;
 }
 .user-message:first-child{
     margin-top: 0;

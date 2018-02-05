@@ -42,30 +42,28 @@
             $lastname = $row['lastname'];
             $messagecontent = $row['messagecontent'];
 
-            if ($senderid) {
-                # code...
+            if ($recieverid == $userid2){
+                $background = 'side-panel__conversation--current';
+            } else{
+                $background = '';
             }
             if ($recieverid != $userid1) {
 
                 $conversations .= <<<CONVERSATION
 
                 <a href="scripts/change-conversation.php?userid2=$recieverid" class="conversation">
-                    <article class="side-panel__conversation">
+                    <article class="side-panel__conversation $background">
                         <img class="side-panel__conversation-picture" src="img/profile-pics/$profilepic" alt="Conversation User Profile Picture">
                         <h2 class="side-panel__conversation-user-name">$firstname $lastname</h2>
                         <p class="side-panel__conversation-preview">$messagecontent</p>
                         <div class="clearfix"></div>
                     </article>
                 </a>
-
 CONVERSATION;
             }
-
-            
-
         }
     } else{
-        $conversations = '<h2 class="side-panel__conversation-user-name no-messages">Your have no messages</h2>';
+        $conversations = '<h2 class="side-panel__conversation-user-name no-messages">No conversations</h2>';
     }
     /*--------------------------
     MESSAGES
@@ -100,5 +98,3 @@ CONVERSATION;
         //
         $messages = '<h2 class="grey-text--light center-text">No messages</h2>';
     }
-
-?>
