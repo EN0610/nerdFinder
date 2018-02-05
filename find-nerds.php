@@ -26,10 +26,7 @@
         </article>
     </header>
     <h3> <br> </h3>
-    <section class="">
-        <?php echo $nerds ;?>
-    </section>
-    <form method="check">
+    <form class="user-box_checklist">
         <label>Website</label>
         <input id="checkBox1" type="checkbox" name="Websites">
         <label>Mobile Apps</label>
@@ -39,6 +36,10 @@
         <label>Software</label>
         <input id="checkBox1" type="checkbox" name="Software">
     </form>
+    <h3> <br> </h3>
+    <section class="">
+        <?php echo $nerds ;?>
+    </section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>
