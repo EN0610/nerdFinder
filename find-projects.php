@@ -23,20 +23,9 @@
             <a class="button button--secondary-white" href="">Become a Nerd</a>
         </article>
     </header>
-    <h3>Nerds just for you</h3>
+    <h3>Current projects on</h3>
     <?php require_once('scripts/project-search.php'); ?>
-    <form action="scripts/nerd-search.php" method="post">
-        <label>Website</label>
-        <input id="checkBox1" type="checkbox" name="Websites">
-        <label>Mobile Apps</label>
-        <input id="checkBox1" type="checkbox" name="MobileApps">
-        <label>Tablet Apps</label>
-        <input id="checkBox1" type="checkbox" name="TabletApps">
-        <label>Software</label>
-        <input id="checkBox1" type="checkbox" name="Software">
-    </form>
-
-
+    <?php echo($projects);?>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>

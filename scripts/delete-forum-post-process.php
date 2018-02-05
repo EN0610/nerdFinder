@@ -11,6 +11,10 @@
     require_once('database-connection.php');
     // Getting the Id of the project clicked from the request stream
     $postid = isset($_REQUEST['post']) ? $_REQUEST['post'] : null;
+    // Validation
+    $postid = filter_var($postid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $postid = filter_var($postid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $postid = trim($postid);
     // SQL to update the project's approval status as '2', which means unapproved AND seen by the admin team
     $sql = "DELETE FROM nf_posts WHERE postid = $postid";
 
