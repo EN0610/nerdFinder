@@ -5,14 +5,33 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
-    // Pulling data in from a script to save space
-    require_once('scripts/admin-manage-events-content.php');
+    // Setting the development enviroment to show errors
+    require_once('scripts/set-environment.php');
+    // Connecting to the Database
+    require_once('scripts/database-connection.php');
+
+    $userDropdownSQL = "SELECT userid, firstname, lastname, username FROM nf_users WHERE usertypeid = 2 OR usertypeid = 3 ORDER BY firstname";
+    $userDropdownSQLResults = mysqli_query($conn, $userDropdownSQL) or die (mysqli_error($conn));
+    $usersDropDown = '';
+
+    if (mysqli_num_rows($userDropdownSQLResults) > 0){
+        // At least one row
+        while ($row = mysqli_fetch_assoc($userDropdownSQLResults)) {
+            //
+            $userid = $row['userid'];
+            $username = $row['username'];
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+
+            $usersDropDown .= "<option value='$userid'>$firstname $lastname ($username)</option>";            
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
-    <title>Manage Events | Nerd Finder Admin</title>
+    <title>User Refunds | Nerd Finder Admin</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -35,10 +54,37 @@
             <a class="admin-tools__link" href="https://analytics.google.com/analytics/web/" target="_blank"><li class="admin-tools__tool"><span class="icon-graph admin-tools__link-icon"></span><span class="admin-tools__link-text">View analytics</span></li></a>
         </ul>
     </aside>
+    </aside>
     <section class="admin-interface">
-        <h1 class="admin-interface__heading meetup-heading">Manage Events</h1><button id="show-modal" class="button button--primary-green new-meetup">New Meetup</button>
-        <section class="admin-interface__content-wrapper soft-box meetup__margin">
-            <?php echo($eventList);?>
+        <h1 class="admin-interface__heading">User Refunds</h1>
+        <section class="admin-interface__content-wrapper">
+            <article class="soft-box padded-box full-width meetup__margin">
+                <form method="post" onsubmit="return false">
+                    <section class="flex-grid">
+                        <article class="grid-1">
+                            <h3>Refund amount</h3>
+                            <input class="full-width-form__field" type="number" name="amount" placeholder="£">
+                            <h3>User</h3>
+                            <select class="full-width-form__field">
+                                <?php echo($usersDropDown);?>
+                            </select><span class="icon-arrow-down select-icon select-icon"></span>
+                        </article>
+                        <article class="grid-1">
+                            <h3>Account number</h3>
+                            <input class="full-width-form__field" type="text" name="card-number">
+                            <h3>Name on card</h3>
+                            <input class="full-width-form__field" type="text" name="name">
+                        </article>
+                        <article class="grid-1">
+                            <h3>Sort code</h3>
+                            <input class="full-width-form__field" type="text" name="security-code">
+                            <h3>Expiration Date</h3>
+                            <input class="full-width-form__field" type="date" name="expiration">
+                        </article>
+                        <input class="button button--primary-green" type="submit" value="Refund">
+                    </section>
+                </form>
+            </article>
         </section>
         <?php require_once('elements/footer--small.php');
         
@@ -52,49 +98,7 @@
             }
         ?>
     </section>
-    <div class="overlay hide"></div>
-    <section class="modal modal--big hide">
-        <span class="icon-exit-dark">
-            <?php echo file_get_contents("img/icon-exit-dark.svg"); ?>
-        </span>
-        <form action="scripts/manage-event-script.php" method="post" class="flex-grid" name="event-form">
-            <section class="grid-2-1">
-                <input type="hidden" name="eventid">
-                <input type="hidden" name="creatorid" value="<?php echo($_SESSION['userid']);?>">
-                <h3>Event name</h3>
-                <input type="text" name="eventname">
-                <h3>Event Description</h3>
-                <textarea name="eventdesc" placeholder="Post content" rows="3"></textarea>
-            </section>
-            <section class="grid-2-1">
-                <h3>Event type</h3>
-                <select name="eventtype">
-                    <option value="1">Networking</option>
-                    <option value="2">Workshop</option>
-                </select>
-                <span class="icon-arrow-down select-icon select-icon--small"></span>
-                <h3>Date</h3>
-                <input type="date" name="eventdate">
-                <section class="flex-grid">
-                    <article class="grid-2-1">
-                        <h3>Start time</h3>
-                        <input type="time" name="starttime">
-                    </article>
-                    <article class="grid-2-1">
-                        <h3>End time</h3>
-                        <input type="time" name="endtime">
-                    </article>
-                </section>
-                <h3>Location</h3>
-                <input type="text" name="location">
-            </section>
-            <input class="button button--primary-green center-button" type="submit" name="add" value="Add meetup">
-            <input class="button button--primary-green center-button hide" type="submit" name="update" value="Update meetup">
-        </form>
-    </section>
-    <?php echo($feedback);?>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script> 
     <script type="text/javascript" src="js/admin.js"></script>
-    <script type="text/javascript" src="js/admin-events.js"></script>
 </body>
 </html>

@@ -2,7 +2,6 @@
 ANIMATIONS
 --------------------------*/
 @keyframes flyIn{
-
     0%{
         bottom: -100px
     }
@@ -24,12 +23,6 @@ TEXT
 .admin-interface__heading{
     padding: 60px 0 50px 0;
     color: #5E7991;
-}
-.icon-exit{
-    float: right;
-    width: 14px;
-    padding: 18px 0 18px 25px;
-    cursor: pointer;
 }
 .admin-interface__text{
     font-size: 14px;
@@ -115,6 +108,9 @@ hr{
 .copyright{
     margin: 10px 0 0 0;
 }
+.full-width{
+    width: 100%;
+}
 /*--------------------------
 MAIN INTERFACE SECTIONS
 --------------------------*/
@@ -183,6 +179,12 @@ FEEDBACK MECHANISM
     user-select: none;
     animation: flyIn 0.2s forwards;
 }
+.feedback a{
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    padding: 14px 0 14px 25px;
+}
 .positive-feedback{
     background: #5AD6AD;
 }
@@ -198,6 +200,10 @@ FEEDBACK MECHANISM
 .feedback-icon{
     position: relative;
     top: 3px;
+    display: inline-block;
+}
+.icon-exit{
+    width: 14px;
 }
 /*--------------------------
 FORMS
@@ -245,6 +251,20 @@ MEETUP EVENTS
 .meetup__margin{
     margin: 0 0 60px 0;
 }
+.no-pad{
+    padding: 0;
+}
+.interface-minimize{
+    width: calc(100% - 122.5px);
+    margin-left: 105px;
+}
+.tools-minimize{
+    width: 105px;
+}
+/*--------------------------
+ADD EVENT
+--------------------------*/
+
 @media all and (max-width: 1265px) {
     /* RWD FRIENDLY */
     .admin-tools__link-text{

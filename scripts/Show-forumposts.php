@@ -5,7 +5,9 @@
   // Connecting to the Database
   require_once('database-connection.php');
 
-  $postSQL = "SELECT * FROM nf_forums ORDER BY forumid";
+  $forumid = isset($_REQUEST['forumid']) ? $_REQUEST['forumid'] : null;
+
+  $postSQL = "SELECT * FROM nf_posts  WHERE forumid = '$forumid'";
   $postResults = mysqli_query($conn, $postSQL) or die (mysqli_error($conn));
 
   $posts = '';
@@ -14,16 +16,16 @@
       // At least one row of technical issues
       while ($row = mysqli_fetch_assoc($postResults)) {
 
-
-          $forumid = $row['forumid'];
-          $forumname = $row['forumname'];
+          
+          $postcontent = $row['postcontent'];
+          $posttime = $row['posttime'];
 
 
           $post.= <<<TABLE
               <tr>
                   <td></td>
-                  <td><a href=forum-post.php?forumid={$forumid}>{$forumname}</td>
-
+                  <td>$postcontent.</td>
+                  <td>$posttime.</td>
 
               </tr>
 TABLE;
