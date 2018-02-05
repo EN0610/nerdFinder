@@ -15,18 +15,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/user-box.css">
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
-    <header class="header header--big">
+    <header class="header background-gradient">
         <article class="wrapper">
-            <h1 class="header__heading grid-2">Hire experts to create your apps, websites, software &amp; games</h1>
-            <a class="button button--primary-white" href="">Hire Nerds</a>&nbsp;&nbsp;
-            <a class="button button--secondary-white" href="">Become a Nerd</a>
+            <h1>Local Nerds</h1>
+            <h4>Search through our extensive Nerds and their skills</h4>
         </article>
     </header>
-    <h3>Nerds just for you</h3>
-    <form action="scripts/nerd-search.php" method="post">
+    <h3> <br> </h3>
+    <section class="">
+        <?php echo $nerds ;?>
+    </section>
+    <form method="check">
         <label>Website</label>
         <input id="checkBox1" type="checkbox" name="Websites">
         <label>Mobile Apps</label>
@@ -36,9 +39,6 @@
         <label>Software</label>
         <input id="checkBox1" type="checkbox" name="Software">
     </form>
-    <section>
-        <?php echo($nerds);?>
-    </section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>
