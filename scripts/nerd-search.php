@@ -21,11 +21,15 @@ if ($nerdResult->num_rows > 0) {
         $profilepic = $row["profilepic"];
         $exp = $row ["experience"];
         $hourlyrate = $row ["hourlyrate"];
-        $portfolioimg1 = $row ["portfolioimg1"];
+        $portfolioImg1 = $row ["portfolioimg1"];
+        $portfolioImg2 = $row ["portfolioimg2"];
+        $portfolioImg3 = $row ["portfolioimg3"];
 
         $nerds .=  <<<NERDS
             <article class="user-box">
-             <img class="user-box_pic1" src="img/portfolios/$portfolioimg1" alt="Portfolio Image">
+             <img class="user-box_pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image">
+             <img class="user-box_pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image">
+             <img class="user-box_pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
              <img class="user-box_profilepic" src="img/profile-pics/$profilepic" alt="User Box Picture">
              <h2 class="user-box_name"> $firstname $lastname </h2>
              <p class="user-box_experience"> $exp years experience</p>
