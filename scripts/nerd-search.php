@@ -1,20 +1,34 @@
 <?php
 /* CREATED BY JOE */
-
+require_once('scripts/session-save-path.php');
+require_once('set-environment.php');
 require_once('database-connection.php');
 
-$sql = "SELECT * 
+$nerdsql = "SELECT * 
             FROM nf_users 
             WHERE usertypeid = 2";
 
-$result = $conn->query($sql);
+$nerdResult = $conn->query($nerdsql);
 
 $nerds = "";
 
-if ($result->num_rows > 0) {
+if ($nerdResult->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $nerds .= "<br> Rate: ". $row["hourlyrate"]. " - Name: ". $row["firstname"]. " " . $row["lastname"] . "<br>";
+    while($row = $nerdResult->fetch_assoc()) {
+
+        $firstname = $row["firstname"];
+        $lastname = $row["lastname"];
+        $profilepic = $row["profilepic"];
+        $dob = $row ["dob"];
+
+        $nerds .=  <<<NERDS
+            <article class="user-box">
+             <img class="user-box_profilepic" src="img/profile-pics/$profilepic" alt="User Box Picture">
+             <h2 class="user-box_name"> $firstname $lastname </h2>
+             <p class="user-box_dob">$dob</p>
+             <div class="clearfix"></div>
+            </article>
+NERDS;
 
     }
 } else {
