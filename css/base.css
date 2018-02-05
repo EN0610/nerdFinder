@@ -222,6 +222,13 @@ HEADERS
 .header__heading{
     padding-bottom: 50px;
 }
+.grey-text{
+    color: #5E7991;
+}
+.grey-text--light{
+    color: #D2DEEA;
+    padding: 0 0 20px 0;
+}
 /*--------------------------
 CONTAINERS
 --------------------------*/

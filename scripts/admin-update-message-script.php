@@ -12,5 +12,5 @@
     $_SESSION['admin-message-userid1'] = $userid1;
     $_SESSION['admin-message-userid2'] = $userid2;
     // Sending user back to previous page
-    header('Location: ../admin-check-messages.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
