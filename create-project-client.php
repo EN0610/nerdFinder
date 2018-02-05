@@ -33,7 +33,6 @@
                 </article>
                 <article class="grid-1">
                       <h3 for="projectspecialistarea">SPECIALIST AREA</h3>
-                      <!-- <input type="text" name="projectspecialistarea" id="projectspecialistarea" required  accesskey="3" tabindex="3"> -->
                       <select name="projectspecialistarea" id="projectspecialistarea" required  accesskey="3" tabindex="3">
                         <option value="1">Websites</option>
                         <option value="2">Mobile apps</option>
