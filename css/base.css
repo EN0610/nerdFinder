@@ -56,6 +56,12 @@ GRIDS
 .grid-1{
     width: calc((100% - 80px) / 3);
 }
+.grid-3-1--small{
+    width: calc((100% - 40px) / 3);
+}
+.grid-3-2--small{
+    width: calc(((100% - 40px) / 3) * 2);
+}
 .grid-2{
     width: calc(((100% - 80px) / 3) * 2);
 }
@@ -353,6 +359,11 @@ input[type='text'], input[type='password'], input[type='date'], input[type='time
     padding: 0 20px;
     box-sizing: border-box;
 }
+input[type='file']{
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px 0 0 0;
+}
 input[type='checkbox']{
     -webkit-appearance: checkbox;
     -moz-appearance: checkbox;
@@ -373,6 +384,12 @@ textarea{
 }
 textarea::placeholder{
     color: #D2DEEA;
+}
+.user-profile{
+    border-radius: 100%;
+    width: 52px;
+    width: 52px;
+    opacity: 0.9;
 }
 .select-icon{
     pointer-events: none;
@@ -402,6 +419,9 @@ textarea::placeholder{
 .full-width-form__field{
     width: 100% !important;
     margin: 5px 0 20px 0 !important;
+}
+.full-width-form__heading{
+    margin: 0 0 20px 0;
 }
 .icon-arrow-left{
     position: relative;
