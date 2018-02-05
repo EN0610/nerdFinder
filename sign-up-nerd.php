@@ -36,7 +36,7 @@
                     <input class="full-width-form__field"type="text" name="passwordhint" id="passwordhint" required accesskey="7" tabindex="7">
                     <h3>DOB</h3>
                     <input class="full-width-form__field" type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
-                </aside>       
+                </aside>
             </section>
             <section class="soft-box soft-box--padded grid-3-2--small">
                 <h2 class="full-width-form__heading">About you</h2>
@@ -49,7 +49,7 @@
                         <input class="full-width-form__field" type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
                         <h3>Years of experience</h3>
                         <input class="full-width-form__field" type="number" name="experience" id="experience" accesskey="9" tabindex="9" min="0">
-                        <h3>Specialiasm</h3>
+                        <h3>Specialism</h3>
                         <select class="full-width-form__field" name="specialismid" required>
                             <option value="1">Websites</option>
                             <option value="2">Mobile Apps</option>
@@ -65,7 +65,10 @@
                         <h3>Upload CV</h3>
                         <input class="full-width-form__field" type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11" value="Browse">
                         <h3>Portfolio images</h3>
-                        <input class="full-width-form__field" type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11" value="Browse">
+                        <input class="portfolioimg" type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11" value="Browse">
+                        <input class="portfolioimg" type="file" name="portfolioimg2" id="portfolioimg2" accesskey="11" tabindex="11" value="Browse">
+                        <input class="portfolioimg" type="file" name="portfolioimg3" id="portfolioimg3" accesskey="11" tabindex="11" value="Browse">
+
                     </aside>
                 </article>
                 <input type="checkbox" name="terms"><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
