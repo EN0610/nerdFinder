@@ -390,6 +390,7 @@ textarea::placeholder{
     width: 52px;
     width: 52px;
     opacity: 0.9;
+    margin: 0 10px 0 0;
 }
 .select-icon{
     pointer-events: none;
@@ -420,12 +421,20 @@ textarea::placeholder{
     width: 100% !important;
     margin: 5px 0 20px 0 !important;
 }
+.full-width-form__field::placeholder{
+    color: #D2DEEA;
+}
 .full-width-form__heading{
     margin: 0 0 20px 0;
 }
 .icon-arrow-left{
     position: relative;
     top: 3px;
+}
+.terms__text{
+    display: inline-block;
+    vertical-align: top;
+    margin: 8px 0 0 10px;
 }
 /*--------------------------
 MAIN COMPONTENTS
