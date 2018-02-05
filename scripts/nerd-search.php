@@ -19,13 +19,15 @@ if ($nerdResult->num_rows > 0) {
         $firstname = $row["firstname"];
         $lastname = $row["lastname"];
         $profilepic = $row["profilepic"];
-        $dob = $row ["dob"];
+        $exp = $row ["experience"];
+        $hourlyrate = $row ["hourlyrate"];
 
         $nerds .=  <<<NERDS
             <article class="user-box">
              <img class="user-box_profilepic" src="img/profile-pics/$profilepic" alt="User Box Picture">
              <h2 class="user-box_name"> $firstname $lastname </h2>
-             <p class="user-box_dob">$dob</p>
+             <p class="user-box_experience"> $exp years experience</p>
+             <p class="user-box_hourlyrate"> £$hourlyrate/ph </p>
              <div class="clearfix"></div>
             </article>
 NERDS;

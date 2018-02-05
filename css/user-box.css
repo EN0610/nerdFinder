@@ -30,7 +30,7 @@ USER BOX
 }
 
 
-.user-box_dob {
+.user-box_experience {
     display: inline-block;
     text-align: right;
     font: 400 12px/50px 'Facit-Regular', sans-serif;
@@ -39,8 +39,11 @@ USER BOX
     color: #414B6B;
 }
 
-.user-box_email {
-
+.user-box_hourlyrate {
+    text-align: right;
+    font: 400 14px/50px 'bold', sans-serif;
+    letter-spacing: 1.1px;
+    color: #414B6B;
 }
 
 
