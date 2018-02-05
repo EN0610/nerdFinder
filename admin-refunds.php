@@ -79,7 +79,7 @@
                             <h3>Sort code</h3>
                             <input class="full-width-form__field" type="text" name="security-code">
                             <h3>Expiration Date</h3>
-                            <input class="full-width-form__field" type="date" name="expiration">
+                            <input class="full-width-form__field" type="month" name="expiration">
                         </article>
                         <input class="button button--primary-green" type="submit" value="Refund">
                     </section>

@@ -21,7 +21,7 @@
                 <li class="nav__item"><a href="forum.php">Forum</a></li>
             </ul>
             <span class="nav__icon icon-menu"></span>
-            <span class="nav__icon nav__messages-icon icon-envelope"></span>
+            <a class="nav__icon nav__messages-icon icon-envelope" href="messages.php"></a>
             <section class="nav__user-area">
                 <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="Profile picture">
                 <span class="nav__icon nav__drop-down-icon icon-arrow-down"></span>
@@ -47,7 +47,7 @@ CONTENT;
                 <li class="nav__item"><a href="forum.php">Forum</a></li>
             </ul>
             <span class="nav__icon icon-menu"></span>
-            <span class="nav__icon nav__messages-icon icon-envelope"></span>
+            <a class="nav__icon nav__messages-icon icon-envelope" href="messages.php"></a>
             <section class="nav__user-area">
                 <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="User profile picture">
                 <span class="nav__icon nav__drop-down-icon icon-arrow-down"></span>
@@ -72,9 +72,9 @@ CONTENT;
                 <li class="nav__item"><a href="meetups.php">Meetups</a></li>
                 <li class="nav__item"><a href="forum.php">Forum</a></li>
             </ul>
-            <a class="button button--nav button--secondary-red" href="sign-in.php">New project</a>
+            <a class="button button--nav button--secondary-red" href="project-new.php">New project</a>
             <span class="nav__icon icon-menu"></span>
-            <span class="nav__icon nav__messages-icon icon-envelope"></span>
+            <a class="nav__icon nav__messages-icon icon-envelope" href="messages.php"></a>
             <section class="nav__user-area">
                 <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="User profile picture">
                 <span class="nav__icon nav__drop-down-icon icon-arrow-down"></span>
