@@ -39,5 +39,5 @@
 
     mysqli_close($conn);
     // Sending user back to the admin dashboard
-    header('Location: ../admin-manage-events.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
