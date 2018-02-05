@@ -55,7 +55,7 @@
         <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
 
         <h3>Years of experience</h3>
-        <input type="text" name="experience" id="experience" accesskey="9" tabindex="9">
+        <input type="number" name="experience" id="experience" accesskey="9" tabindex="9">
 
         <h3>Specialiasm</h3>
         <select name="specialismid" required>
@@ -67,7 +67,7 @@
         </select><span class="icon-arrow-down select-icon"></span>
 
         <h3>Hourly rate</h3>
-        <input type="text" name="rate" id="rate" accesskey="10" tabindex="10">
+        <input type="number" name="rate" id="rate" accesskey="10" tabindex="10">
 
         <h3>Upload CV</h3>
         <input type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
