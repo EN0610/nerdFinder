@@ -76,6 +76,22 @@
     'cost' => 11
   ));
 
+  function validateAge($dob, $age = 18)
+{
+    // $birthday can be UNIX_TIMESTAMP or just a string-date.
+    if(is_string($dob)) {
+        $dob = strtotime($dob);
+    }
+
+    // check
+    // 31536000 is the number of seconds in a 365 days year.
+    if(time() - $dob < $age * 31536000)  {
+        return false;
+    }
+
+    return true;
+}
+
   $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, company, jobtitle, businessarea)
   VALUES (null, '3', '$firstname', '$lastname', '$email', '$username', '$dob', '$hashedpassword', '$passwordhint', '0', '0', '$profilepic', '$company', '$jobtitle', '$businessarea')";
   if (mysqli_query($conn, $sql)) {
