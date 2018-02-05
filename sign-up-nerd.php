@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
-    <title>| Nerd Finder</title>
+    <title>Sign up | Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -42,13 +42,13 @@
                 <h2 class="full-width-form__heading">About you</h2>
                 <h3>Profile picture</h3>
                 <img class="user-profile" src="img/profile-pics/no-image.jpg" alt="Profile Picture">
-                <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
+                <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8" value="Browse">
                 <article class="flex-grid">
                     <aside class="grid-2-1">
                         <h3>Firstname</h3>
                         <input class="full-width-form__field" type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
                         <h3>Years of experience</h3>
-                        <input class="full-width-form__field" type="number" name="experience" id="experience" accesskey="9" tabindex="9">
+                        <input class="full-width-form__field" type="number" name="experience" id="experience" accesskey="9" tabindex="9" min="0">
                         <h3>Specialiasm</h3>
                         <select class="full-width-form__field" name="specialismid" required>
                             <option value="1">Websites</option>
@@ -57,17 +57,18 @@
                             <option value="4">Software</option>
                         </select><span class="icon-arrow-down select-icon"></span>
                         <h3>Hourly rate</h3>
-                        <input class="full-width-form__field" type="number" name="rate" id="rate" accesskey="10" tabindex="10">
+                        <input class="full-width-form__field" type="number" name="rate" id="rate" accesskey="10" tabindex="10" min="0" placeholder="£20">
                     </aside>
                     <aside class="grid-2-1">
                         <h3>Lastname</h3>
                         <input class="full-width-form__field" type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
                         <h3>Upload CV</h3>
-                        <input class="full-width-form__field" type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11">
+                        <input class="full-width-form__field" type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11" value="Browse">
                         <h3>Portfolio images</h3>
-                        <input class="full-width-form__field" type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11">
+                        <input class="full-width-form__field" type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11" value="Browse">
                     </aside>
                 </article>
+                <input type="checkbox" name="terms"><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
                 <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="12" tabindex="12">
             </section>
         </form>
