@@ -5,7 +5,13 @@
   // Connecting to the Database
   require_once('database-connection.php');
 
-  $postSQL = "SELECT * FROM nf_forums ORDER BY forumid";
+
+  $postSQL = "SELECT *
+              FROM nf_posts INNER JOIN nf_forums
+              ON (nf_posts.forumid = nf_forums.forumid) ";
+
+
+
   $postResults = mysqli_query($conn, $postSQL) or die (mysqli_error($conn));
 
   $posts = '';
@@ -15,14 +21,18 @@
       while ($row = mysqli_fetch_assoc($postResults)) {
 
 
+          $postid = $row['postid'];
           $forumid = $row['forumid'];
+          $postcontent = $row['postcontent'];
           $forumname = $row['forumname'];
 
 
-          $post.= <<<TABLE
+
+          $posts.= <<<TABLE
               <tr>
                   <td></td>
-                  <td><a href=forum-post.php?forumid={$forumid} class="wrapper">{$forumname}</td>
+                  <td><a href=forum-post.php?postid={$postid}&forumid={$forumid} class="wrapper">{$postcontent}</td>
+                  <td>{$forumname}</td>
 
 
               </tr>

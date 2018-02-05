@@ -4,28 +4,33 @@
   // Connecting to the Database
   require_once('database-connection.php');
 
+  $postid = isset($_REQUEST['postid']) ? $_REQUEST['postid'] : null;
   $forumid = isset($_REQUEST['forumid']) ? $_REQUEST['forumid'] : null;
 
-  $postSQL = "SELECT * FROM nf_posts  WHERE forumid = '$forumid'";
+  $postSQL = "SELECT *
+              FROM nf_posts INNER JOIN nf_comments
+              ON (nf_posts.postid = nf_comments.postid)
+              WHERE nf_posts.postid = $postid ";
+
   $postResults = mysqli_query($conn, $postSQL) or die (mysqli_error($conn));
 
-  $posts = '';
+  $post = '';
 
   if (mysqli_num_rows($postResults) > 0){
-      // At least one row of technical issues
+
       while ($row = mysqli_fetch_assoc($postResults)) {
 
-          $forumid = $row['forumid'];
           $postid = $row['postid'];
-          $postcontent = $row['postcontent'];
-          $posttime = $row['posttime'];
+          $commentid = $row['commentid'];
+          $postcontent = $row ['postcontent'];
+          $commentcontent = $row['commentcontent'];
+
 
 
           $post.= <<<TABLE
               <tr>
-                  <td></td>
-                  <td><a href=Forum-post-individual.php?forumid={$forumid}&postid={$postid}>{$postcontent}</td>
-                  <td>$posttime.</td>
+
+                  <td>$commentcontent</td>
 
               </tr>
 TABLE;

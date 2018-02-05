@@ -24,22 +24,25 @@
           // For every issue in the database add th relevant HTML to a variable, which, will be echoed onto the page
           // if the event_Type is 1 then it will display Networking event
           if ($eventtype == 1) {
-              $eventtype = 'Networking event';
+              $eventtype = '<img src="img/event1.png" class="rating" title="Fresh" alt="Fresh" /> Networking event.';
           // if the event_Type is 1 then it will display Networking event
           } else if ($eventtype == 2) {
-              $eventtype = 'Workshop event';
+              $eventtype = '<img src="img/event.jpg" class="rating" title="Fresh" alt="Fresh" /> Workshop event.';
           }
+
+
+
 
           // need to retrive customer ID for the details page and not display is though
           $events .= <<<CONTENT
-              <section class= soft-box soft-box--padded wrapper>
-                  <h1><a href=meetup-details.php?eventid={$eventid} >{$eventname}</h1>
-                  <p>$eventdate.</p>
-                  <p>$eventlocation.</p>
-                  <p>$starttime.</p>
-                  <p>$endtime.</p>
-                  <p>$eventtype.</p>
 
+              <section class= soft-box soft-box--padded wrapper main flex-grid >
+                <article class= events-grid__row>
+                  $eventtype
+                    <h2 class= event-grid-3-1>
+                      <a href=meetup-details.php?eventid={$eventid}>{$eventname} </a>
+                      <br><p>$eventlocation</p>
+                </article
               </section>
 CONTENT;
         }

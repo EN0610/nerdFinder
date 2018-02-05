@@ -236,6 +236,55 @@ CONTAINERS
 .main{
     margin: 60px auto;
 }
+
+/*--------------------------
+events
+--------------------------*/
+
+.event-soft-box--padded{
+    padding: 40px;
+}
+.event-main{
+    margin: 60px auto;
+}
+.event-date {
+    float: right;
+}
+.event-soft-box{
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
+    margin-bottom: 25px;
+    width: 100%;
+    text-align: -moz-left;
+
+}
+.event-soft-box-content {
+    position: relative;
+    float: right;
+}
+.event-type {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
+    margin-bottom: 25px;
+    width: 100%;
+
+}
+img{
+height: 30%;
+}
+
+.event-grid-3-1 {
+    width: calc((100% - 120px) * 0.33);
+    float: right;
+    width: 33%;
+    margin-bottom: 0%;
+}
+.events-grid__row{
+    margin: 0 0 30px 0;
+}
+
 /*--------------------------
 CALL TO ACTIONS
 --------------------------*/

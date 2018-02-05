@@ -18,13 +18,23 @@
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
+
 <header class="header--big">
 <h1>Find Events</h1>
 </header>
-      <section class="wrapper_1 soft-box--padded ">
-      <?php echo($events);?>
-    </section>
 
+      <div class="wrapper_1 soft-box--padded main">
+      <?php echo($events);?>
+    </div>
+    <form action="scripts/add-event.php" method="post" class="flex-grid" name="event-form">
+        <section class="grid-2-1">
+            <input type="hidden" name="eventid" value="<?php echo($_SESSION['eventid']);?>">
+
+        </section>
+
+        <input class="button button--primary-green center-button" type="submit" name="add" value="add event">
+
+    </form>
 
     <?php require_once('elements/footer--big.php'); ?>
 </body>

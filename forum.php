@@ -26,9 +26,34 @@
     <table>
       <?php
 
-      echo($post);
+      echo($posts);
       ?>
     </table>
-    <?php require_once('elements/footer--big.php'); ?>
+    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 0)){
+        // user SIGNED IN
+    ?>
+    <section class = "soft-box soft-box--padded wrapper main">
+    <form class="flex-grid full-width-form" action="scripts/add-forum-post.php" method="post">
+
+  <input class="full-width-form__field" type="text" name="commentcontent" required placeholder="text"><br><br>
+
+  <input  class="full-width-form__field" type="date" name="posted" required placeholder="date"><br><br>
+
+  <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Data To Database">
+
+</form>
+</section>
+
+    <?php require_once('elements/footer--big.php');
+
+
+
+        }
+        else{
+            // NON ADMIN
+            echo('sign in');
+
+        }
+    ?>
 </body>
 </html>

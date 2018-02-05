@@ -10,7 +10,7 @@
   $eventSQL = "SELECT * FROM nf_events WHERE eventid = '$eventid'";
   $eventResults = mysqli_query($conn, $eventSQL) or die (mysqli_error($conn));
 
-  $eventdetails = '';
+
 
   if (mysqli_num_rows($eventResults) > 0){
       // At least one row of events
@@ -22,7 +22,7 @@
           $eventdate = $row['eventdate'];
           $eventlocation = $row['location'];
           $starttime = $row['starttime'];
-          $endtime = $row['eventname'];
+          $endtime = $row['endtime'];
           $eventtype = $row['eventtype'];
           // For every issue in the database add th relevant HTML to a variable, which, will be echoed onto the page
           // if the event_Type is 1 then it will display Networking event
@@ -34,19 +34,7 @@
           }
 
           // need to retrive customer ID for the details page and not display is though
-          $eventdetails .= <<<CONTENT
 
-
-                  <H1 class="header header--big header--small">$eventname.</H1>
-                  <p><span class="soft-box soft-box--padded main">$eventdate.</span></p>
-                  <p>$eventlocation.</p>
-                  <p>$eventdescription.</p>
-                  <p>$starttime.</p>
-                  <p>$endtime.</p>
-                  <p>$eventtype.</p>
-
-
-CONTENT;
         }
       }
 ?>
