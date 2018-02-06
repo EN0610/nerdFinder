@@ -381,6 +381,9 @@ input[type='checkbox']{
     -moz-appearance: checkbox;
     appearance: checkbox;
 }
+input[type='text']:disabled{
+    background: #F0F4F8;
+}
 select{
     width: 100%;
     background: #fff;
@@ -479,10 +482,6 @@ MESSAGES
 }
 .user-message:last-child{
     margin-bottom: 0;
-}
-.user-message .underline{
-    color: inherit;
-    border-bottom: 1px #fff solid;
 }
 /*--------------------------
 FOOTER
