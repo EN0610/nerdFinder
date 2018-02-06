@@ -1,6 +1,6 @@
 <?php
-	/* CREATED BY DALE */
+	/* CREATED BY JACK */
 
-	ini_set("session.save_path", "/wamp64/www/GitHub/sessionData");
+	ini_set("session.save_path", "/xampp/htdocs/xampp/sessionData");
 
 ?>
