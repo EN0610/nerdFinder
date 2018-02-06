@@ -98,3 +98,22 @@ CONVERSATION;
         //
         $messages = '<h2 class="grey-text--light center-text">No messages</h2>';
     }
+    /*--------------------------
+    NEW CONVERSATION / MESSAGE
+    --------------------------*/
+    $userDropdownSQL = "SELECT userid, firstname, lastname, username FROM nf_users ORDER BY firstname";
+    $userDropdownSQLResults = mysqli_query($conn, $userDropdownSQL) or die (mysqli_error($conn));
+    $usersDropDown = '';
+
+    if (mysqli_num_rows($userDropdownSQLResults) > 0){
+        // At least one row
+        while ($row = mysqli_fetch_assoc($userDropdownSQLResults)) {
+            //
+            $userid = $row['userid'];
+            $username = $row['username'];
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+
+            $usersDropDown .= "<option value='$userid'>$firstname $lastname ($username)</option>";            
+        }
+    }

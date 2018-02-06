@@ -63,7 +63,7 @@
                     <section class="flex-grid">
                         <article class="grid-1">
                             <h3>Refund amount</h3>
-                            <input class="full-width-form__field" type="number" name="amount" placeholder="£">
+                            <input class="full-width-form__field" type="number" name="amount" placeholder="£" required min="0">
                             <h3>User</h3>
                             <select class="full-width-form__field">
                                 <?php echo($usersDropDown);?>
@@ -71,15 +71,15 @@
                         </article>
                         <article class="grid-1">
                             <h3>Account number</h3>
-                            <input class="full-width-form__field" type="text" name="card-number">
+                            <input class="full-width-form__field" type="number" name="card-number" required min="0">
                             <h3>Name on card</h3>
-                            <input class="full-width-form__field" type="text" name="name">
+                            <input class="full-width-form__field" type="text" name="name" required>
                         </article>
                         <article class="grid-1">
                             <h3>Sort code</h3>
-                            <input class="full-width-form__field" type="text" name="security-code">
+                            <input class="full-width-form__field" type="text" name="security-code" required min="0">
                             <h3>Expiration Date</h3>
-                            <input class="full-width-form__field" type="month" name="expiration">
+                            <input class="full-width-form__field" type="month" name="expiration" required>
                         </article>
                         <input class="button button--primary-green" type="submit" value="Refund">
                     </section>
