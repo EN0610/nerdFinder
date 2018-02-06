@@ -128,7 +128,6 @@ MESSAGES LAYOUT
 .messages__button{
     position: fixed;
     bottom: 50px;
-    left: calc((100% / 6) - 87.5px);
     z-index: 1001;
 }
 .messages__grad{
@@ -158,5 +157,43 @@ MESSAGES LAYOUT
 @media all and (min-width: 1280px) {
     .wrapper--messages{
         left: calc((100% - 1265px) / 2); 
+    }
+    .messages__button{
+        left: calc(((100% - 1265px) / 2 ) + 148px)
+    }
+}
+@media all and (min-width: 900px) {
+    .messages__button{
+        left: calc((100% / 6) - 87.5px)
+    }
+}
+@media all and (max-width: 900px) {
+    .wrapper--messages{
+        position: static;
+        margin-top: 140px;
+    }
+    .side-panel{
+        width: 100%;
+        height: auto;
+        top: 0;
+        padding-bottom: 0;
+    }
+    .messages__button{
+        top: 167px;
+        right: 40px;
+        position: absolute;
+        z-index: 2;
+    }
+    .message-container{
+        width: 100%;
+        height: auto;
+        overflow: auto;
+    }
+    .modal{
+        width: 80%;
+        left: 10%;
+    }
+    .messages__grad{
+        display: none;
     }
 }

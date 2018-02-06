@@ -14,7 +14,7 @@
                 <p class="footer__heading">Account</p>
                 <ul>
                     <li class="footer__link"><a href="sign-up.php">Create account</a></li>
-                    <li class="footer__link"><a href="">Forgotten password</a></li>
+                    <li class="footer__link"><a href="forgotten-password.php">Forgotten password</a></li>
                     <li class="footer__link"><a href="go-premium.php">Go premium</a></li>
                     <li class="footer__link"><a href="sign-in.php">Sign in</a></li>
                 </ul>

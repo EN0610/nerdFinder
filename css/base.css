@@ -207,6 +207,7 @@ HEADERS
 .header{
     margin: 70px 0 0 0;
     width: 100%;
+    z-index: 50;
 }
 .header--big{
     padding-bottom: 100px;
@@ -616,6 +617,9 @@ MODAL
         margin: 0;
     }
     .nav__admin{
+        display: none;
+    }
+    .nav__button{
         display: none;
     }
     /*--------------------------
