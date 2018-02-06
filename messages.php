@@ -26,6 +26,7 @@
         <h1>Your messages</h1>
         <?php echo($conversations);?>
         <span class="button button--primary-green messages__button">New message</span>
+        <div class="messages__grad"></div>
     </aside><!--
  --><section class="message-container">
         <article class="message-container__messages">
