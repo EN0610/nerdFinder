@@ -9,7 +9,6 @@
     require_once('set-environment.php');
     // Connecting to the Database
     require_once('database-connection.php');
-
     // Getting user's ID
     $userid1 = $_SESSION['userid'];
     // Getting receiver ID
@@ -39,5 +38,7 @@
 
     $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
     //
+    mysqli_close($conn);
+    
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

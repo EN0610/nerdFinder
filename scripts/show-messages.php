@@ -28,7 +28,7 @@
                          FROM nf_messages INNER JOIN nf_users
                          ON (nf_messages.recieverid = nf_users.userid)
                          WHERE recieverid = $userid1 OR senderid = $userid1
-                         GROUP BY recieverid
+                         GROUP BY recieverid, senderid
                          ORDER BY messagesent DESC";
 
     $conversationsSqlResults = mysqli_query($conn, $conversationsSql) or die (mysqli_error($conn));
@@ -119,3 +119,5 @@ CONVERSATION;
             $usersDropDown .= "<option value='$userid'>$firstname $lastname ($username)</option>";            
         }
     }
+
+    mysqli_close($conn);

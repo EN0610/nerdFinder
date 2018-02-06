@@ -36,7 +36,7 @@
         $messageSent = date('Y-m-d H:i:s');
 
         $messageUserSql = "INSERT INTO nf_messages (senderid, recieverid, opened, messagecontent, messagesent)
-                           VALUES (13, $userid, 0, 'Your comment $commentcontent has been rejected due to inappropriate/ offensive content. Email admin@nerdfinder.com to appeal this action.', '$messageSent')";
+                           VALUES (13, $userid, 0, 'Your comment &#39;$commentcontent&#39; has been rejected due to inappropriate/ offensive content. Email admin@nerdfinder.com to appeal this action.', '$messageSent')";
 
         mysqli_query($conn, $messageUserSql) or die (mysqli_error($conn));
         // Changing the session variable of admin-feedback to approved

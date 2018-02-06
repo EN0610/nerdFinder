@@ -37,7 +37,7 @@
         $messageSent = date('Y-m-d H:i:s');
 
         $messageUserSql = "INSERT INTO nf_messages (senderid, recieverid, opened, messagecontent, messagesent)
-                           VALUES (13, $userid, 0, 'Your project $projectname has been approved and will now appear in searches for nerds', '$messageSent')";
+                           VALUES (13, $userid, 0, 'Your project &#39;$projectname&#39; has been approved and will now appear in searches for nerds', '$messageSent')";
 
         mysqli_query($conn, $messageUserSql) or die (mysqli_error($conn));
         // Changing the session variable of admin-feedback to approved
