@@ -1,8 +1,37 @@
 <?php
-    // Defining path to session data folder where all session data will be saved/found
-    require_once('scripts/session-save-path.php');
-    // Resuming current session
-    session_start();
+// Defining path to session data folder where all session data will be saved/found
+require_once('scripts/session-save-path.php');
+// Resuming current session
+session_start();
+// Setting the development enviroment to show errors
+require_once('scripts/set-environment.php');
+// Connecting to the Database
+require_once('scripts/database-connection.php');
+
+    $userid =  isset($_REQUEST['userid']) ? $_REQUEST['userid'] : 1;
+    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $userid = trim($userid);
+    // SQL using the ID in request stream to pull rest of project info from the Database
+    $sql = "SELECT * FROM nf_users WHERE userid = $userid";
+
+    $editprofile = mysqli_query($conn, $sql) or die (mysqli_error($conn));
+
+            while ($row =mysqli_fetch_assoc($editprofile)) {
+              $firstname = $row['firstname'];
+              $lastname = $row['lastname'];
+              $email = $row['email'];
+              $username = $row['username'];
+              $dob = $row['dob'];
+              $userpassword = $row['userpassword'];
+              $passwordhint = $row['passwordhint'];
+              $profilepic = $row['profilepic'];
+              $experience = $row['experience'];
+              $specialismid = $row['specialismid'];
+              $rate = $row['rate'];
+              $nerdcv = $row['nerdcv'];
+              $portfolioimg1 = $row['portfolioimg1'];
+            }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,9 +59,9 @@
   </section>
 
     <?php require_once('elements/nav.php'); ?>
-    <?php require_once('elements/footer--big.php');
+    <?php require_once('elements/footer--big.php');?>
     }
-      else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 3)){
+      <?php else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 3)){
             // CLIENT SIGNED IN
             require_once('elements/nav.php'); ?>
             <header class="header background-gradient">
@@ -42,46 +71,6 @@
             </header>
             <section class="soft-box soft-box--padded wrapper main">
               <?php
-              require_once('scripts/database-connection.php');	  // make db connection
-              // Check connection
-              if (!$conn) {
-                  die("Connection failed: " . mysqli_connect_error());
-              }
-
-              $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : 1;
-              $profilePicURL = $_SESSION['profilePicURL'];
-
-              $sql = "SELECT nf_users.userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, company, jobtitle, businessarea, nf_projects.projectid, nf_projects.clientid, nf_projects.projectname, nf_projects.projectdescription, nf_projects.budget, nf_projects.deadline
-              FROM nf_users
-              JOIN nf_projects
-              ON nf_users.userid=nf_projects.clientid
-              WHERE nf_users.userid = $userid";
-
-      $rsprofile = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
-      while ($row = mysqli_fetch_assoc($rsprofile)) {
-        $userid = $row['userid'];
-        $usertypeid = $row['usertypeid'];
-        $firstname = $row['firstname'];
-        $lastname = $row['lastname'];
-        $username = $row['username'];
-        $dob = $row['dob'];
-        $userpassword = $row['userpassword'];
-        $passwordhint = $row['passwordhint'];
-        $premium = $row['premium'];
-        $locked = $row['locked'];
-        $profilepic = $row['profilepic'];
-        $company = $row['company'];
-        $jobtitle = $row['jobtitle'];
-        $businessarea = $row['businessarea'];
-        $projectid = $row['projectid'];
-        $clientid = $row['clientid'];
-        $projectname = $row['projectname'];
-        $projectdescription = $row['projectdescription'];
-        $budget = $row['budget'];
-        $deadline = $row['deadline'];
-
-
         echo "<div class= \"nf_users\">\n";
         echo "<img class= \"nav__user-profile\" src=\"img/profile-pics/$profilePicURL\">\n";
         echo "<p><span class= \"firstname\">$firstname</span></p>\n";
@@ -93,20 +82,14 @@
         echo "<p><span class= \"budget\">$budget</span></p>\n";
         echo "<p><span class= \"deadline\">$deadline</span></p>\n";
         echo "</div>\n";
-      }
 
       mysqli_free_result($rsprofile);
       mysqli_close($conn);
       ?>
-            </section>
-
-            <section>
-
-            </section>
-            <?php require_once('elements/footer--big.php');
-        } else
+            <?php require_once('elements/footer--big.php'); ?>
+        } <?php else {
             // NON CLIENT OR NERD SIGNED IN
-            require_once('elements/nav.php');?>
+          require_once('elements/nav.php'); ?>
             <header class="header background-gradient">
                 <article class="wrapper">
                     <h1>Whoops!</h1>
@@ -117,5 +100,6 @@
                 <h2>Click the SIGN IN button in the navigation bar above and sign in with your Nerd or Client username to continue</h2>
             </section>
             <?php require_once('elements/footer--big.php');?>
+          }
 </body>
 </html>
