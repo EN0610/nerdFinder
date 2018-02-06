@@ -5,18 +5,6 @@
       die("Connection failed: " . mysqli_connect_error());
   }
 
-  // $firstname = $_POST['firstname'];
-  // $lastname = $_POST['lastname'];
-  // $email = $_POST['email'];
-  // $username = $_POST['username'];
-  // $dob = $_POST['dob'];
-  // $userpassword = $_POST['userpassword'];
-  // $passwordhint = $_POST['passwordhint'];
-  // $profilepic = $_POST['profilepic'];
-  // $company = $_POST['company'];
-  // $jobtitle = $_POST['jobtitle'];
-  // $businessarea = $_POST['businessarea'];
-
   /*----------------------------------------------------
   RETRIVING AND VALIDATING SIGN IN DATA
   ----------------------------------------------------*/
@@ -76,8 +64,7 @@
     'cost' => 11
   ));
 
-  function validateAge($dob, $age = 18)
-{
+  function validateAge($dob, $age = 18) {
     // $birthday can be UNIX_TIMESTAMP or just a string-date.
     if(is_string($dob)) {
         $dob = strtotime($dob);
@@ -90,7 +77,7 @@
     }
 
     return true;
-}
+  }
 
   $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, company, jobtitle, businessarea)
   VALUES (null, '3', '$firstname', '$lastname', '$email', '$username', '$dob', '$hashedpassword', '$passwordhint', '0', '0', '$profilepic', '$company', '$jobtitle', '$businessarea')";
