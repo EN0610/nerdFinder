@@ -25,22 +25,8 @@
       </section>
   </header>
   <section class="soft-box soft-box--padded wrapper main">
-      <h2>Nerd User</h2>
-              <article class="grid-1">
-                <!-- User Profile Picture -->
-              </article>
-              <article class="grid-1">
-                <!-- Username -->
-              </article>
-              <article class="grid-1">
-                <!-- User Specialiasm -->
-              </article>
-              <article class="grid-1">
-                <!-- Years of Experience -->
-              </article>
-              <article class="grid-1">
-                <!-- Hourly Rate -->
-              </article>
+    <a class="button button--primary-white" href="edit-profile-nerd.php">Edit Your Profile</a>&nbsp;&nbsp;
+
   </section>
 
     <?php require_once('elements/nav.php'); ?>
