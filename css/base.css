@@ -207,6 +207,7 @@ HEADERS
 .header{
     margin: 70px 0 0 0;
     width: 100%;
+    z-index: 50;
 }
 .header--big{
     padding-bottom: 100px;
@@ -228,6 +229,10 @@ HEADERS
 .grey-text--light{
     color: #D2DEEA;
     padding: 0 0 20px 0;
+}
+.center-heading{
+    text-align: center;
+    padding-bottom: 70px;
 }
 /*--------------------------
 CONTAINERS
@@ -447,19 +452,6 @@ textarea::placeholder{
     width: 100% !important;
     margin: 5px 0 5px 0 !important;
 }
-
-/*--------------------------
-MAIN COMPONTENTS
---------------------------*/
-.user-profile-name{
-    display: inline-block;
-    vertical-align: top;
-    font: 400 14px/70px 'Facit-Regular', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #414B6B;
-    margin: 0 0 0 5px;
-}
 /*--------------------------
 MESSAGES
 --------------------------*/
@@ -592,6 +584,25 @@ MODAL
     line-height: 32px;
     cursor: pointer;
 }
+/*--------------------------
+MISCELLANEOUS
+--------------------------*/
+.user-profile-name{
+    display: inline-block;
+    vertical-align: top;
+    font: 400 14px/70px 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #414B6B;
+    margin: 0 0 0 5px;
+}
+.icon-check{
+    color: #5AD6AD;
+    font-size: 50px;
+}
+.copyright--center{
+    margin-bottom: 60px;
+}
 @media all and (max-width: 900px) {
 
     .icon-menu{
@@ -616,6 +627,9 @@ MODAL
         margin: 0;
     }
     .nav__admin{
+        display: none;
+    }
+    .nav__button{
         display: none;
     }
     /*--------------------------

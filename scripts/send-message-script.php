@@ -1,4 +1,6 @@
 <?php
+    /* CREATED BY HARRY */
+    
     // Defining path to session data folder where all session data will be saved/found
     require_once('session-save-path.php');
     // Resuming current session
@@ -7,7 +9,6 @@
     require_once('set-environment.php');
     // Connecting to the Database
     require_once('database-connection.php');
-
     // Getting user's ID
     $userid1 = $_SESSION['userid'];
     // Getting receiver ID
@@ -37,5 +38,7 @@
 
     $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
     //
+    mysqli_close($conn);
+    
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

@@ -1,4 +1,6 @@
 <?php
+    /* CREATED BY HARRY */
+    
     // Defining path to session data folder where all session data will be saved/found
     require_once('scripts/session-save-path.php');
     // Resuming current session
