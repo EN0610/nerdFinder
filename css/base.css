@@ -480,6 +480,10 @@ MESSAGES
 .user-message:last-child{
     margin-bottom: 0;
 }
+.user-message .underline{
+    color: inherit;
+    border-bottom: 1px #fff solid;
+}
 /*--------------------------
 FOOTER
 --------------------------*/
@@ -596,7 +600,7 @@ MISCELLANEOUS
     color: #414B6B;
     margin: 0 0 0 5px;
 }
-.icon-check{
+.icon-check--big{
     color: #5AD6AD;
     font-size: 50px;
     display: block;
@@ -604,10 +608,6 @@ MISCELLANEOUS
 }
 .copyright--center{
     margin-bottom: 60px;
-}
-.message-container__messages .underline{
-    border-bottom: 1px #fff solid;
-    color: #fff;
 }
 .interest-message a:visited, .interest-message a:active{
     color: inherit;

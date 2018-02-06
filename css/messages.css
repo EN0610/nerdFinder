@@ -48,9 +48,6 @@ MESSAGES LAYOUT
     display: block;
     border-top: solid 1px #F0F4F8;
 }
-.conversation:last-child{
-    border-bottom: solid 1px #F0F4F8;
-}
 .side-panel__conversation:hover{
     background: #F6F8FA;
 }

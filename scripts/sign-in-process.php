@@ -90,7 +90,7 @@
                 $_SESSION['userType'] = 3;
             }
             // Redirecting user back to homepage as signed in
-            header('Location: ../profile.php?userid=$userid');
+            header('Location: ../profile.php?userid=' . $userid);
 
         } else{
             // Username correct but password incorrect
