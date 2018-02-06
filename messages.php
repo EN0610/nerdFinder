@@ -25,6 +25,7 @@
     <aside class="side-panel shadow--dark">
         <h1>Your messages</h1>
         <?php echo($conversations);?>
+        <span class="button button--primary-green messages__button">New message</span>
     </aside><!--
  --><section class="message-container">
         <article class="message-container__messages">
@@ -35,6 +36,22 @@
          --><span class="icon-arrow-up-circle message-container__submit" onclick="document.getElementById('send-message').submit();"></span>
         </form>
     </section>
+</section>
+<div class="overlay hide"></div>
+<section class="modal hide">
+    <span class="icon-exit-dark">
+        <?php echo file_get_contents("img/icon-exit-dark.svg"); ?>
+    </span>
+    <form class="modal__form" action="scripts/send-new-message-script.php" method="post">
+        <h3 class="modal__form-heading">New Message</h3>
+        <select name="recieverid">
+            <optgroup label="Send a message to:">
+                <?php echo($usersDropDown);?>
+            </optgroup>
+        </select><span class="icon-arrow-down select-icon select-icon--small"></span>
+        <textarea class="full-width-form__field modal__form-message" name="message" placeholder="Message" rows="4"></textarea>
+        <input class="button button--primary-green" type="submit" name="submit" value="Send">
+    </form>
 </section>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/messages.js"></script>
