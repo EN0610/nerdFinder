@@ -9,9 +9,6 @@ require_once('scripts/set-environment.php');
 require_once('scripts/database-connection.php');
 
     $userid = $_SESSION['userid'];
-    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
-    $userid = trim($userid);
     // SQL using the ID in request stream to pull rest of project info from the Database
     $sql = "SELECT * FROM nf_users WHERE userid = $userid";
 
