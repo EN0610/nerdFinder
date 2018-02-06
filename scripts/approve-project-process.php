@@ -55,5 +55,5 @@
 
     mysqli_close($conn);
     // Sending user back to the admin dashboard
-    header('Location: ../admin-dashboard.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

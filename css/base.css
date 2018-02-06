@@ -222,6 +222,13 @@ HEADERS
 .header__heading{
     padding-bottom: 50px;
 }
+.grey-text{
+    color: #5E7991;
+}
+.grey-text--light{
+    color: #D2DEEA;
+    padding: 0 0 20px 0;
+}
 /*--------------------------
 CONTAINERS
 --------------------------*/
@@ -349,8 +356,8 @@ input:focus, select:focus, textarea:focus{
 }
 input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea, input[type='number'], input[type='month'], input[type='email']{
     background: #fff;
-    border: solid 1px #F0F4F8;
-    border-radius: 20px;
+    border: solid 1px #F0F4F8 !important;
+    border-radius: 20px !important;
     width: calc(100% - 80px);
     margin: 0 auto;
     font: 400 14px/36px 'Facit-Regular', sans-serif;
@@ -460,16 +467,20 @@ MESSAGES
     color: #fff;
     padding: 8px 12px;
     border-radius: 10px;
-    width: 65%;
+    width: auto;
+    max-width: 65%;
     margin: 20px 0;
     font: 400 14px/22px 'Facit-Regular', sans-serif;
 }
 .user-message__sent{
     background: #5AD6AD;
+    float: left;
+    clear: both;
 }
 .user-message__recieved{
     background: #5E7991;
     margin-left: 35%;
+    float: right;
 }
 .user-message:first-child{
     margin-top: 0;
