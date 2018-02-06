@@ -30,7 +30,7 @@
           $post.= <<<TABLE
               <tr>
 
-                  <td>$commentcontent</td>
+                  <td class= wrapper>$commentcontent</td>
 
               </tr>
 TABLE;

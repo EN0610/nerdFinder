@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
@@ -23,19 +23,26 @@
 <h1>Find Events</h1>
 </header>
 
-      <div class="wrapper_1 soft-box--padded main">
+      <article class="wrapper_1 soft-box--padded main">
       <?php echo($events);?>
-    </div>
-    <form action="scripts/add-event.php" method="post" class="flex-grid" name="event-form">
-        <section class="grid-2-1">
-            <input type="hidden" name="eventid" value="<?php echo($_SESSION['eventid']);?>">
+    </article>
+    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] <= 3)){
+        // user SIGNED IN
+    ?>
+    <a href="add-event-page.php" class="button button--primary-green center-button">Add Event &raquo;</a>
 
-        </section>
 
-        <input class="button button--primary-green center-button" type="submit" name="add" value="add event">
+    <?php require_once('elements/footer--big.php');
 
-    </form>
 
-    <?php require_once('elements/footer--big.php'); ?>
+
+        }
+        else{
+            // NON ADMIN
+            echo('Not signed in to create question');
+
+        }
+        ?>
+
 </body>
 </html>

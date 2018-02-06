@@ -28,15 +28,17 @@
 
 
 
-          $posts.= <<<TABLE
-              <tr>
-                  <td></td>
-                  <td><a href=forum-post.php?postid={$postid}&forumid={$forumid} class="wrapper">{$postcontent}</td>
-                  <td>{$forumname}</td>
+          $posts.= <<<CONTENT
+                  <section class= "wrapper-forum main soft-box-forum">
+                    <article>
+                      <a href=forum-post.php?postid={$postid}&forumid={$forumid} class="wrapper">
+                        {$postcontent}
+                      </a><br>
+                        {$forumname}
+                    </article>
+                  </section>
 
-
-              </tr>
-TABLE;
+CONTENT;
         }
-      }
+      }"wrapper-forum main soft-box-forum"
 ?>

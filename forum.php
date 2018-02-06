@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
@@ -23,16 +23,16 @@
     <h1>Forum</h1>
     </article>
     </header>
-    <table>
+
       <?php
 
       echo($posts);
       ?>
-    </table>
-    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 0)){
+
+    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 1)){
         // user SIGNED IN
     ?>
-    <section class = "soft-box soft-box--padded wrapper main">
+    <section class = "soft-box soft-box--padded wrapper-forum main">
     <form class="flex-grid full-width-form" action="scripts/add-forum-post.php" method="post">
 
   <input class="full-width-form__field" type="text" name="commentcontent" required placeholder="text"><br><br>
@@ -51,7 +51,7 @@
         }
         else{
             // NON ADMIN
-            echo('sign in');
+            echo('Not signed in to create q');
 
         }
     ?>
