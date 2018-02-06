@@ -3,6 +3,7 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
+    require_once('scripts/project-search.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/user-box.css">
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
@@ -24,7 +26,6 @@
         </article>
     </header>
     <h3>Current projects on</h3>
-    <?php require_once('scripts/project-search.php'); ?>
     <?php echo($projects);?>
     <?php require_once('elements/footer--big.php'); ?>
 </body>

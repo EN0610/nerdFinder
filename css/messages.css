@@ -37,10 +37,15 @@ MESSAGES LAYOUT
     letter-spacing: 1px;
 }
 .side-panel__conversation{
-    border-top: solid 1px #F0F4F8;
     width: 100%;
     padding: 30px 60px;
-    cursor: pointer;
+}
+.conversation{
+    display: block;
+    border-top: solid 1px #F0F4F8;
+}
+.conversation:last-child{
+    border-bottom: solid 1px #F0F4F8;
 }
 .side-panel__conversation:hover{
     background: #F6F8FA;

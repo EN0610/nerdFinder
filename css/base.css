@@ -222,6 +222,13 @@ HEADERS
 .header__heading{
     padding-bottom: 50px;
 }
+.grey-text{
+    color: #5E7991;
+}
+.grey-text--light{
+    color: #D2DEEA;
+    padding: 0 0 20px 0;
+}
 /*--------------------------
 CONTAINERS
 --------------------------*/
@@ -460,16 +467,20 @@ MESSAGES
     color: #fff;
     padding: 8px 12px;
     border-radius: 10px;
-    width: 65%;
+    width: auto;
+    max-width: 65%;
     margin: 20px 0;
     font: 400 14px/22px 'Facit-Regular', sans-serif;
 }
 .user-message__sent{
     background: #5AD6AD;
+    float: left;
+    clear: both;
 }
 .user-message__recieved{
     background: #5E7991;
     margin-left: 35%;
+    float: right;
 }
 .user-message:first-child{
     margin-top: 0;
