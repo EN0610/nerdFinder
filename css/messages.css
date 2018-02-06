@@ -27,8 +27,9 @@ MESSAGES LAYOUT
     overflow-x: hidden;
     display: inline-block;
     vertical-align: top;
-    z-index: 1200;
+    z-index: 900;
     border-right: solid 1px #F0F4F8;
+    padding: 0 0 160px 0;
 }
 .side-panel h1{
     padding: 40px 60px 30px;
@@ -84,7 +85,7 @@ MESSAGES LAYOUT
     vertical-align: top;
     height: 100%;
     width: calc((100% / 3) * 2);
-    z-index: 1100;
+    z-index: 800;
 }
 .message-container__messages{
     padding: 40px;
@@ -123,6 +124,36 @@ MESSAGES LAYOUT
     color: #D2DEEA;
     width: 100%;
     border-top: solid 1px #F0F4F8;
+}
+.messages__button{
+    position: fixed;
+    bottom: 50px;
+    left: calc((100% / 6) - 87.5px);
+    z-index: 1001;
+}
+.messages__grad{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 
+    z-index: 1000;
+    width: calc(100% / 3);
+    height: 160px;
+    pointer-events: none;
+    background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+.modal__form{
+    width: 85%;
+}
+.modal__form-heading{
+    margin-bottom: 10px; 
+}
+.modal__form-message{
+    padding: 10px 20px;
+    line-height: 24px;
 }
 @media all and (min-width: 1280px) {
     .wrapper--messages{

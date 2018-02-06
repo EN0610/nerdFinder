@@ -80,7 +80,9 @@
                 <form id="control-user-form" action="scripts/control-user-process.php" method="post" class="padded-box--small admin-interface__text">
                     <p class="admin-interface__text">Choose user</p>
                     <select name="user">
-                        <?php echo($usersDropDown); ?>
+                        <optgroup label="Users">
+                            <?php echo($usersDropDown); ?>
+                        </optgroup>
                     </select><span class="icon-arrow-down select-icon"></span>
                     <input type="submit" class="text-link" name="lock" value="Lock">&nbsp;&nbsp;&nbsp;
                     <input type="submit" class="text-link" name="delete" value="Delete">
