@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
-    <title>Go premium | Nerd Finder</title>
+    <title>Congratulations | Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">

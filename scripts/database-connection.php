@@ -1,5 +1,5 @@
 <?php
-	/* CREATED BY JACK */
+	/* CREATED BY DALE */
 
     // connecting to the database
     $conn = mysqli_connect('localhost', 'root', '', 'NerdFinder');
