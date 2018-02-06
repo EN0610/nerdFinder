@@ -60,13 +60,13 @@
                     WHERE senderid = $userid1 AND recieverid = $userid2 OR senderid = $userid2 AND recieverid = $userid1
                     ORDER BY messagesent";
     
-    $messagesdropdownSQLResults = mysqli_query($conn, $messagesSQL) or die (mysqli_error($conn));
+    $messagesSQLResults = mysqli_query($conn, $messagesSQL) or die (mysqli_error($conn));
     
-    if (mysqli_num_rows($messagesdropdownSQLResults) > 0){
+    if (mysqli_num_rows($messagesSQLResults) > 0){
 
         $pageContent = '';
 
-        while ($row = mysqli_fetch_assoc($messagesdropdownSQLResults)) {
+        while ($row = mysqli_fetch_assoc($messagesSQLResults)) {
             // 
             $messagecontent = $row['messagecontent'];
             $recieverid = $row['recieverid'];

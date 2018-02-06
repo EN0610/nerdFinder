@@ -10,6 +10,11 @@
     // Connecting to the Database
     require_once('scripts/database-connection.php');
     // Pulling clicked on project from request stream AND validating
+    $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : 1;
+    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $userid = trim($userid);
+
     $projectid = isset($_REQUEST['projectid']) ? $_REQUEST['projectid'] : 1;
     $projectid = filter_var($projectid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $projectid = filter_var($projectid, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -61,7 +66,7 @@
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php'); ?>
-    <title><?php echo($projectname); ?> | Nerd Finder</title>
+    <title><?php echo($firstname); ?> | Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
@@ -90,7 +95,7 @@
             <input type="hidden" name="projectname" value="<?php echo($projectname);?>">
             <input type="hidden" name="clientid" value="<?php echo($userid); ?>">
             <input type="hidden" name="full-name" value="<?php echo($firstname . ' ' . $lastname);?>">
-            <input class="button button--primary-green" type="submit" value="Show interest">
+            <input class="button button--primary-green" type="submit" name="" value="Show interest">
         </form>
     </article>
     <aside class="grid-3-1">
@@ -107,7 +112,8 @@
         </article>
         <article class="grid__row">
             <h3>Budget</h3>
-            <p><?php echo('£' . $budget); ?></p>
+            <p><?php echo('£' . $budget); ?></p><br>
+            <a class="text-link" href="find-projects.php?specialismid=<?php echo($specialismid);?>"><?php echo('More ' . $specialismdesc . ' projects');?></a>
         </article>
     </aside>
 </section>

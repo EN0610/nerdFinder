@@ -1,4 +1,6 @@
 <?php
+    /* CREATED BY HARRY */
+    
     // Defining path to session data folder where all session data will be saved/found
     require_once('scripts/session-save-path.php');
     // Resuming current session
@@ -19,8 +21,8 @@
     <header class="header header--big">
         <article class="wrapper">
             <h1 class="header__heading grid-2">Hire experts to create your apps, websites, software &amp; games</h1>
-            <a class="button button--primary-white" href="">Hire Nerds</a>&nbsp;&nbsp;
-            <a class="button button--secondary-white" href="">Become a Nerd</a>
+            <a class="button button--primary-white" href="sign-up-client.php">Hire Nerds</a>&nbsp;&nbsp;
+            <a class="button button--secondary-white" href="sign-up-nerd.php">Become a Nerd</a>
         </article>
     </header>
     <section id="how-it-works">

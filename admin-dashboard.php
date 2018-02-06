@@ -79,7 +79,9 @@
                 <form id="lock-user-form" action="scripts/lock-user-process.php" method="post" class="padded-box--small admin-interface__text">
                     <p class="admin-interface__text">Choose user</p>
                     <select name="user">
-                        <?php echo($usersDropDown); ?>
+                        <optgroup label="Users">
+                            <?php echo($usersDropDown); ?>
+                        </optgroup>
                     </select><span class="icon-arrow-down select-icon"></span>
                     <a class="text-link" onclick="document.getElementById('lock-user-form').submit();">Lock</a>&nbsp;&nbsp;&nbsp;
                     <a class="text-link" href="mailto:devteam@nerdfinder.com?Subject=Delete%20User%20Account">Delete</a>

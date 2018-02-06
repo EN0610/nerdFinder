@@ -1,5 +1,6 @@
 <?php
 	/* CREATED BY HARRY */
+    
 	// Defining path to session data folder where all session data will be saved/found
     require_once('session-save-path.php');
     // Resuming current session
@@ -39,5 +40,5 @@
 
     mysqli_close($conn);
     // Sending user back to the admin dashboard
-    header('Location: ../admin-manage-events.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

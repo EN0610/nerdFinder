@@ -1,4 +1,6 @@
 <?php
+    /* CREATED BY HARRY */
+    
     // Defining path to session data folder where all session data will be saved/found
     require_once('scripts/session-save-path.php');
     // Resuming current session
@@ -35,7 +37,7 @@
 <body>
     <div class="flex-grid">
         <article class="grid-1 shadow--light">
-            <div class="nerd-finder-logo"><?php echo file_get_contents("img/Nerd-Finder-Logo.svg"); ?></div>
+            <div class="nerd-finder-logo"><a href="index.php"><?php echo file_get_contents("img/Nerd-Finder-Logo.svg"); ?></a></div>
             <form action="scripts/sign-in-process.php" method="post">
                 <h3>Username</h3>
                 <input type="text" name="username" value="<?php echo($username);?>">

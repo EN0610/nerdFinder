@@ -1,6 +1,5 @@
 <?php 
-
-/* CREATED BY HARRY */
+    /* CREATED BY HARRY */
     
     // Defining path to session data folder where all session data will be saved/found
     require_once('session-save-path.php');
