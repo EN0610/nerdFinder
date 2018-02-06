@@ -48,7 +48,7 @@
                   die("Connection failed: " . mysqli_connect_error());
               }
 
-              $userid = $_SESSION['userid'];
+              $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : 1;
               $profilePicURL = $_SESSION['profilePicURL'];
 
               $sql = "SELECT nf_users.userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, company, jobtitle, businessarea, nf_projects.projectid, nf_projects.clientid, nf_projects.projectname, nf_projects.projectdescription, nf_projects.budget, nf_projects.deadline
@@ -98,6 +98,10 @@
       mysqli_free_result($rsprofile);
       mysqli_close($conn);
       ?>
+            </section>
+
+            <section>
+
             </section>
             <?php require_once('elements/footer--big.php');
         } else
