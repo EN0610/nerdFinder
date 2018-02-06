@@ -41,6 +41,9 @@ MESSAGES LAYOUT
     width: 100%;
     padding: 30px 60px;
 }
+.side-panel__conversation a:visited{
+    color: inherit;
+}
 .conversation{
     display: block;
     border-top: solid 1px #F0F4F8;

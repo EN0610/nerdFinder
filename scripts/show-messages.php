@@ -49,6 +49,7 @@
             } else{
                 $background = '';
             }
+            
             if ($recieverid != $userid1) {
 
                 $conversations .= <<<CONVERSATION

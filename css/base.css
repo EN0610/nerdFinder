@@ -599,10 +599,22 @@ MISCELLANEOUS
 .icon-check{
     color: #5AD6AD;
     font-size: 50px;
+    display: block;
+    margin-bottom: 20px;
 }
 .copyright--center{
     margin-bottom: 60px;
 }
+.message-container__messages .underline{
+    border-bottom: 1px #fff solid;
+    color: #fff;
+}
+.interest-message a:visited, .interest-message a:active{
+    color: inherit;
+}
+/*--------------------------
+MEDIA QUERIES
+--------------------------*/
 @media all and (max-width: 900px) {
 
     .icon-menu{
