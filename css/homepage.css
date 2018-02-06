@@ -1,0 +1,51 @@
+/*--------------------------
+GLOBAL LAYOUT
+--------------------------*/
+hr{
+    background: #5E7991;
+    border: none;
+    height: 3px;
+    width: 80px;
+    margin: 30px auto 60px;
+}
+#case-study{
+    color: #fff;
+}
+#case-study hr{
+    background: #fff;
+}
+#case-study{
+    background: #ff9673 url('../img/case-study.jpg');
+    background-size: cover;
+}
+.white{
+    background: #fff;
+}
+.band{
+    padding: 60px 0 90px;
+}
+.headline{
+    color: #fff;
+    margin: 0 0 80px 0;
+    font-size: 36px;
+    line-height: 56px;
+}
+.callout{
+    color: #fff;
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: right;
+    width: 60%;
+    position: relative;
+    top: 20px;
+}
+.headline__container{
+    display: inline-block;
+    width: 40%;
+}
+.shoutout{
+    font: 600 64px/82px 'Facit-Semibold', sans-serif;
+    letter-spacing: 2px;
+    color: #5E7991;
+    margin: 0 0 60px 0;
+}
