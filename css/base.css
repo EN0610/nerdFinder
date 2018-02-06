@@ -361,8 +361,8 @@ input:focus, select:focus, textarea:focus{
 }
 input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea, input[type='number'], input[type='month'], input[type='email']{
     background: #fff;
-    border: solid 1px #F0F4F8;
-    border-radius: 20px;
+    border: solid 1px #F0F4F8 !important;
+    border-radius: 20px !important;
     width: calc(100% - 80px);
     margin: 0 auto;
     font: 400 14px/36px 'Facit-Regular', sans-serif;

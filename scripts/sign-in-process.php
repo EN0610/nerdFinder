@@ -98,7 +98,7 @@
             $_SESSION['errorMessage'] = 'Incorrect password';
             // PASSWORD HINT
             header('Location: ' . $_SERVER['HTTP_REFERER']);
-        }
+        } 
 
     } else{
         // Username not correct
