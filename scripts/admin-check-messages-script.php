@@ -11,8 +11,8 @@
         $userid1 = $_SESSION['admin-message-userid1'];
         $userid2 = $_SESSION['admin-message-userid2'];
     } else{
-        $userid1 = 7;
-        $userid2 = 6;
+        $userid1 = 1;
+        $userid2 = 2;
     }
     /*----------------------------------------------------
     POPULATING THE DROP DOWNS
@@ -54,10 +54,6 @@
     /*----------------------------------------------------
     DISPLAYING MESSAGES
     ----------------------------------------------------*/
-    if ($userid1 == $userid2) {
-        // Sender and reciever are the same user
-        $pageContent = '<h2>Sender a reciever are same user</h2>';
-    }
     // SQL for showing any messages from users
     $messagesSQL = "SELECT messagecontent, messagesent, firstname, lastname, username, senderid, recieverid
                     FROM nf_messages INNER JOIN nf_users ON (nf_messages.senderid = nf_users.userid)
@@ -86,7 +82,13 @@
             }
         }
     } else{
-        // Users selected have not messaged each other before
-        $pageContent = '<h2 class="light-grey-text">No messages between selected users</h2>';
+
+        if ($userid1 == $userid2) {
+        // Sender and reciever are the same user
+        $pageContent = '<h2 class="light-grey-text">Sender a reciever are same user</h2>';
+        } else{
+            // Users selected have not messaged each other before
+            $pageContent = '<h2 class="light-grey-text">No messages between selected users</h2>';
+        }
     }
 ?>

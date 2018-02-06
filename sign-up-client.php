@@ -15,45 +15,107 @@
     <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-  <?php require_once('elements/nav.php'); ?>
   <header class="header background-gradient">
-    <article class="wrapper">
-      <h1>Sign up</h1>
-      <h3>Save money and improve your business</h3>
-    </article>
+      <article class="wrapper">
+          <h1>Sign up</h1>
+          <h4>Work on amazing projects</h4>
+      </article>
   </header>
-
-  <section class="soft-box soft-box--padded wrapper main">
+  <section class="wrapper main">
+      <form action="scripts/sign-up-process-client.php" method="post" class="flex-grid">
+          <section class = "soft-box soft-box--padded grid-3-1--small">
+              <aside>
+                  <h2 class="full-width-form__heading">Profile</h2>
+                  <h3>Username</h3>
+                  <input class="full-width-form__field" type="text" name="username" id="username" required  accesskey="1" tabindex="1">
+                  <h3>Email</h3>
+                  <input class="full-width-form__field" type="email" name="email" id="email" required  accesskey="2" tabindex="2">
+                  <h3>Password</h3>
+                  <input class="full-width-form__field" type="password" name="userpassword" id="userpassword" required  accesskey="3" tabindex="3">
+                  <h3>Password Hint</h3>
+                  <input class="full-width-form__field"type="text" name="passwordhint" id="passwordhint" required accesskey="4" tabindex="4">
+                  <h3>DOB</h3>
+                  <input class="full-width-form__field" type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
+              </aside>
+          </section>
+          <section class="soft-box soft-box--padded grid-3-2--small">
+              <h2 class="full-width-form__heading">About you</h2>
+              <h3>Profile picture</h3>
+              <img class="user-profile" src="img/profile-pics/no-image.jpg" alt="Profile Picture">
+              <input type="file" name="profilepic" id="profilepic" accesskey="6" tabindex="6" value="Browse">
+              <article class="flex-grid">
+                  <aside class="grid-2-1">
+                      <h3>Firstname</h3>
+                      <input class="full-width-form__field" type="text" name="firstname" id="firstname" required  accesskey="7" tabindex="7">
+                      <h3>Company</h3>
+                      <input class="full-width-form__field" type="text" name="company" id="company" accesskey="9" tabindex="9">
+                      <h3>Job Title</h3>
+                      <input class="full-width-form__field" type="text" name="jobtitle" id="jobtitle" accesskey="11" tabindex="11">
+                  </aside>
+                  <aside class="grid-2-1">
+                      <h3>Lastname</h3>
+                      <input class="full-width-form__field" type="text" name="lastname" id="lastname" required  accesskey="8" tabindex="8">
+                      <h3>business Area</h3>
+                      <input type="text" name="businessarea" id="businessarea" accesskey="10" tabindex="10">
+                  </aside>
+              </article>
+              <input type="checkbox" name="terms"><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
+              <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="12" tabindex="12">
+          </section>
+      </form>
+  </section>
+    <!-- <section class="wrapper main">
     <form id = "feedback" action="scripts/sign-up-process-client.php" method="post">
-      <h3>Profile</h3>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required  accesskey="1" tabindex="1">
-      <label for="userpassword">Password</label>
-      <input type="text" name="userpassword" id="userpassword" required  accesskey="2" tabindex="2">
-      <label for="passwordhint">Password Hint</label>
-      <input type="text" name="passwordhint" id="passwordhint" accesskey="3" tabindex="3">
-      <label for="dob">DATE OF BIRTH</label>
-      <input type="date" name="dob" id="dob" accesskey="4" tabindex="4">
-  </section>
+    <section>
+    <fieldset>
+      <section class = "soft-box soft-box--padded wrapper main">
+        <h2>Profile</h2>
 
-  <section class="soft-box soft-box--padded wrapper main">
-    <h3>About you</h3>
-    <label for="profilepic">Profile Picture</label>
-    <input type="file" name="profilepic" id="profilepic" accesskey="5" tabindex="5">
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" id="firstname" required  accesskey="6" tabindex="6">
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname" required  accesskey="7" tabindex="7">
-    <label for="company">Company</label>
-    <input type="text" name="company" id="company" accesskey="8" tabindex="8">
-    <label for="jobtitle">Job Title</label>
-    <input type="text" name="jobtitle" id="jobtitle" accesskey="9" tabindex="9">
-    <label for="businessarea">Business Area</label>
-    <input type="text" name="businessarea" id="businessarea" accesskey="10" tabindex="10">
+        <h3>Username</h3>
+        <input type="text" name="username" id="username" required  accesskey="4" tabindex="4">
 
-    <input type="submit" value="HIRE NERDS" class="button button--primary-green center-button" accesskey="6" tabindex="6">
+        <h3>Email</h3>
+        <input type="email" name="email" id="email" required  accesskey="3" tabindex="3">
+
+        <h3>Password</h3>
+        <input type="password" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
+
+        <h3>Password Hint</h3>
+        <input type="text" name="passwordhint" id="passwordhint" required accesskey="7" tabindex="7">
+
+        <h3>DOB</h3>
+        <input type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
+      </section>
+
+      <section class = "soft-box soft-box--padded wrapper main">
+        <h3>Firstname</h3>
+        <input type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
+
+        <h3>Lastname</h3>
+        <input type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
+
+        <h3>Profile picture</h3>
+        <img class = "nav__user-profile" src="img/profile-pics/no-image.jpg" alt="Profile Picture">
+        <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8">
+
+        <h3>Company</h3>
+        <input type="text" name="company" id="company" accesskey="9" tabindex="9">
+
+        <h3>Job Title</h3>
+        <input type="text" name="jobtitle" id="jobtitle" accesskey="10" tabindex="10">
+
+        <h3>business Area</h3>
+        <input type="text" name="businessarea" id="businessarea" accesskey="11" tabindex="11">
+
+        <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="12" tabindex="12">
+      </section>
+    </fieldset>
+    </section>
+
     </form>
-  </section>
-  <?php require_once('elements/footer--big.php'); ?>
+  </section> -->
+
+    <?php require_once('elements/nav.php'); ?>
+    <?php require_once('elements/footer--small.php'); ?>
 </body>
 </html>
