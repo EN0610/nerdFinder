@@ -90,7 +90,7 @@
             <input type="hidden" name="projectname" value="<?php echo($projectname);?>">
             <input type="hidden" name="clientid" value="<?php echo($userid); ?>">
             <input type="hidden" name="full-name" value="<?php echo($firstname . ' ' . $lastname);?>">
-            <input class="button button--primary-green" type="submit" name="" value="Show interest">
+            <input class="button button--primary-green" type="submit" value="Show interest">
         </form>
     </article>
     <aside class="grid-3-1">
@@ -107,8 +107,7 @@
         </article>
         <article class="grid__row">
             <h3>Budget</h3>
-            <p><?php echo('£' . $budget); ?></p><br>
-            <a class="text-link" href="find-projects.php?specialismid=<?php echo($specialismid);?>"><?php echo('More ' . $specialismdesc . ' projects');?></a>
+            <p><?php echo('£' . $budget); ?></p>
         </article>
     </aside>
 </section>

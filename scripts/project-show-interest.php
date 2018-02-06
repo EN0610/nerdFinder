@@ -2,13 +2,13 @@
 	/* CREATED BY HARRY */
 
 	// Defining path to session data folder where all session data will be saved/found
-    require_once('scripts/session-save-path.php');
+    require_once('session-save-path.php');
     // Resuming current session
     session_start();
     // Setting the development enviroment to show errors
-    require_once('scripts/set-environment.php');
+    require_once('set-environment.php');
     // Connecting to the Database
-    require_once('scripts/database-connection.php');
+    require_once('database-connection.php');
     /*--------------------------
     PULLING DATA FROM FORM
     --------------------------*/
@@ -29,16 +29,20 @@
     $projectname = trim($projectname);
     $clientid = trim($clientid);
     $fullName = trim($fullName);
+
     /*--------------------------
     MESSAGE TO SHOW INTEREST
     --------------------------*/
+
     // Getting user's ID
     $userid = $_SESSION['userid'];
 
-    $message = 'Hi $fullName, I&#39;m interested in your project &#39;$projectname&#39;. Message me from my profile <a href="profile.php?userid=$userid" class="text-link"></a> if you want to work with me';
+    $message = 'Hi ' . $fullName . ', I am interested in your project (' . $projectname . '). Message me from <a href="profile.php?userid=' . $userid . '" class="underline">my profile</a> if you want to work with me.';
+
 	/*--------------------------
     MAKING CURRENT TIME
     --------------------------*/
+    
     date_default_timezone_set('Europe/London');
     $currentTime = date('Y-m-d H:i:s');
 
@@ -47,5 +51,7 @@
 
     $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 
-    header('Location: ');
+    mysqli_close($conn);
+
+    header('Location: ../project-interest-shown.php?message=' . $message . '&projectid=' . $projectid);
 ?>
