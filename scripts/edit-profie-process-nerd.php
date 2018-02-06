@@ -25,10 +25,10 @@
     'cost' => 11
   ));
 
-  $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, experience, hourlyrate, nerdcv, portfolioimg1, specialismid)
-  VALUES (null, '2', '$firstname', '$lastname', '$email', '$username', '$dob', '$hashedpassword', '$passwordhint', '0', '0', '$profilepic', '$experience', '$rate', '$nerdcv', '$portfolioimg1', '$specialismid')";
+  $sql = "UPDATE nf_users SET firstname=$firstname, lastname=$lastname, email=$email, username=$username, dob=$dob, userpassword=$userpassword, passwordhint=$passwordhint, profilepic=$profilepic, experience=$experience, hourlyrate=$rate, nerdcv=$nerdcv, portfolioimg1=$portfolioimg1, specialismid=$specialismid)
+          WHERE userid=$userid";
   if (mysqli_query($conn, $sql)) {
-      header('Location: ../congratulations.php');
+      header('Location: ../profile.php');
   } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }

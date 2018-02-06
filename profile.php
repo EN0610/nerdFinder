@@ -32,12 +32,12 @@
     <?php require_once('elements/nav.php'); ?>
     <?php require_once('elements/footer--big.php');
     }
-      else {
-            // NON NERD OR CLIENT
+      else if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 3)){
+            // CLIENT SIGNED IN
             require_once('elements/nav.php'); ?>
             <header class="header background-gradient">
                 <article class="wrapper">
-                    <h1>Whoops!</h1>
+                    <h1>client!</h1>
                     <h4>You must be signed in to access this page</h4>
                 </article>
             </header>
@@ -46,9 +46,18 @@
 
             </section>
             <?php require_once('elements/footer--big.php');
-            echo('<h2 class="center-text sign-in-required">You must be signed in as a Nerd or a Client to access this page</h2><p class="center-text">Click the SIGN IN button in the navigation bar above and sign in with your Nerd or Client username to continue</p>');
-        }
-            ?>
-
+        } else
+            // NON CLIENT OR NERD SIGNED IN
+            require_once('elements/nav.php');?>
+            <header class="header background-gradient">
+                <article class="wrapper">
+                    <h1>Whoops!</h1>
+                    <h4>You must be signed in to access this page</h4>
+                </article>
+            </header>
+            <section class="soft-box soft-box--padded wrapper main">
+                <h2>Click the SIGN IN button in the navigation bar above and sign in with your Nerd or Client username to continue</h2>
+            </section>
+            <?php require_once('elements/footer--big.php');?>
 </body>
 </html>

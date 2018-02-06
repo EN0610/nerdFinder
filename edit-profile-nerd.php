@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
-    <title>Sign up | Nerd Finder</title>
+    <title>Edit profile | Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -22,20 +22,20 @@
       </article>
     </header>
     <section class="wrapper main">
-        <form action="scripts/sign-up-process-nerd.php" method="post" class="flex-grid">
+        <form action="scripts/edit-profile-process-nerd.php" method="get" class="flex-grid">
             <section class = "soft-box soft-box--padded grid-3-1--small">
                 <aside>
                     <h2 class="full-width-form__heading">Your details</h2>
                     <h3>Username</h3>
-                    <input class="full-width-form__field" type="text" name="username" id="username" required  accesskey="4" tabindex="4">
+                    <input class="full-width-form__field" type="text" name="username" id="username" accesskey="4" tabindex="4" disabled>
                     <h3>Email</h3>
-                    <input class="full-width-form__field" type="email" name="email" id="email" required  accesskey="3" tabindex="3">
+                    <input class="full-width-form__field" type="email" name="email" id="email" accesskey="3" tabindex="3">
                     <h3>Password</h3>
-                    <input class="full-width-form__field" type="password" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
+                    <input class="full-width-form__field" type="password" name="userpassword" id="userpassword" accesskey="6" tabindex="6">
                     <h3>Password Hint</h3>
-                    <input class="full-width-form__field"type="text" name="passwordhint" id="passwordhint" required accesskey="7" tabindex="7">
+                    <input class="full-width-form__field"type="text" name="passwordhint" id="passwordhint" accesskey="7" tabindex="7">
                     <h3>DOB</h3>
-                    <input class="full-width-form__field" type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
+                    <input class="full-width-form__field" type="date" name="dob" id="dob" accesskey="5" tabindex="5">
                 </aside>
             </section>
             <section class="soft-box soft-box--padded grid-3-2--small">
@@ -46,11 +46,11 @@
                 <article class="flex-grid">
                     <aside class="grid-2-1">
                         <h3>Firstname</h3>
-                        <input class="full-width-form__field" type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
+                        <input class="full-width-form__field" type="text" name="firstname" id="firstname" accesskey="1" tabindex="1">
                         <h3>Years of experience</h3>
                         <input class="full-width-form__field" type="number" name="experience" id="experience" accesskey="9" tabindex="9" min="0">
                         <h3>Specialism</h3>
-                        <select class="full-width-form__field" name="specialismid" required>
+                        <select class="full-width-form__field" name="specialismid">
                             <option value="1">Websites</option>
                             <option value="2">Mobile Apps</option>
                             <option value="3">Tablet Apps</option>
@@ -61,7 +61,7 @@
                     </aside>
                     <aside class="grid-2-1">
                         <h3>Lastname</h3>
-                        <input class="full-width-form__field" type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
+                        <input class="full-width-form__field" type="text" name="lastname" id="lastname" accesskey="2" tabindex="2">
                         <h3>Upload CV</h3>
                         <input class="full-width-form__field" type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11" value="Browse">
                         <h3>Portfolio images</h3>
@@ -71,8 +71,7 @@
 
                     </aside>
                 </article>
-                <input type="checkbox" name="terms"><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
-                <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="12" tabindex="12">
+                <input type="submit" value="SAVE CHANGES" class="button button--primary-green center-button" accesskey="12" tabindex="12">
             </section>
         </form>
     </section>
