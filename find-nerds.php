@@ -37,7 +37,7 @@
         <input id="checkBox1" type="checkbox" name="Software">
     </form>
     <h3> <br> </h3>
-    <section class="">
+    <section class="wrapper-box">
         <?php echo $nerds ;?>
     </section>
     <?php require_once('elements/footer--big.php'); ?>
