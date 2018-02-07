@@ -369,7 +369,7 @@ input[type='text'], input[type='password'], input[type='date'], input[type='time
 input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea, input[type='number'], input[type='month'], input[type='email']{
 >>>>>>> 42504c15ed73dfbc886372ac76cfd8bd83caaf83
     background: #fff;
-    border: solid 1px #F0F4F8 !important;
+    border: solid 1px #F0F4F8;
     border-radius: 20px !important;
     width: calc(100% - 80px);
     margin: 0 auto;
@@ -388,6 +388,9 @@ input[type='checkbox']{
     -webkit-appearance: checkbox;
     -moz-appearance: checkbox;
     appearance: checkbox;
+}
+input[type='text']:disabled{
+    background: #F0F4F8;
 }
 select{
     width: 100%;
@@ -487,10 +490,6 @@ MESSAGES
 }
 .user-message:last-child{
     margin-bottom: 0;
-}
-.user-message .underline{
-    color: inherit;
-    border-bottom: 1px #fff solid;
 }
 /*--------------------------
 FOOTER

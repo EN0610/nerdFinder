@@ -67,7 +67,7 @@
                             <h3>User</h3>
                             <select class="full-width-form__field">
                                 <?php echo($usersDropDown);?>
-                            </select><span class="icon-arrow-down select-icon select-icon"></span>
+                            </select><span class="icon-arrow-down select-icon"></span>
                         </article>
                         <article class="grid-1">
                             <h3>Account number</h3>

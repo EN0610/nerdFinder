@@ -37,7 +37,7 @@
     // Getting user's ID
     $userid = $_SESSION['userid'];
 
-    $message = 'Hi ' . $fullName . ', I am interested in your project (' . $projectname . '). Message me from <a href="profile.php?userid=' . $userid . '" class="underline">my profile</a> if you want to work with me.';
+    $message = 'Hi ' . $fullName . ', I am interested in your project (' . $projectname . '). Message me from my profile at www.nerdfinder.com/profile.php?userid=' . $userid . ' if you want to work with me.';
 
 	/*--------------------------
     MAKING CURRENT TIME
