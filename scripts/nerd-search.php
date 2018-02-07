@@ -5,7 +5,8 @@ require_once('set-environment.php');
 require_once('database-connection.php');
 
 $nerdsql = "SELECT * 
-            FROM nf_users 
+            FROM nf_users INNER JOIN nf_specialismtypes
+            ON nf_users.specialismid = nf_specialismtypes.specialismid
             WHERE usertypeid = 2";
 
 $nerdResult = $conn->query($nerdsql);
@@ -19,25 +20,33 @@ if ($nerdResult->num_rows > 0) {
         $userid = $row["userid"];
         $firstname = $row["firstname"];
         $lastname = $row["lastname"];
+        $specialismdesc = $row["specialismdesc"];
         $profilepic = $row["profilepic"];
-        $exp = $row ["experience"];
-        $hourlyrate = $row ["hourlyrate"];
-        $portfolioImg1 = $row ["portfolioimg1"];
-        $portfolioImg2 = $row ["portfolioimg2"];
-        $portfolioImg3 = $row ["portfolioimg3"];
+        $exp = $row["experience"];
+        $hourlyrate = $row["hourlyrate"];
+        $portfolioImg1 = $row["portfolioimg1"];
+        $portfolioImg2 = $row["portfolioimg2"];
+        $portfolioImg3 = $row["portfolioimg3"];
+
+        $hourlyrate = substr($hourlyrate, 0, 2);
 
         $nerds .= <<<NERDS
 
-        <a href="profile.php?userid=$userid">
-            <article class="user-box">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
-                <img class="user-box_profilepic" src="img/profile-pics/$profilepic" alt="User Box Picture">
-                <h2 class="user-box_name">$firstname $lastname</h2>
-                <p class="user-box_experience"> $exp years experience</p>
-                <p class="user-box_hourlyrate"> £$hourlyrate/ph</p>
-                <div class="clearfix"></div>
+        <a href="profile.php?userid=$userid" class="user-box shadow--light">
+            <article>
+                <section>
+                    <img class="user-box__pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image"><!--
+                    --><img class="user-box__pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image"><!--
+                    --><img class="user-box__pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
+                </section>
+                <section class="user-box__wrapper">
+                    <article>
+                        <img class="user-box__profilepic" src="img/profile-pics/$profilepic" alt="User Box Picture">
+                        <h3 class="user-box__name">$firstname $lastname</h3>
+                    </article>
+                    <p class="user-box__experience"> $specialismdesc <br> $exp years experience</p><!--
+                    --><h2 class="user-box__rate">£$hourlyrate/ph</h2>
+                </section>
             </article>
         </a>
 NERDS;

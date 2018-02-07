@@ -636,10 +636,68 @@ MISCELLANEOUS
     margin-bottom: 0 !important;
 }
 /*--------------------------
+USER BOXES
+--------------------------*/
+.user-box{
+    background: #fff;
+    margin: 0 0 40px 0;
+    width: calc((100% - 80px) / 3);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.user-box:hover{
+    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.30);
+}
+.user-box__wrapper{
+    padding: 20px 30px;
+    width: 100%;
+}
+.user-box__pic{
+    width: calc(100% / 3);
+}
+.user-box__profilepic{
+    border-radius: 100%;
+    width: 40px;
+    display: inline-block;
+}
+.user-box__name{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 40px;
+    color: #414B6B;
+    margin-left: 15px;
+}
+.user-box__project-name{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 40px;
+    color: #414B6B;
+    height: 74px;
+}
+.user-box__rate{
+    font-size: 36px;
+    text-align: right;
+    width: 40%;
+    display: inline-block;
+    margin-top: 20px;
+}
+.user-box__experience{
+    width: 60%;
+    display: inline-block;
+    margin-top: 20px;
+}
+.user-box__details{
+    width: 100%;
+    margin: 20px 0;
+}
+/*--------------------------
 MEDIA QUERIES
 --------------------------*/
 @media all and (max-width: 900px) {
 
+    .user-box{
+        width: 100%;
+    }
     .icon-menu{
         display: inline-block;
         color: #414B6B;

@@ -28,8 +28,7 @@
           $starttime = $row['starttime'];
           $endtime = $row['endtime'];
           $eventtype = $row['eventtype'];
-          // For every issue in the database add th relevant HTML to a variable, which, will be echoed onto the page
-          // if the event_Type is 1 then it will display Networking event
+
           if ($eventtype == 1) {
               $eventtype = 'Networking event';
           // if the event_Type is 1 then it will display Networking event

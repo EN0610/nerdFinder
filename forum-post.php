@@ -6,6 +6,8 @@
 
     require_once('scripts/show-forum-post.php');
     require_once('scripts/add-forum-comments.php');
+
+    $postid = isset($_REQUEST['postid']) ? $_REQUEST['postid'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,27 +23,31 @@
     <?php require_once('elements/nav.php'); ?>
 
     <header class="background-gradient">
-    <br>
+
     <h1>  <?php
       echo ($postcontent);
-      ?></h1>
-    <br>
-    </header>
-      <?php
-      echo ($post);
       ?>
+    </h1>
 
-      <section class = "soft-box soft-box--padded wrapper main">
+  </header>
+
+  <section class="wrapper flex-grid">
+      <section class="sidebar grid-3-1--small soft-box--padded">
+        <h2>Add Comments</h2>
       <form class="flex-grid full-width-form" action="scripts/add-forum-comments.php" method="post">
 
-    <input class="full-width-form__field" type="text" name="commentcontent" required placeholder="text"><br><br>
+      <input class="full-width-form__field" type="text" name="commentcontent" required placeholder="Comment"><br><br>
+      <input type="hidden" value="<?php echo($postid);?>" name="postid">
+      <input  class="full-width-form__field" type="hidden" name="posted" value="<?php echo($currentTime);?>" required placeholder="Date"><br><br>
 
-    <input  class="full-width-form__field" type="date" name="posted" required placeholder="date"><br><br>
-
-    <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Data To Database">
-
-</form>
-</section>
+      <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Comment">
+      </form>
+      </section>
+      <section class="grid-3-2--small">
+  <?php
+      echo ($post);
+      ?>
+    </section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>

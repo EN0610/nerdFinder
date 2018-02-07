@@ -24,10 +24,10 @@
           // For every issue in the database add th relevant HTML to a variable, which, will be echoed onto the page
           // if the event_Type is 1 then it will display Networking event
           if ($eventtype == 1) {
-              $eventtype = '<img src="img/event1.png" class="rating" title="Fresh" alt="Fresh" /> Networking event.';
+              $eventtype = '<img src="img/events/Networking.jpg" class="rating" title="Fresh" alt="Fresh" /> Networking event.';
           // if the event_Type is 1 then it will display Networking event
           } else if ($eventtype == 2) {
-              $eventtype = '<img src="img/event.jpg" class="rating" title="Fresh" alt="Fresh" /> Workshop event.';
+              $eventtype = '<img src="img/events/Workshop.png" class="rating" title="Fresh" alt="Fresh" /> Workshop event.';
           }
 
 
@@ -35,19 +35,25 @@
 
           // need to retrive customer ID for the details page and not display is though
           $events .= <<<CONTENT
+            <a href=meetup-details.php?eventid={$eventid}>
+              <section class= "forum-soft-box ">
 
-              <section class= "main">
-                <article class= event-soft-box>
+                <div class="flex-grid full-width-form">
+                <div class= grid-1>
                     $eventtype
+                    </div>
                       <div class="grid-1">
-                        <a href=meetup-details.php?eventid={$eventid}>{$eventname} </a>
+                        <h2>{$eventname} </h2>
                       </div>
-                    <article class= grid-1>
-                      <p class=event-box_location>
-                        <br>$eventlocation
-                      </p>
-                </article>
+                    <div class= grid-1>
+                      <h4 class=event-box_location>
+                        $eventlocation
+                      </h4>
+                </div>
+                </div>
+
               </section>
+            </a>
 CONTENT;
         }
       }
