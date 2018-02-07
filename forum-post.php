@@ -22,7 +22,7 @@
     <?php require_once('elements/nav.php'); ?>
     <header class="header background-gradient">
         <article class="wrapper">
-          <h1 class="center-heading"><?php echo ($postcontent);?></h1>
+          <h1 class="center-heading"><?php echo($postcontent);?></h1>
         </article>
     </header>
 
