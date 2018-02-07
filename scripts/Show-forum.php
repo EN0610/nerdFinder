@@ -40,5 +40,5 @@
 
 CONTENT;
         }
-      }"wrapper-forum main soft-box-forum"
+      }
 ?>

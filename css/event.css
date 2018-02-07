@@ -260,50 +260,47 @@ forum
 /*--------------------------
 events
 --------------------------*/
+.event-soft-box {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 35px;
+    text-align: center;
+    background: white;
+
+}
 
 .event-soft-box--padded{
     padding: 40px;
 }
-.event-main{
-    margin: 60px auto;
-}
+
 .event-date {
     float: right;
 }
-.event-soft-box{
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
-    margin-bottom: 25px;
-    width: 100%;
-    text-align: -moz-left;
-
-}
-.event-soft-box-content {
-    position: relative;
-    float: right;
-}
-.event-type {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
-    margin-bottom: 25px;
-    width: 100%;
-
-}
-img{
-height: 30%;
+.event_wrapper{
+    max-width: 1145px;
+    margin: 0 auto;
 }
 
-.event-grid-3-1 {
-    width: calc((100% - 120px) * 0.33);
-    float: right;
-    width: 33%;
-    margin-bottom: 0%;
+.event-box_pic {
+    display: contents;
+    vertical-align: top;
+    font:  '120px', 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    color: #414B6B;
 }
-.events-grid__row{
-    margin: 0 0 30px 0;
+.event-box_location {
+    display: contents;
+    vertical-align: top;
+    font: 400 14px/70px 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    color: #414B6B;
 }
+
+
+
+
+
 
 /*--------------------------
 CALL TO ACTIONS

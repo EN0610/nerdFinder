@@ -41,10 +41,20 @@
         </article>
 
 </aside>
+<?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] = 3)){
+    // user SIGNED IN
+?>
 <form method="post"  action="scripts/attend-event.php">
     <input type="submit" name="submit" value="submt"/>
 </form>
+<?php
+}
+else{
+    // NON ADMIN
+    echo('Not signed in to create an event');
 
+}
+?>
 
 
 </section>

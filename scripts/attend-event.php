@@ -9,16 +9,16 @@ $eventid = isset($_REQUEST['eventid']) ? $_REQUEST['eventid'] : null;
 if(isset($_POST['submit']))
 {
 
-
-
-
     $query ="INSERT INTO nf_eventattendance (userid, eventid)
       VALUE (1, $eventid)";
 
 
-$sqlResults = mysqli_query($conn, $query) or die (mysqli_error($conn));
-}
-
-
+          if (mysqli_query($conn, $query)) {
+              header('Location: ../meetups.php');
+            } else {
+                echo "Error: " . $query . "<br>" . mysqli_error($conn);
+            }
+            mysqli_close($conn);
+      }
 
 ?>

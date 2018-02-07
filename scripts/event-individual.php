@@ -6,6 +6,10 @@
   require_once('database-connection.php');
 
   $eventid = isset($_REQUEST['eventid']) ? $_REQUEST['eventid'] : null;
+  $eventid = filter_var($eventid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  $eventid = filter_var($eventid, FILTER_SANITIZE_SPECIAL_CHARS);
+  $eventid = filter_var($eventid);
+  $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : NULL;
 
   $eventSQL = "SELECT * FROM nf_events WHERE eventid = '$eventid'";
   $eventResults = mysqli_query($conn, $eventSQL) or die (mysqli_error($conn));

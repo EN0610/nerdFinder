@@ -23,25 +23,27 @@
 <h1>Find Events</h1>
 </header>
 
-      <article class="wrapper_1 soft-box--padded main">
+
       <?php echo($events);?>
-    </article>
+  
     <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] <= 3)){
         // user SIGNED IN
     ?>
     <a href="add-event-page.php" class="button button--primary-green center-button">Add Event &raquo;</a>
 
 
-    <?php require_once('elements/footer--big.php');
+    <?php
 
 
 
         }
         else{
             // NON ADMIN
-            echo('Not signed in to create question');
+            echo('Not signed in to create an event');
 
         }
+        ?>
+        <?php require_once('elements/footer--big.php');
         ?>
 
 </body>

@@ -36,13 +36,17 @@
           // need to retrive customer ID for the details page and not display is though
           $events .= <<<CONTENT
 
-              <section class= soft-box soft-box--padded wrapper main flex-grid >
-                <article class= events-grid__row>
-                  $eventtype
-                    <h2 class= event-grid-3-1>
-                      <a href=meetup-details.php?eventid={$eventid}>{$eventname} </a>
-                      <br><p>$eventlocation</p>
-                </article
+              <section class= "main">
+                <article class= event-soft-box>
+                    $eventtype
+                      <div class="grid-1">
+                        <a href=meetup-details.php?eventid={$eventid}>{$eventname} </a>
+                      </div>
+                    <article class= grid-1>
+                      <p class=event-box_location>
+                        <br>$eventlocation
+                      </p>
+                </article>
               </section>
 CONTENT;
         }

@@ -6,8 +6,10 @@ include('database-connection.php');
 // php code to Insert data into mysql database from input text
 $postid = isset($_REQUEST['postid']) ? $_REQUEST['postid'] : null;
 $forumid = isset($_REQUEST['forumid']) ? $_REQUEST['forumid'] : null;
-
-
+$postid = filter_var($postid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+$forumid = filter_var($forumid, FILTER_SANITIZE_SPECIAL_CHARS);
+$postid = filter_var($postid);
+$forumid = filter_var($forumid);
 }
 if(isset($_POST['insert']))
 {

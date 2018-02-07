@@ -17,43 +17,35 @@
     <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
-    <?php require_once('elements/nav.php'); ?>
-    <header class="background-gradient">
+<?php require_once('elements/nav.php'); ?>
+        <header class="background-gradient">
+
     <article class="wrapper">
-    <h1>Forum</h1>
+        <h1>Forum</h1>
     </article>
     </header>
 
-      <?php
+      <?php echo($posts);?>
 
-      echo($posts);
-      ?>
-
-    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 1)){
-        // user SIGNED IN
+    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] = 1)){
+        //checking from the session, what usertype is and only displaying for 1 (admin)
     ?>
     <section class = "soft-box soft-box--padded wrapper-forum main">
-    <form class="flex-grid full-width-form" action="scripts/add-forum-post.php" method="post">
+      <form class="flex-grid full-width-form" action="scripts/add-forum-post.php" method="post">
+        <input class="full-width-form__field" type="text" name="postcontent" required placeholder="text"><br><br>
+        <input  class="full-width-form__field" type="date" name="posted" required placeholder="date"><br><br>
+        <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Data To Database">
+      </form>
+    </section>
 
-  <input class="full-width-form__field" type="text" name="commentcontent" required placeholder="text"><br><br>
-
-  <input  class="full-width-form__field" type="date" name="posted" required placeholder="date"><br><br>
-
-  <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Data To Database">
-
-</form>
-</section>
-
-    <?php require_once('elements/footer--big.php');
-
-
-
+    <?php
         }
         else{
-            // NON ADMIN
+            // For all users not signed in as the admin, this message will be displayed
             echo('Not signed in to create q');
-
-        }
+          }
     ?>
+
+    <?php require_once('elements/footer--big.php');?>
 </body>
 </html>
