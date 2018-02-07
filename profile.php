@@ -84,6 +84,51 @@ require_once('scripts/database-connection.php');
 
             }
 
+            // SQL using the ID in request stream to pull rest of project info from the Database
+            $projectSqlClient = "SELECT *
+                               FROM nf_projects INNER JOIN nf_users
+                               ON (nf_projects.clientid = nf_users.userid) INNER JOIN nf_specialismtypes
+                               ON (nf_projects.specialismid = nf_specialismtypes.specialismid)
+                               WHERE userid = $userid";
+
+            $projectSqlClientResults = mysqli_query($conn, $projectSqlClient) or die (mysqli_error($conn));
+
+            if (mysqli_num_rows($projectSqlClientResults) > 0) {
+
+                // Project found
+                while ($row = mysqli_fetch_assoc($projectSqlClientResults)) {
+                    // Project details
+                    $projectname = $row['projectname'];
+                    $specialismid = $row['specialismid'];
+                    $specialismdesc = $row['specialismdesc'];
+                    $projectdescription = $row['projectdescription'];
+                    $budget = $row['budget'];
+                    $deadline = $row['deadline'];
+                    $inspirationimg1 = $row['inspirationimg1'];
+                    $inspirationimg2 = $row['inspirationimg2'];
+                    $inspirationimg3 = $row['inspirationimg3'];
+                    // User details
+                    $userid = $row['clientid'];
+                    $firstname = $row['firstname'];
+                    $lastname = $row['lastname'];
+                    $username = $row['username'];
+                    $profilepic = $row['profilepic'];
+                    $company = $row['company'];
+                    $jobtitle = $row['jobtitle'];
+                }
+                if ($specialismdesc = 'Websites') {
+                    $specialismdesc = 'Website';
+
+                 } else if ($specialismdesc = 'Mobile apps') {
+                     $specialismdesc = 'Mobile app';
+                 } else if ($specialismdesc = 'Tablet apps') {
+                    $specialismdesc = 'Tablet app';
+                 }
+
+            } else {
+
+            }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -150,21 +195,27 @@ require_once('scripts/database-connection.php');
 CONTENT;
     } else if ($usertypeid == 3) {
     $profilepage = <<<CONTENT
-    <section class='wrapper main'>
-      <section class = 'soft-box soft-box--padded grid-3-1--small'>
-          <aside>
-            <h2 class='full-width-form__heading'>CLIENT USER</h2>
-            <img class="nav__user-profile" src=img/profile-pics/pedro-dacantus.jpg alt="Profile picture">
-            <h2>$firstname $lastname</h2>
-            <h3>$specialismid Specialist</h3>
-            <h3>with $experience Years of experience</h3>
-            <h3>HIRE for £$hourlyrate/hr</h3>
-            <a class="button button--secondary-red center-button" href="messages.php">MESSAGE</a>
-          </aside>
-      </section>
+        <h2 class="full-width-form__heading"NERD USER</h2>
+        <img class="nav__user-profile" src="img/profile-pics/$profilepic" alt="Profile picture">
+        <h2>$firstname $lastname</h2>
+        <h3>$jobtitle</h3>
+        <h3>at $company</h3>
+        <a class="button button--secondary-red center-button" href="messages.php">MESSAGE</a>
+      </aside>
     </section>
+
     <section>
-      <h3>CLIENT</h3>
+      <article class="grid-3-2">
+        <h3 class="grid__row">$specialismdesc project</h3>
+        <h2 class="grid__row">$projectname</h2>
+        <p class="grid__row">$projectdescription</p>
+        <h3 class="grid__row">Inspiration images</h3>
+      </article>
+      <article class="grid__row">
+        <img class="grid__row-image" src="img/projects/$inspirationimg1" alt="Project Inspiration Image 1">
+        <img class="grid__row-image" src="<?php echo(img/projects/$inspirationimg2" alt="Project Inspiration Image 2">
+        <img class="grid__row-image" src="<?php echo(img/projects/$inspirationimg3" alt="Project Inspiration Image 3">
+      </article>            
     </section>
 CONTENT;
   } echo($profilepage);
