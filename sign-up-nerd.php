@@ -27,13 +27,13 @@
                 <aside>
                     <h2 class="full-width-form__heading">Profile</h2>
                     <h3>Username</h3>
-                    <input class="full-width-form__field" type="text" name="username" id="username" required  accesskey="4" tabindex="4">
+                    <input class="full-width-form__field" type="text" name="username" id="username" required  accesskey="1" tabindex="1">
                     <h3>Email</h3>
-                    <input class="full-width-form__field" type="email" name="email" id="email" required  accesskey="3" tabindex="3">
+                    <input class="full-width-form__field" type="email" name="email" id="email" required  accesskey="2" tabindex="2">
                     <h3>Password</h3>
-                    <input class="full-width-form__field" type="password" name="userpassword" id="userpassword" required  accesskey="6" tabindex="6">
+                    <input class="full-width-form__field" type="password" name="userpassword" id="userpassword" required  accesskey="3" tabindex="3">
                     <h3>Password Hint</h3>
-                    <input class="full-width-form__field"type="text" name="passwordhint" id="passwordhint" required accesskey="7" tabindex="7">
+                    <input class="full-width-form__field"type="text" name="passwordhint" id="passwordhint" required accesskey="4" tabindex="4">
                     <h3>DOB</h3>
                     <input class="full-width-form__field" type="date" name="dob" id="dob" required accesskey="5" tabindex="5">
                 </aside>
@@ -42,15 +42,15 @@
                 <h2 class="full-width-form__heading">About you</h2>
                 <h3>Profile picture</h3>
                 <img class="user-profile" src="img/profile-pics/no-image.jpg" alt="Profile Picture">
-                <input type="file" name="profilepic" id="profilepic" accesskey="8" tabindex="8" value="Browse">
+                <input type="file" name="profilepic" id="profilepic" accesskey="6" tabindex="6" value="Browse">
                 <article class="flex-grid">
                     <aside class="grid-2-1">
                         <h3>Firstname</h3>
-                        <input class="full-width-form__field" type="text" name="firstname" id="firstname" required  accesskey="1" tabindex="1">
+                        <input class="full-width-form__field" type="text" name="firstname" id="firstname" required  accesskey="7" tabindex="7">
                         <h3>Years of experience</h3>
-                        <input class="full-width-form__field" type="number" name="experience" id="experience" accesskey="9" tabindex="9" min="0">
+                        <input class="full-width-form__field" type="number" name="experience" id="experience" accesskey="8" tabindex="8" min="0">
                         <h3>Specialism</h3>
-                        <select class="full-width-form__field" name="specialismid" required>
+                        <select class="full-width-form__field" name="specialismid" required accesskey="9" tabindex="9">
                             <option value="1">Websites</option>
                             <option value="2">Mobile Apps</option>
                             <option value="3">Tablet Apps</option>
@@ -61,23 +61,23 @@
                     </aside>
                     <aside class="grid-2-1">
                         <h3>Lastname</h3>
-                        <input class="full-width-form__field" type="text" name="lastname" id="lastname" required  accesskey="2" tabindex="2">
+                        <input class="full-width-form__field" type="text" name="lastname" id="lastname" required  accesskey="11" tabindex="11">
                         <h3>Upload CV</h3>
-                        <input class="full-width-form__field" type="file" name="nerdcv" id="nerdcv" accesskey="11" tabindex="11" value="Browse">
+                        <input class="full-width-form__field" type="file" name="nerdcv" id="nerdcv" accesskey="12" tabindex="12" value="Browse">
                         <h3>Portfolio images</h3>
-                        <input class="portfolioimg" type="file" name="portfolioimg1" id="portfolioimg1" accesskey="11" tabindex="11" value="Browse">
-                        <input class="portfolioimg" type="file" name="portfolioimg2" id="portfolioimg2" accesskey="11" tabindex="11" value="Browse">
-                        <input class="portfolioimg" type="file" name="portfolioimg3" id="portfolioimg3" accesskey="11" tabindex="11" value="Browse">
+                        <input class="portfolioimg" type="file" name="portfolioimg1" id="portfolioimg1" accesskey="13" tabindex="13" value="Browse">
+                        <input class="portfolioimg" type="file" name="portfolioimg2" id="portfolioimg2" accesskey="14" tabindex="14" value="Browse">
+                        <input class="portfolioimg" type="file" name="portfolioimg3" id="portfolioimg3" accesskey="15" tabindex="15" value="Browse">
 
                     </aside>
                 </article>
-                <input type="checkbox" name="terms"><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
-                <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="12" tabindex="12">
+                <input type="checkbox" name="terms" required><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
+                <input type="submit" value="BECOME A NERD" class="button button--primary-green center-button" accesskey="16" tabindex="16">
             </section>
         </form>
     </section>
     <?php require_once('elements/nav.php'); ?>
-    <?php require_once('elements/footer--small.php'); ?>
+    <?php require_once('elements/footer--big.php'); ?>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

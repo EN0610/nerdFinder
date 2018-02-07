@@ -65,6 +65,6 @@
         </form>
     </section>
     <?php require_once('elements/nav.php'); ?>
-    <?php require_once('elements/footer--small.php'); ?>
+    <?php require_once('elements/footer--big.php'); ?>
   </body>
 </html>
