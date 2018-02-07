@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/user-box.css">
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
@@ -25,10 +24,8 @@
             <h4>Accelerate your project'success </h4>
         </article>
     </header>
-    <h3> <br> </h3>
-    <h3> <br> </h3>
-    <section class="">
-        <?php echo $nerds ;?>
+    <section class="wrapper main flex-grid">
+        <?php echo($nerds);?>
     </section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
