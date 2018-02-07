@@ -1,19 +1,16 @@
 <?php
+// Defining path to session data folder where all session data will be saved/found
+require_once('session-save-path.php');
+// Resuming current session
+session_start();
+
 require_once('database-connection.php');	  // make db connection
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// $specialismid = $_POST['projectspecialistarea'];
-// $projectname = $_POST['projectname'];
-// $projectdescription = $_POST['projectdescription'];
-// $budget = $_POST['projectbudget'];
-// $posted = date('Y/m/d');
-// $deadline = $_POST['projectdeadline'];
-// $inspirationimg1 = $_POST['inspirationimg1'];
-// $inspirationimg2 = $_POST['inspirationimg2'];
-// $inspirationimg3 = $_POST['inspirationimg3'];
+$userid = $_SESSION['userid'];
 
 /*----------------------------------------------------
 RETRIVING AND VALIDATING SIGN IN DATA
@@ -61,10 +58,10 @@ $inspirationimg2 = trim($inspirationimg2);
 $inspirationimg3 = trim($inspirationimg3);
 // Any data left by this point will not be harmful to the database
 
-$sql = "INSERT INTO nf_projects (projectid, clientid, nerdid, specialismid, projectname, projectdescription, budget, posted, deadline, approved, finished, inspirationimg1, inspirationimg2, inspirationimg3)
-VALUES (null, '3', null, '$specialismid', '$projectname', '$projectdescription', '$budget', '$posted', '$deadline', '0', '0', '$inspirationimg1', '$inspirationimg2', '$inspirationimg3')";
+$sql = "INSERT INTO nf_projects (clientid, nerdid, specialismid, projectname, projectdescription, budget, posted, deadline, approved, finished, inspirationimg1, inspirationimg2, inspirationimg3)
+VALUES ($userid, null, '$specialismid', '$projectname', '$projectdescription', '$budget', '$posted', '$deadline', '0', '0', '$inspirationimg1', '$inspirationimg2', '$inspirationimg3')";
 if (mysqli_query($conn, $sql)) {
-    header('Location: ../index.php');
+    header('Location: ../profile.php?userid=' . $userid);
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
