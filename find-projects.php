@@ -18,11 +18,10 @@
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
-    <header class="header header--big">
+    <header class="header background-gradient">
         <article class="wrapper">
-            <h1 class="header__heading grid-2">Hire experts to create your apps, websites, software &amp; games</h1>
-            <a class="button button--primary-white" href="">Hire Nerds</a>&nbsp;&nbsp;
-            <a class="button button--secondary-white" href="">Become a Nerd</a>
+            <h1>Find Project</h1>
+            <h4>Build an impressive portfolio</h4>
         </article>
     </header>
     <h3>Current projects on</h3>
