@@ -23,12 +23,12 @@
     <?php require_once('elements/nav.php'); ?>
 
     <header class="background-gradient">
-    <br>
+
     <h1>  <?php
       echo ($postcontent);
       ?>
     </h1>
-    <br>
+
   </header>
 
   <section class="wrapper flex-grid">

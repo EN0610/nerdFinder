@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/event.css">
 </head>
 
 <body>
