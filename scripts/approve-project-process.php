@@ -10,17 +10,13 @@
     // Connecting to the Database
     require_once('database-connection.php');
     // Getting the Id of the project clicked from the request stream
-    $userid = isset($_REQUEST['clientid']) ? $_REQUEST['clientid'] : null;
     $projectid = isset($_REQUEST['projectid']) ? $_REQUEST['projectid'] : null;
     $projectname = isset($_REQUEST['projectname']) ? $_REQUEST['projectname'] : null;
     // Validating
-    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $projectid = filter_var($projectid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $projectname = filter_var($projectname, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
     $projectid = filter_var($projectid, FILTER_SANITIZE_SPECIAL_CHARS);
     $projectname = filter_var($projectname, FILTER_SANITIZE_SPECIAL_CHARS);
-    $userid = trim($userid);
     $projectid = trim($projectid);
     $projectname = trim($projectname);
     // SQL to update the project's approval status as '1', which means approved AND seen by the admin team
@@ -32,14 +28,14 @@
     $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 
     if ($sqlResults){
-        // Messaging user to notify them
-        date_default_timezone_set('Europe/London');
-        $messageSent = date('Y-m-d H:i:s');
 
+<<<<<<< HEAD
+=======
         $messageUserSql = "INSERT INTO nf_messages (senderid, recieverid, opened, messagecontent, messagesent)
                            VALUES (13, $userid, 0, 'Your project &#39;$projectname&#39; has been approved and will now appear in searches for nerds', '$messageSent')";
 
         mysqli_query($conn, $messageUserSql) or die (mysqli_error($conn));
+>>>>>>> 42504c15ed73dfbc886372ac76cfd8bd83caaf83
         // Changing the session variable of admin-feedback to approved
         $_SESSION['admin-feedback'] = 1;
         //

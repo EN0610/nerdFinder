@@ -20,7 +20,7 @@
         $greeting = "afternoon";
     } else {
         $greeting = "evening";
-    } 
+    }
     // Getting signed in users first naem to personalise greeting
     if (isset($_SESSION['firstName'])){
         $userFirstname = $_SESSION['firstName'];
@@ -104,7 +104,7 @@
     if (mysqli_num_rows($techIssueResults) > 0){
         // At least one row of technical issues
         while ($row = mysqli_fetch_assoc($techIssueResults)) {
-            
+
             $issuedescription = $row['issuedescription'];
             // For every issue in the database add th relevant HTML to a variable, which, will be echoed onto the page
             $techIssues .= <<<CONTENT
@@ -118,7 +118,7 @@
 
 CONTENT;
         }
-        
+
     } else{
         // No technical issues in the database
         $techIssues = '<table class="moderation-empty"><tr><td>No issues to report</td></tr></table>';
@@ -128,7 +128,7 @@ CONTENT;
     NEW PROJECTS REQUESTS
     --------------------------*/
 
-    $unapprovedProjects = "SELECT * 
+    $unapprovedProjects = "SELECT projectid, projectname, username, posted, approved
                            FROM nf_projects INNER JOIN nf_users
                            ON (nf_projects.clientid = nf_users.userid)
                            WHERE approved = 0
@@ -144,7 +144,6 @@ CONTENT;
 
             $projectid = $row['projectid'];
             $projectname = $row['projectname'];
-            $clientid = $row['clientid'];
             $clientusername = $row['username'];
             $posted = $row['posted'];
 
@@ -159,13 +158,11 @@ CONTENT;
                         <form id="project-reject-$projectid" class="approval-control" action="scripts/reject-project-process.php" method="post">
                             <input type="hidden" name="projectname" value="$projectname">
                             <input type="hidden" name="projectid" value="$projectid">
-                            <input type="hidden" name="clientid" value="$clientid">                        
                             <a class="icon-close reject-icon" onclick="document.getElementById('project-reject-$projectid').submit();"></a>
                         </form>&nbsp;
                         <form id="project-approval-$projectid" class="approval-control" action="scripts/approve-project-process.php" method="post">
                             <input type="hidden" name="projectname" value="$projectname">
                             <input type="hidden" name="projectid" value="$projectid">
-                            <input type="hidden" name="clientid" value="$clientid">
                             <a class="icon-check approve-icon" onclick="document.getElementById('project-approval-$projectid').submit();"></a>
                         </form>
                     </td>
@@ -191,7 +188,7 @@ CONTENT;
     USER RESTRICTION
     --------------------------*/
 
-    $userDropdownSQL = "SELECT userid, firstname, lastname, username FROM nf_users WHERE usertypeid = 2 OR usertypeid = 3 ORDER BY firstname";
+    $userDropdownSQL = "SELECT userid, firstname, lastname, username FROM nf_users ORDER BY firstname";
     $userDropdownSQLResults = mysqli_query($conn, $userDropdownSQL) or die (mysqli_error($conn));
     $usersDropDown = '';
 
@@ -204,7 +201,7 @@ CONTENT;
             $firstname = $row['firstname'];
             $lastname = $row['lastname'];
 
-            $usersDropDown .= "<option value='$userid'>$firstname $lastname ($username)</option>";            
+            $usersDropDown .= "<option value='$userid'>$firstname $lastname ($username)</option>";
         }
     }
 
@@ -212,7 +209,7 @@ CONTENT;
     NEW COMMENT MODERATION
     --------------------------*/
 
-    $unaprovedComments = "SELECT *
+    $unaprovedComments = "SELECT firstname, lastname, username, commentid, commentcontent, postid, approved
                           FROM nf_comments INNER JOIN nf_users
                           ON (nf_comments.userid = nf_users.userid)
                           WHERE approved = 0
@@ -226,7 +223,6 @@ CONTENT;
 
         while ($row = mysqli_fetch_assoc($unaprovedCommentsResults)) {
 
-            $userid = $row['userid'];
             $firstname = $row['firstname'];
             $lastname = $row['lastname'];
             $username = $row['username'];
@@ -246,15 +242,11 @@ CONTENT;
                     </td>
                     <td>
                         <form id="comment-reject-$commentid" class="approval-control" action="scripts/reject-comment-process.php" method="post">
-                            <input type="hidden" name="userid" value="$userid">
                             <input type="hidden" name="commentid" value="$commentid">
-                            <input type="hidden" name="commentcontent" value="$commentcontent">
                             <a class="icon-close reject-icon" onclick="document.getElementById('comment-reject-$commentid').submit();"></a>
                         </form>&nbsp;
                         <form id="comment-approval-$commentid" class="approval-control" action="scripts/approve-comment-process.php" method="post">
-                            <input type="hidden" name="userid" value="$userid">
                             <input type="hidden" name="commentid" value="$commentid">
-                            <input type="hidden" name="commentcontent" value="$commentcontent">
                             <a class="icon-check approve-icon" onclick="document.getElementById('comment-approval-$commentid').submit();"></a>
                         </form>
                     </td>
@@ -273,9 +265,9 @@ CONTENT;
     /*--------------------------
     FORUM POSTS
     --------------------------*/
-    
+
     $postsDropdownSQL = "SELECT postid, postcontent
-                         FROM nf_posts 
+                         FROM nf_posts
                          ORDER BY posttime DESC";
     $postsDropdownSQLResults = mysqli_query($conn, $postsDropdownSQL) or die (mysqli_error($conn));
     $postsDropdown = '';
@@ -287,7 +279,7 @@ CONTENT;
             $postid = $row['postid'];
             $postcontent = $row['postcontent'];
 
-            $postsDropdown .= "<option value='$postid'>$postcontent</option>";            
+            $postsDropdown .= "<option value='$postid'>$postcontent</option>";
         }
     }
     /*--------------------------
@@ -303,7 +295,7 @@ CONTENT;
             $message = $_SESSION['feedback-message'];
             // Positive Feedback
             $feedback = <<<CONTENT
-            
+
             <aside class="feedback positive-feedback">
                 <span class="icon-check feedback-icon"></span>
                 <h5 class="feedback-message">$message</h5>
@@ -312,7 +304,7 @@ CONTENT;
                 </a>
             </aside>
 CONTENT;
-            
+
         } else if (($_SESSION['admin-feedback']) === 2){
 
             $message = $_SESSION['feedback-message'];

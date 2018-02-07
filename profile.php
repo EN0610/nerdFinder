@@ -7,8 +7,8 @@ session_start();
 require_once('scripts/set-environment.php');
 // Connecting to the Database
 require_once('scripts/database-connection.php');
+  $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : 1;
 
-    $userid = $_SESSION['userid'];
 
     // SQL using the ID in request stream to pull rest of project info from the Database
     $sql = "SELECT * FROM nf_users WHERE userid = $userid";
@@ -16,6 +16,7 @@ require_once('scripts/database-connection.php');
     $editprofile = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 
             while ($row =mysqli_fetch_assoc($editprofile)) {
+              $userid = $row['userid'];
               $firstname = $row['firstname'];
               $lastname = $row['lastname'];
               $email = $row['email'];
@@ -44,42 +45,38 @@ require_once('scripts/database-connection.php');
     <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-  <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] == 2)){
-      // NERD SIGNED IN
-  ?>
+  <?php require_once('elements/nav.php'); ?>
   <header class="header background-gradient">
       <section class="header--small wrapper">
           <a class="header--small__link" href="javascript:history.back()"><span class="icon-arrow-left"></span>&nbsp;&nbsp;&nbsp;Back</a>
       </section>
   </header>
       <section class='wrapper main'>
-        <form action='scripts/edit-profie-process-nerd.php' method='get' class='flex-grid'>
-            <section class = 'soft-box soft-box--padded grid-3-1--small'>
-                <aside>
+          <section class = 'soft-box soft-box--padded grid-3-1--small'>
+              <aside>
 
-                  <!--  NERD User
-                        PROFILE Picture
-                        Username
-                        specialismid
-                        experience
-                        Hourlyrate
-                        MESSAGE
-                        download cv-->
+                <!--  NERD User
+                      PROFILE Picture
+                      Username
+                      specialismid
+                      experience
+                      Hourlyrate
+                      MESSAGE
+                      download cv-->
 
-                    <h2 class='full-width-form__heading'>NERD USER</h2>
-                    <img class="nav__user-profile" src=img/profile-pics/pedro-dacantus.jpg alt="Profile picture">
-                    <h2><?php echo $firstname . " " . $lastname;?></h2>
-                    <h3><?php echo $specialismid;?> Specialist</h3>
-                    <h3>with <?php echo $experience;?> Years of experience</h3>
-                    <h3>HIRE for £<?php echo $hourlyrate ;?>/hr</h3>
-                </aside>
+                  <h2 class='full-width-form__heading'>NERD USER</h2>
+                  <img class="nav__user-profile" src=img/profile-pics/pedro-dacantus.jpg alt="Profile picture">
+                  <h2><?php echo $firstname . " " . $lastname;?></h2>
+                  <h3><?php echo $specialismid;?> Specialist</h3>
+                  <h3>with <?php echo $experience;?> Years of experience</h3>
+                  <h3>HIRE for £<?php echo $hourlyrate ;?>/hr</h3>
+              </aside>
             </section>
             <section>
                 <h3>PORTFOLIO IMAGES</h3>
             </section>
         </form>
     </section>
-  <?php } require_once('elements/nav.php'); ?>
     <?php require_once('elements/footer--small.php'); ?>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

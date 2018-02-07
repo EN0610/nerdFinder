@@ -22,7 +22,7 @@
         </article>
     </header>
     <section class="center-text soft-box soft-box--padded grid-1 shadow--light main">
-        <span class="icon-check"></span>
+        <span class="icon-check icon-check--big"></span>
         <h2 class="full-width-form__field">You're all set up</h2>
         <p class="full-width-form__field">You can now begin using your account</p><br>
         <a class="button button--primary-green" href="sign-in.php">Sign in</a>

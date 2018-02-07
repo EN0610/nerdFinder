@@ -26,7 +26,7 @@
         </article>
     </header>
     <section class="center-text soft-box soft-box--padded grid-1 shadow--light main">
-        <span class="icon-check"></span>
+        <span class="icon-check icon-check--big"></span>
         <h2 class="full-width-form__field">Your message</h2>
         <p class="full-width-form__field interest-message">"<?php echo($message);?>"</p>
         <a href="project.php?projectid=<?php echo($projectid);?>" class="text-link">View project</a><br><br>
