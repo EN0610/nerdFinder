@@ -23,19 +23,19 @@
   $rate = $_GET['rate'];
   $nerdcv = $_GET['nerdcv'];
   $portfolioimg1 = $_GET['portfolioimg1'];
-  // $portfolioimg2 = $_POST['portfolioimg2'];
-  // $portfolioimg3 = $_POST['portfolioimg3'];
+  $portfolioimg2 = $_POST['portfolioimg2'];
+  $portfolioimg3 = $_POST['portfolioimg3'];
 
   $hashedpassword = password_hash($userpassword, PASSWORD_BCRYPT, array(
     'cost' => 11
   ));
 
   $sql = "UPDATE nf_users
-          SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', dob='$dob', userpassword='$hashedpassword', passwordhint='$passwordhint', profilepic='$profilepic', experience='$experience', hourlyrate='$rate', nerdcv='$nerdcv', portfolioimg1='$portfolioimg1', specialismid='$specialismid'
+          SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', dob='$dob', userpassword='$hashedpassword', passwordhint='$passwordhint', profilepic='$profilepic', experience='$experience', hourlyrate='$rate', nerdcv='$nerdcv', portfolioimg1='$portfolioimg1', portfolioimg2='$portfolioimg2', portfolioimg3='$portfolioimg3', specialismid='$specialismid'
           WHERE userid='$userid'";
 
   if (mysqli_query($conn, $sql)) {
-      header('Location: ../profile.php');
+        header('Location: ../profile.php?userid=' . $userid);
   } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }

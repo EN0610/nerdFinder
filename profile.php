@@ -75,12 +75,20 @@ require_once('scripts/database-connection.php');
                   <?php if ($usertypeid == 2) {
                     $profilepage = <<<CONTENT
                   <h2 class="full-width-form__heading"NERD USER</h2>
-                  <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="Profile picture">
+                  <img class="nav__user-profile" src="img/profile-pics/$profilepic" alt="Profile picture">
                   <h2>$firstname $lastname</h2>
                   <h3>$specialismid Specialist</h3>
                   <h3>with $experience Years of experience</h3>
                   <h3>HIRE for £$hourlyrate/hr</h3>
               </aside>
+          </section>
+          <section>
+            <h3>PORTFOLIO IMAGES</h3>
+            <article class="user-box">
+                <img class="user-box_pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image">
+                <img class="user-box_pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image">
+                <img class="user-box_pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
+            </article>
           </section>
           <section>
             <h3>PORTFOLIO IMAGES</h3>

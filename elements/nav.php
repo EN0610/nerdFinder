@@ -32,7 +32,7 @@
             <section class="soft-box nav__drop-down shadow--dark hide">
                 <ul>
                     <li><a class="nav__drop-down-list-item" href="admin-dashboard.php">Admin dashboard</a></li>
-                    <li><a class="nav__drop-down-list-item" href="edit-profile-.php">Edit profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="edit-profile-client-.php">Edit profile</a></li>
                     <li><a class="nav__drop-down-list-item" href="scripts/sign-out-process.php">Sign out</a></li>
                 </ul>
             </section>

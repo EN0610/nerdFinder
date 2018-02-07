@@ -9,6 +9,7 @@ require_once('scripts/set-environment.php');
 require_once('scripts/database-connection.php');
 
     $userid = $_SESSION['userid'];
+    $password = $_SESSION['password'];
     // SQL using the ID in request stream to pull rest of project info from the Database
     $sql = "SELECT * FROM nf_users WHERE userid = $userid";
 
@@ -57,7 +58,7 @@ require_once('scripts/database-connection.php');
                     <h3>Email</h3>
                     <input class='full-width-form__field' type='email' name='email' id='email' value="<?php echo($email);?>" accesskey='3' tabindex='3'>
                     <h3>Password</h3>
-                    <input class='full-width-form__field' type='password' name='userpassword' id='userpassword' value="<?php echo($userpassword);?>" accesskey='6' tabindex='6'>
+                    <input class='full-width-form__field' type='password' name='userpassword' id='userpassword' value="<?php echo($password);?>" accesskey='6' tabindex='6'>
                     <h3>Password Hint</h3>
                     <input class='full-width-form__field'type='text' name='passwordhint' id='passwordhint' value="<?php echo($passwordhint);?>" accesskey='7' tabindex='7'>
                     <h3>DOB</h3>
