@@ -1,4 +1,6 @@
 <?php
+    /* CREATED BY HARRY */
+    
     // Defining path to session data folder where all session data will be saved/found
     require_once('scripts/session-save-path.php');
     // Resuming current session
@@ -42,7 +44,7 @@
                 <h3>Password</h3>
                 <input type="password" name="password" value="<?php echo($password);?>"><br>
                 <p class="error-message"><?php echo($errorMessage)?></p>
-                <a class="text-link" href="sign-up.php">Create account</a>&nbsp;&nbsp;
+                <a class="text-link" href="sign-up-client.php">Create account</a>&nbsp;&nbsp;
                 <a class="text-link" href="forgotten-password.php">Forgotten password</a><br>
                 <input class="background-gradient button" type="submit" name="" value="Sign In">
             </form>

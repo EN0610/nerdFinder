@@ -4,7 +4,8 @@
     // Resuming current session
     session_start();
 
-    require_once('scripts/show-forumposts.php');
+    require_once('scripts/show-forum-post.php');
+    require_once('scripts/add-forum-comments.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +19,29 @@
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
-    <br><br><br><br><br>
-    <table>
-      <?php echo($post);?>
-    </table>
+
+    <header class="background-gradient">
+    <br>
+    <h1>  <?php
+      echo ($postcontent);
+      ?></h1>
+    <br>
+    </header>
+      <?php
+      echo ($post);
+      ?>
+
+      <section class = "soft-box soft-box--padded wrapper main">
+      <form class="flex-grid full-width-form" action="scripts/add-forum-comments.php" method="post">
+
+    <input class="full-width-form__field" type="text" name="commentcontent" required placeholder="text"><br><br>
+
+    <input  class="full-width-form__field" type="date" name="posted" required placeholder="date"><br><br>
+
+    <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Data To Database">
+
+</form>
+</section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>

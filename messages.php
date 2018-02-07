@@ -1,4 +1,6 @@
 <?php
+    /* CREATED BY HARRY */
+    
     // Setting the development enviroment to show errors
     require_once('scripts/show-messages.php');
 ?>
@@ -33,7 +35,7 @@
             <?php echo($messages);?>
         </article>
         <form action="scripts/send-message-script.php" method="post" class="message-container__form" id="send-message">
-            <textarea class="message-container__textarea" placeholder="Type something" rows="2" name="message"></textarea><!--
+            <textarea class="message-container__textarea" placeholder="Type something" rows="2" name="message" required></textarea><!--
          --><span class="icon-arrow-up-circle message-container__submit" onclick="document.getElementById('send-message').submit();"></span>
         </form>
     </section>
@@ -50,7 +52,7 @@
                 <?php echo($usersDropDown);?>
             </optgroup>
         </select><span class="icon-arrow-down select-icon select-icon--small"></span>
-        <textarea class="full-width-form__field modal__form-message" name="message" placeholder="Message" rows="4"></textarea>
+        <textarea class="full-width-form__field modal__form-message" name="message" placeholder="Message" rows="4" required></textarea>
         <input class="button button--primary-green" type="submit" name="submit" value="Send">
     </form>
 </section>

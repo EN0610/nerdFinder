@@ -1,4 +1,6 @@
-<?php   
+<?php
+    /* CREATED BY HARRY */
+    
     // Defining path to session data folder where all session data will be saved/found
     require_once('session-save-path.php');
     // Resuming current session
@@ -26,7 +28,7 @@
                          FROM nf_messages INNER JOIN nf_users
                          ON (nf_messages.recieverid = nf_users.userid)
                          WHERE recieverid = $userid1 OR senderid = $userid1
-                         GROUP BY recieverid
+                         GROUP BY recieverid, senderid
                          ORDER BY messagesent DESC";
 
     $conversationsSqlResults = mysqli_query($conn, $conversationsSql) or die (mysqli_error($conn));
@@ -47,6 +49,7 @@
             } else{
                 $background = '';
             }
+            
             if ($recieverid != $userid1) {
 
                 $conversations .= <<<CONVERSATION
@@ -117,3 +120,5 @@ CONVERSATION;
             $usersDropDown .= "<option value='$userid'>$firstname $lastname ($username)</option>";            
         }
     }
+
+    mysqli_close($conn);

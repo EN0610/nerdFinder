@@ -9,9 +9,6 @@ require_once('scripts/set-environment.php');
 require_once('scripts/database-connection.php');
 
     $userid = $_SESSION['userid'];
-    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
-    $userid = trim($userid);
     // SQL using the ID in request stream to pull rest of project info from the Database
     $sql = "SELECT * FROM nf_users WHERE userid = $userid";
 
@@ -28,7 +25,7 @@ require_once('scripts/database-connection.php');
               $profilepic = $row['profilepic'];
               $experience = $row['experience'];
               $specialismid = $row['specialismid'];
-              $rate = $row['rate'];
+              $hourlyrate = $row['hourlyrate'];
               $nerdcv = $row['nerdcv'];
               $portfolioimg1 = $row['portfolioimg1'];
             }
@@ -38,7 +35,8 @@ require_once('scripts/database-connection.php');
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
     <title>Edit profile | Nerd Finder</title>
-    <link rel="stylesheet" href="css/reset.css">   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/base.css">
 </head>
@@ -57,13 +55,13 @@ require_once('scripts/database-connection.php');
                     <h3>Username</h3>
                     <input class='full-width-form__field' type='text' name='username' id='$username' value="<?php echo($username);?>" accesskey='4' tabindex='4' readonly>
                     <h3>Email</h3>
-                    <input class='full-width-form__field' type='email' name='email' id='email' value="<?php echo($email);?>"accesskey='3' tabindex='3'>
+                    <input class='full-width-form__field' type='email' name='email' id='email' value="<?php echo($email);?>" accesskey='3' tabindex='3'>
                     <h3>Password</h3>
-                    <input class='full-width-form__field' type='password' name='userpassword' id='userpassword' accesskey='6' tabindex='6'>
+                    <input class='full-width-form__field' type='password' name='userpassword' id='userpassword' value="<?php echo($userpassword);?>" accesskey='6' tabindex='6'>
                     <h3>Password Hint</h3>
-                    <input class='full-width-form__field'type='text' name='passwordhint' id='passwordhint' accesskey='7' tabindex='7'>
+                    <input class='full-width-form__field'type='text' name='passwordhint' id='passwordhint' value="<?php echo($passwordhint);?>" accesskey='7' tabindex='7'>
                     <h3>DOB</h3>
-                    <input class='full-width-form__field' type='date' name='dob' id='dob' accesskey='5' tabindex='5'>
+                    <input class='full-width-form__field' type='date' name='dob' id='dob' value="<?php echo($dob);?>" accesskey='5' tabindex='5'>
                 </aside>
             </section>
             <section class='soft-box soft-box--padded grid-3-2--small'>
@@ -74,9 +72,9 @@ require_once('scripts/database-connection.php');
                 <article class='flex-grid'>
                     <aside class='grid-2-1'>
                         <h3>Firstname</h3>
-                        <input class='full-width-form__field' type='text' name='firstname' id='firstname' accesskey='1' tabindex='1'>
+                        <input class='full-width-form__field' type='text' name='firstname' id='firstname' value="<?php echo($firstname);?>" accesskey='1' tabindex='1'>
                         <h3>Years of experience</h3>
-                        <input class='full-width-form__field' type='number' name='experience' id='experience' accesskey='9' tabindex='9' min='0'>
+                        <input class='full-width-form__field' type='number' name='experience' id='experience' value="<?php echo($experience);?>" accesskey='9' tabindex='9' min='0'>
                         <h3>Specialism</h3>
                         <select class='full-width-form__field' name='specialismid'>
                             <option value='1'>Websites</option>
@@ -85,11 +83,11 @@ require_once('scripts/database-connection.php');
                             <option value='4'>Software</option>
                         </select><span class='icon-arrow-down select-icon'></span>
                         <h3>Hourly rate</h3>
-                        <input class='full-width-form__field' type='number' name='rate' id='rate' accesskey='10' tabindex='10' min='0' placeholder='£20'>
+                        <input class='full-width-form__field' type='number' name='rate' id='hourlyrate' value="<?php echo($hourlyrate);?>" accesskey='10' tabindex='10' min='0'>
                     </aside>
                     <aside class='grid-2-1'>
                         <h3>Lastname</h3>
-                        <input class='full-width-form__field' type='text' name='lastname' id='lastname' accesskey='2' tabindex='2'>
+                        <input class='full-width-form__field' type='text' name='lastname' id='lastname' value="<?php echo($lastname);?>" accesskey='2' tabindex='2'>
                         <h3>Upload CV</h3>
                         <input class='full-width-form__field' type='file' name='nerdcv' id='nerdcv' accesskey='11' tabindex='11' value='Browse'>
                         <h3>Portfolio images</h3>
@@ -98,8 +96,8 @@ require_once('scripts/database-connection.php');
                         <input class='portfolioimg' type='file' name='portfolioimg3' id='portfolioimg3' accesskey='11' tabindex='11' value='Browse'>
                     </aside>
                 </article>
-                <input type='submit' value='SAVE CHANGES' class='button button--primary-green center-button' accesskey='12' tabindex='12'>
-                <a class="button button--primary-red" href="scripts/delete-profile-process.php">DELETE PROFILE</a>&nbsp;&nbsp;
+                <input type='submit' value='SAVE CHANGES' class='button button--primary-green center-button' accesskey='12' tabindex='12'>&nbsp;&nbsp;&nbsp;
+                <a class="button button--secondary-red center-button" href="scripts/delete-profile-process.php">DELETE PROFILE</a>
             </section>
         </form>
     </section>

@@ -91,4 +91,3 @@
             $pageContent = '<h2 class="light-grey-text">No messages between selected users</h2>';
         }
     }
-?>

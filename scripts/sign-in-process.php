@@ -81,16 +81,21 @@
             if ($usertypeid == 1) {
                 // Admin user
                 $_SESSION['userType'] = 1;
-
+                // Redirecting user back to homepage as signed in
+                header('Location: ../admin-dashboard.php');
             } else if($usertypeid == 2){
                 // Nerd user
                 $_SESSION['userType'] = 2;
+                // Redirecting user back to homepage as signed in
+                header('Location: ../profile.php?userid=' . $userid);
             } else{
                 // Client user
                 $_SESSION['userType'] = 3;
+                // Redirecting user back to homepage as signed in
+                header('Location: ../profile.php?userid=' . $userid);
             }
             // Redirecting user back to homepage as signed in
-            header('Location: ../index.php');
+            header('Location: ../profile.php?userid=' . $userid);
 
         } else{
             // Username correct but password incorrect

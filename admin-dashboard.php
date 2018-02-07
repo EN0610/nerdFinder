@@ -30,7 +30,6 @@
             <a class="admin-tools__link" href="admin-dashboard.php"><li class="admin-tools__tool"><span class="icon-speedometer admin-tools__link-icon"></span><span class="admin-tools__link-text">Dashboard</span></li></a>
             <a class="admin-tools__link" href="admin-manage-events.php"><li class="admin-tools__tool"><span class="icon-calendar admin-tools__link-icon"></span><span class="admin-tools__link-text">Manage events</span></li></a>
             <a class="admin-tools__link" href="admin-check-messages.php"><li class="admin-tools__tool"><span class="icon-envelope-open admin-tools__link-icon"></span><span class="admin-tools__link-text">Check Messages</span></li></a>
-            <a class="admin-tools__link" href="admin-refunds.php"><li class="admin-tools__tool"><span class="icon-credit-card admin-tools__link-icon"></span><span class="admin-tools__link-text">User Refunds</span></li></a>
             <a class="admin-tools__link" href="https://insights.hotjar.com/sites/746289/dashboard" target="_blank"><li class="admin-tools__tool"><span class="icon-eye admin-tools__link-icon"></span><span class="admin-tools__link-text">Track users</span></li></a>
             <a class="admin-tools__link" href="https://analytics.google.com/analytics/web/" target="_blank"><li class="admin-tools__tool"><span class="icon-graph admin-tools__link-icon"></span><span class="admin-tools__link-text">View analytics</span></li></a>
         </ul>
@@ -77,15 +76,15 @@
             <article class="soft-box admin-interface__content ">
                 <h5>User control</h5>
                 <hr>
-                <form id="control-user-form" action="scripts/control-user-process.php" method="post" class="padded-box--small admin-interface__text">
+                <form id="lock-user-form" action="scripts/lock-user-process.php" method="post" class="padded-box--small admin-interface__text">
                     <p class="admin-interface__text">Choose user</p>
                     <select name="user">
                         <optgroup label="Users">
                             <?php echo($usersDropDown); ?>
                         </optgroup>
                     </select><span class="icon-arrow-down select-icon"></span>
-                    <input type="submit" class="text-link" name="lock" value="Lock">&nbsp;&nbsp;&nbsp;
-                    <input type="submit" class="text-link" name="delete" value="Delete">
+                    <a class="text-link" onclick="document.getElementById('lock-user-form').submit();">Lock</a>&nbsp;&nbsp;&nbsp;
+                    <a class="text-link" href="mailto:devteam@nerdfinder.com?Subject=Delete%20User%20Account">Delete</a>
                 </form>
             </article>
             <article class="soft-box admin-interface__content">

@@ -72,7 +72,7 @@ CONTENT;
                 <li class="nav__item"><a href="meetups.php">Meetups</a></li>
                 <li class="nav__item"><a href="forum.php">Forum</a></li>
             </ul>
-            <a class="button button--nav button--secondary-red" href="project-new.php">New project</a>
+            <a class="button button--nav button--secondary-red nav__button" href="project-new.php">New project</a>
             <span class="nav__icon icon-menu"></span>
             <a class="nav__icon nav__messages-icon icon-envelope" href="messages.php"></a>
             <section class="nav__user-area">
