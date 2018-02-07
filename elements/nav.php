@@ -7,6 +7,9 @@
 
     if (isset($_SESSION['signedIn'])){
         // User signed in
+        //
+        $userid = $_SESSION['userid'];
+
         if ($_SESSION['userType'] == 1){
             // Admin user
             $nav = <<<CONTENT
@@ -54,7 +57,7 @@ CONTENT;
             </section>
             <section class="soft-box nav__drop-down shadow--dark hide">
                 <ul>
-                    <li><a class="nav__drop-down-list-item" href="profile.php">View profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="profile.php?userid=$userid">View profile</a></li>
                     <li><a class="nav__drop-down-list-item" href="edit-profile-nerd.php">Edit profile</a></li>
                     <li><a class="nav__drop-down-list-item" href="scripts/sign-out-process.php">Sign out</a></li>
                 </ul>
@@ -81,7 +84,7 @@ CONTENT;
             </section>
             <section class="soft-box nav__drop-down shadow--dark hide">
                 <ul>
-                    <li><a class="nav__drop-down-list-item" href="profile.php">View profile</a></li>
+                    <li><a class="nav__drop-down-list-item" href="profile.php?userid=$userid">View profile</a></li>
                     <li><a class="nav__drop-down-list-item" href="edit-profile-client.php">Edit profile</a></li>
                     <li><a class="nav__drop-down-list-item" href="scripts/sign-out-process.php">Sign out</a></li>
                 </ul>
