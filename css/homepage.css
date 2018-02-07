@@ -1,6 +1,3 @@
-/*--------------------------
-GLOBAL LAYOUT
---------------------------*/
 hr{
     background: #5E7991;
     border: none;
@@ -23,6 +20,9 @@ hr{
 }
 .band{
     padding: 60px 0 90px;
+}
+.category__heading{
+    margin: 10px 0 0 0;
 }
 .headline{
     color: #fff;
@@ -48,4 +48,46 @@ hr{
     letter-spacing: 2px;
     color: #5E7991;
     margin: 0 0 60px 0;
+}
+.works__image{
+    width: 80%;
+    max-width: 180px;
+    margin: 0 0 15px 0;
+}
+.works__desc{
+    width: 70%;
+    margin: 15px auto 40px auto;
+}
+/*--------------------------
+MEDIA QUERIES
+--------------------------*/
+@media all and (max-width: 900px) {
+
+    .headline__container{
+        width: 80%;
+        display: block;
+    }
+    .callout{
+        width: 100%;
+        display: block;
+    }
+    #case-study{
+        background-position: center;
+    }
+    .works__stage{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .works__stage:first-child{
+        margin-top: 0;
+    }
+    .shoutout{
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+@media all and (max-width: 600px) {
+    .headline__container{
+        width: 100%;
+    }
 }

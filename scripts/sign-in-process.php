@@ -94,7 +94,8 @@
                 // Redirecting user back to homepage as signed in
                 header('Location: ../profile.php?userid=' . $userid);
             }
-            
+            // Redirecting user back to homepage as signed in
+            header('Location: ../profile.php?userid=' . $userid);
 
         } else{
             // Username correct but password incorrect
@@ -102,7 +103,7 @@
             $_SESSION['errorMessage'] = 'Incorrect password';
             // PASSWORD HINT
             header('Location: ' . $_SERVER['HTTP_REFERER']);
-        } 
+        }
 
     } else{
         // Username not correct

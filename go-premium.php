@@ -30,7 +30,7 @@
             }
         }
     } else{
-
+        $premiumUser = false;
     }
 ?>
 <!DOCTYPE html>
@@ -77,30 +77,6 @@ PREMIUM;
     </header>
     <section class="soft-box soft-box--padded wrapper main">
         <h2>£10 per month</h2>
-<<<<<<< HEAD
-            <form class="flex-grid full-width-form">
-                <article class="grid-1">
-                    <h3>What's included</h3>
-                    <ul class="bulleted-list">
-                        <li>Free project processing</li>
-                        <li>Priority ranking in searches</li>
-                    </ul>
-                </article>
-                <article class="grid-1">
-                    <h3>Card number</h3>
-                    <input class="full-width-form__field" type="text" name="card-number">
-                    <h3>Name of card</h3>
-                    <input class="full-width-form__field" type="text" name="name">
-                </article>
-                <article class="grid-1">
-                    <h3>Security code</h3>
-                    <input class="full-width-form__field" type="text" name="security-code">
-                    <h3>Expiration Date</h3>
-                    <input class="full-width-form__field" type="text" name="expiration">
-                </article>
-                <input class="button button--primary-green center-button" type="submit" name="" value="Pay by card">
-            </form>
-=======
         <form class="flex-grid full-width-form" action="scripts/go-premium-script.php" method="post">
             <article class="grid-1">
                 <h3>What's included</h3>
@@ -123,7 +99,6 @@ PREMIUM;
             </article>
             <input class="button button--primary-green center-button" type="submit" name="" value="Pay by card">
         </form>
->>>>>>> 42504c15ed73dfbc886372ac76cfd8bd83caaf83
     </section>
 
 NOPREMIUM;

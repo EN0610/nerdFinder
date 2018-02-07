@@ -40,7 +40,7 @@ USER BOX
 .user-box_name {
     display: inline-block;
     vertical-align: top;
-    font: 400 14px/70px 'Facit-Regular', sans-serif;
+    font: 600 24px/32px 'Facit-Semibold', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: #414B6B;
@@ -51,21 +51,23 @@ USER BOX
     text-align: center;
     text-transform: uppercase;
     font: 400 12px/50px 'Facit-Regular', sans-serif;
-    letter-spacing: 1.1px;
+    letter-spacing: 1px;
     color: #414B6B;
 }
 
 .user-box_hourlyrate {
-    text-align: center;
-    font: 400 12px/50px 'bold', sans-serif;
-    letter-spacing: 1.1px;
+    display: inline-block;
+    vertical-align: top;
+    font: 400 14px/70px 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: #414B6B;
 }
 
 .user-box_checklist {
     vertical-align: bottom;
     font: 400 14px/70px 'Facit-Regular', sans-serif;
-    letter-spacing: 1.5px;
+    letter-spacing: 1spx;
     color: #414B6B;
 }
 
@@ -116,7 +118,7 @@ USER BOX
 
 .user-box_budget {
     text-align: center;
-    font: 400 12px/50px 'bold', sans-serif;
+    font:600 24px/32px 'Facit-Semibold', sans-serif;
     letter-spacing: 1.1px;
     color: #414B6B;
 }

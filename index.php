@@ -30,22 +30,22 @@
         <h3>How it works</h3>
         <hr>
         <section class="flex-grid wrapper">
-            <article class="grid-1">
-                <img alt="" src="">
+            <article class="grid-1 works__stage">
+                <img class="works__image" alt="Sign Up" src="img/how-it-works/sign-up.png">
                 <h2>Sign up</h2>
-                <p>Benefits include free access to Nerd Finder events and 24/7 customer service.</p>
+                <p class="works__desc">Benefits include free access to Nerd Finder events and 24/7 customer service.</p>
                 <a class="text-link" href="sign-up-client.php">Create account</a>
             </article>
-            <article class="grid-1">
-                <img alt="" src="">
+            <article class="grid-1 works__stage">
+                <img class="works__image" alt="Post a project" src="img/how-it-works/post-project.png">
                 <h2>Post a project</h2>
-                <p>Introduce your idea and gain interest from the Nerd Finder community.</p>
+                <p class="works__desc">Introduce your idea and gain interest from the Nerd Finder community.</p>
                 <a class="text-link" href="find-projects.php">Browse projects</a>
             </article>
-            <article class="grid-1">
-                <img alt="" src="">
+            <article class="grid-1 works__stage">
+                <img class="works__image" alt="Hire nerds" src="img/how-it-works/hire-nerds.png">
                 <h2>Hire nerds</h2>
-                <p>Find experts who can bring your idea into reality using our search facility.</p>
+                <p class="works__desc">Find experts who can bring your idea into reality using our search facility.</p>
                 <a class="text-link" href="find-nerds.php">Browse nerds</a>
             </article>
         </section> 
@@ -62,21 +62,21 @@
         <h3 class="center-text">Categories</h3>
         <hr>
         <section class="flex-grid wrapper">
-            <article class="grid-1">
+            <article class="grid-1 grid__row">
                 <img src="img/categories/Website.jpg" alt="Websites">
-                <h2>Websites</h2>
+                <h2 class="category__heading">Websites</h2>
             </article>
-            <article class="grid-1">
+            <article class="grid-1 grid__row">
                 <img src="img/categories/Mobile.jpg" alt="Mobile Apps">
-                <h2>Mobile Apps</h2>
+                <h2 class="category__heading">Mobile Apps</h2>
             </article>
-            <article class="grid-1">
+            <article class="grid-1 grid__row">
                 <img src="img/categories/Tablet.jpg" alt="Tablet Apps">
-                <h2>Tablet Apps</h2>
+                <h2 class="category__heading">Tablet Apps</h2>
             </article>
             <article class="grid-1">
                 <img src="img/categories/Software.jpg" alt="Software">
-                <h2>Software</h2>
+                <h2 class="category__heading">Software</h2>
             </article>
             <article class="grid-1"></article>
             <article class="grid-1"></article>

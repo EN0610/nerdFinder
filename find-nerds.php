@@ -21,21 +21,11 @@
     <?php require_once('elements/nav.php'); ?>
     <header class="header background-gradient">
         <article class="wrapper">
-            <h1>Local Nerds</h1>
-            <h4>Search through our extensive Nerds and their skills</h4>
+            <h1>Find Nerds</h1>
+            <h4>Accelerate your project'success </h4>
         </article>
     </header>
     <h3> <br> </h3>
-    <form class="user-box_checklist">
-        <label>Website</label>
-        <input id="checkBox1" type="checkbox" name="Websites">
-        <label>Mobile Apps</label>
-        <input id="checkBox1" type="checkbox" name="MobileApps">
-        <label>Tablet Apps</label>
-        <input id="checkBox1" type="checkbox" name="TabletApps">
-        <label>Software</label>
-        <input id="checkBox1" type="checkbox" name="Software">
-    </form>
     <h3> <br> </h3>
     <section class="">
         <?php echo $nerds ;?>
