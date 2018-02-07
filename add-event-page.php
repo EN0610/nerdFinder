@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
@@ -30,11 +30,10 @@
                <h3>Event Name</h3>
                <input class="full-width-form__field" type="text" name="eventname">
                <h3>Event Type</h3>
-               <select name="eventtype" size="4" multiple>
-                  <option name="eventtype" value="network">network</option>
-                    <option name="eventtype" value="meetup">meetup</option>
 
-                  </select>
+                  <input type="radio" name="eventtype" value="1">network</input>
+                    <input type="radio"name="eventtype" value="2">meetup</input>
+
 
 
                <h3>Event Description</h3>
@@ -42,9 +41,9 @@
                <h3>Event Date</h3>
                <input class="full-width-form__field" type="date" name="eventdate">
                <h3>Start Time</h3>
-               <input class="full-width-form__field" type="time" name="starttime">
+               <input class="full-width-form__field" type="H:i:s" name="starttime">
                <h3>End Time</h3>
-               <input class="full-width-form__field" type="time" name="endtime">
+               <input class="full-width-form__field" type="H:i:s" name="endtime">
                <h3>Location</h3>
                <input class="full-width-form__field" type="text" name="location">
 <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Event">

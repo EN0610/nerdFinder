@@ -208,6 +208,53 @@ NAV
     display: none;
 }
 /*--------------------------
+events
+--------------------------*/
+.event-soft-box {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 35px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.event-soft-box--padded{
+    padding: 40px;
+}
+
+.event-date {
+    float: right;
+}
+.event_wrapper{
+    max-width: 1145px;
+    margin: 0 auto;
+}
+
+.event-box_pic {
+    display: contents;
+    vertical-align: top;
+    font:  '120px', 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    color: #414B6B;
+}
+.event-box_location {
+    display: contents;
+    vertical-align: top;
+    font: 400 14px/70px 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    color: #414B6B;
+}
+
+.event_button {
+    margin: 48px 52px;
+    text-align: right;
+}
+
+
+/*--------------------------
 HEADERS
 --------------------------*/
 .header{
@@ -239,6 +286,19 @@ HEADERS
 .center-heading{
     text-align: center;
     padding-bottom: 70px;
+}
+/*--------------------------
+Forum
+--------------------------*/
+.forum-soft-box {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 35px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    width: 100%;
 }
 /*--------------------------
 CONTAINERS

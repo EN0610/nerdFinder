@@ -201,6 +201,8 @@ NAV
 .icon-menu{
     display: none;
 }
+
+
 /*--------------------------
 HEADERS
 --------------------------*/
@@ -256,47 +258,6 @@ forum
     box-shadow: 0px 0px 10px rgba(144, 164, 183, 0.05);
 
 }
-
-/*--------------------------
-events
---------------------------*/
-.event-soft-box {
-    display: flex;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 35px;
-    text-align: center;
-    background: white;
-
-}
-
-.event-soft-box--padded{
-    padding: 40px;
-}
-
-.event-date {
-    float: right;
-}
-.event_wrapper{
-    max-width: 1145px;
-    margin: 0 auto;
-}
-
-.event-box_pic {
-    display: contents;
-    vertical-align: top;
-    font:  '120px', 'Facit-Regular', sans-serif;
-    text-transform: uppercase;
-    color: #414B6B;
-}
-.event-box_location {
-    display: contents;
-    vertical-align: top;
-    font: 400 14px/70px 'Facit-Regular', sans-serif;
-    text-transform: uppercase;
-    color: #414B6B;
-}
-
 
 
 
@@ -400,11 +361,9 @@ EFFECTS
 /*--------------------------
 FORM ELEMENTS
 --------------------------*/
-input, select{
+input, select {
     height: 36px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    width: 10px;
 }
 input:focus, select:focus, textarea:focus{
     outline:0;

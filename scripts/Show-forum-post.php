@@ -30,11 +30,14 @@
           $commentcontent = $row['commentcontent'];
 
 
-          $post.= <<<TABLE
-                    <tr>
-                      <td class= wrapper>$commentcontent</td>
-                    </tr>
-TABLE;
+          $post.= <<<CONTENT
+
+                      <article class= forum-soft-box>
+                        <p class= wrapper>$commentcontent</p>
+                      </article>
+
+
+CONTENT;
         }
       }
 ?>
