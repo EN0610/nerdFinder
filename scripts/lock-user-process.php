@@ -17,7 +17,24 @@
     $userid = trim($userid);
     //
     if (isset($_POST['delete'])) {
-        # code...
+        
+        $deleteSql = "DELETE FROM nf_users
+                      WHERE userid = $userid";
+
+        $deleteSqlResults = mysqli_query($conn, $deleteSql) or die (mysqli_error($conn));
+
+        if ($deleteSqlResults){
+            // Changing the session variable of admin-feedback to approved
+            $_SESSION['admin-feedback'] = 1;
+            //
+            $_SESSION['feedback-message'] = 'User deleted';
+        } else{
+            // Changing the session variable of admin-feedback to approved
+            $_SESSION['admin-feedback'] = 2;
+            //
+            $_SESSION['feedback-message'] = 'User not deleted, system error';
+        }
+
     } else if (isset($_POST['lock'])) {
         
         $lockCheck = "SELECT locked
@@ -41,8 +58,8 @@
                 } else{
                     // User not locked
                     $sql = "UPDATE nf_users
-                    SET locked = 1 
-                    WHERE userid = $userid";
+                            SET locked = 1 
+                            WHERE userid = $userid";
                     // Applying the SQL query to the database
                     $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
                     // Changing the session variable of admin-feedback to approved

@@ -10,15 +10,22 @@
     // Connecting to the Database
     require_once('database-connection.php');
     // Getting the Id of the project clicked from the request stream
+    $userid = isset($_REQUEST['clientid']) ? $_REQUEST['clientid'] : null;
     $projectid = isset($_REQUEST['projectid']) ? $_REQUEST['projectid'] : null;
     $projectname = isset($_REQUEST['projectname']) ? $_REQUEST['projectname'] : null;
-    // Validating
+    // Validation
+    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $projectid = filter_var($projectid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $projectname = filter_var($projectname, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
     $projectid = filter_var($projectid, FILTER_SANITIZE_SPECIAL_CHARS);
     $projectname = filter_var($projectname, FILTER_SANITIZE_SPECIAL_CHARS);
+    $userid = trim($userid);
     $projectid = trim($projectid);
     $projectname = trim($projectname);
+    // Getting current time
+    date_default_timezone_set('Europe/London');
+    $messageSent = date('Y-m-d H:i:s');
     // SQL to update the project's approval status as '1', which means approved AND seen by the admin team
     $sql = "UPDATE nf_projects
             SET approved = 1

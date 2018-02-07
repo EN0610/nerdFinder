@@ -11,10 +11,21 @@
     require_once('database-connection.php');
     // Getting the Id of the project clicked from the request stream
     $commentid = isset($_REQUEST['commentid']) ? $_REQUEST['commentid'] : null;
+    $commentcontent = isset($_REQUEST['commentcontent']) ? $_REQUEST['commentcontent'] : null;
+    $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : null;
     // Validating
     $commentid = filter_var($commentid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $commentcontent = filter_var($commentcontent, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $userid = filter_var($userid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $commentcontent = filter_var($commentcontent, FILTER_SANITIZE_SPECIAL_CHARS);
     $commentid = filter_var($commentid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $commentcontent = trim($commentcontent);
     $commentid = trim($commentid);
+    $userid = trim($userid);
+    // Getting current time
+    date_default_timezone_set('Europe/London');
+    $messageSent = date('Y-m-d H:i:s');
     // SQL to update the comments's approval status as '1', which means approved AND seen by the admin team
     $sql = "UPDATE nf_comments
             SET approved = 1

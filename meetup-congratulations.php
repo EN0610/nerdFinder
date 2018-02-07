@@ -25,7 +25,7 @@
         <span class="icon-check icon-check--big"></span>
         <h2 class="full-width-form__field">You're signed up for the event!</h2>
         <p class="full-width-form__field">Add the date to your diary.</p><br>
-        <a class="button button--primary-green" href="Meetups.php">Return to meetup Page</a>
+        <a class="button button--primary-green" href="meetups.php">Return to meetup Page</a>
     </section>
     <?php require_once('elements/footer--big.php'); ?>
 </body>

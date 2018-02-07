@@ -128,7 +128,7 @@ CONTENT;
     NEW PROJECTS REQUESTS
     --------------------------*/
 
-    $unapprovedProjects = "SELECT projectid, projectname, username, posted, approved
+    $unapprovedProjects = "SELECT *
                            FROM nf_projects INNER JOIN nf_users
                            ON (nf_projects.clientid = nf_users.userid)
                            WHERE approved = 0
@@ -144,6 +144,7 @@ CONTENT;
 
             $projectid = $row['projectid'];
             $projectname = $row['projectname'];
+            $clientid = $row['clientid'];
             $clientusername = $row['username'];
             $posted = $row['posted'];
 
@@ -157,11 +158,13 @@ CONTENT;
                     <td>
                         <form id="project-reject-$projectid" class="approval-control" action="scripts/reject-project-process.php" method="post">
                             <input type="hidden" name="projectname" value="$projectname">
+                            <input type="hidden" name="clientid" value="$clientid">
                             <input type="hidden" name="projectid" value="$projectid">
                             <a class="icon-close reject-icon" onclick="document.getElementById('project-reject-$projectid').submit();"></a>
                         </form>&nbsp;
                         <form id="project-approval-$projectid" class="approval-control" action="scripts/approve-project-process.php" method="post">
                             <input type="hidden" name="projectname" value="$projectname">
+                            <input type="hidden" name="clientid" value="$clientid">
                             <input type="hidden" name="projectid" value="$projectid">
                             <a class="icon-check approve-icon" onclick="document.getElementById('project-approval-$projectid').submit();"></a>
                         </form>
@@ -209,7 +212,7 @@ CONTENT;
     NEW COMMENT MODERATION
     --------------------------*/
 
-    $unaprovedComments = "SELECT firstname, lastname, username, commentid, commentcontent, postid, approved
+    $unaprovedComments = "SELECT *
                           FROM nf_comments INNER JOIN nf_users
                           ON (nf_comments.userid = nf_users.userid)
                           WHERE approved = 0
@@ -229,6 +232,7 @@ CONTENT;
             $commentid = $row['commentid'];
             $commentcontent = $row['commentcontent'];
             $postid = $row['postid'];
+            $userid = $row['userid'];
 
             $comments .= <<<CONTENT
 
@@ -243,10 +247,14 @@ CONTENT;
                     <td>
                         <form id="comment-reject-$commentid" class="approval-control" action="scripts/reject-comment-process.php" method="post">
                             <input type="hidden" name="commentid" value="$commentid">
+                            <input type="hidden" name="userid" value="$userid">
+                            <input type="hidden" name="commentcontent" value="$commentcontent">
                             <a class="icon-close reject-icon" onclick="document.getElementById('comment-reject-$commentid').submit();"></a>
                         </form>&nbsp;
                         <form id="comment-approval-$commentid" class="approval-control" action="scripts/approve-comment-process.php" method="post">
                             <input type="hidden" name="commentid" value="$commentid">
+                            <input type="hidden" name="userid" value="$userid">
+                            <input type="hidden" name="commentcontent" value="$commentcontent">
                             <a class="icon-check approve-icon" onclick="document.getElementById('comment-approval-$commentid').submit();"></a>
                         </form>
                     </td>

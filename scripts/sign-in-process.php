@@ -94,8 +94,6 @@
                 // Redirecting user back to homepage as signed in
                 header('Location: ../profile.php?userid=' . $userid);
             }
-            // Redirecting user back to homepage as signed in
-            header('Location: ../profile.php?userid=' . $userid);
 
         } else{
             // Username correct but password incorrect

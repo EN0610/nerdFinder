@@ -14,7 +14,7 @@
   $postSQL = "SELECT *
               FROM nf_posts LEFT JOIN nf_comments
               ON (nf_posts.postid = nf_comments.postid)
-              WHERE nf_posts.postid = $postid ";
+              WHERE nf_posts.postid = $postid AND nf_comments.approved = 1";
 
   $postResults = mysqli_query($conn, $postSQL) or die (mysqli_error($conn));
 

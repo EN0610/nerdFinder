@@ -30,6 +30,7 @@
             <a class="admin-tools__link" href="admin-dashboard.php"><li class="admin-tools__tool"><span class="icon-speedometer admin-tools__link-icon"></span><span class="admin-tools__link-text">Dashboard</span></li></a>
             <a class="admin-tools__link" href="admin-manage-events.php"><li class="admin-tools__tool"><span class="icon-calendar admin-tools__link-icon"></span><span class="admin-tools__link-text">Manage events</span></li></a>
             <a class="admin-tools__link" href="admin-check-messages.php"><li class="admin-tools__tool"><span class="icon-envelope-open admin-tools__link-icon"></span><span class="admin-tools__link-text">Check Messages</span></li></a>
+            <a class="admin-tools__link" href="admin-refunds.php"><li class="admin-tools__tool"><span class="icon-credit-card admin-tools__link-icon"></span><span class="admin-tools__link-text">User Refunds</span></li></a>
             <a class="admin-tools__link" href="https://insights.hotjar.com/sites/746289/dashboard" target="_blank"><li class="admin-tools__tool"><span class="icon-eye admin-tools__link-icon"></span><span class="admin-tools__link-text">Track users</span></li></a>
             <a class="admin-tools__link" href="https://analytics.google.com/analytics/web/" target="_blank"><li class="admin-tools__tool"><span class="icon-graph admin-tools__link-icon"></span><span class="admin-tools__link-text">View analytics</span></li></a>
         </ul>
@@ -61,9 +62,9 @@
                 <input type="hidden" name="eventid">
                 <input type="hidden" name="creatorid" value="<?php echo($_SESSION['userid']);?>">
                 <h3>Event name</h3>
-                <input type="text" name="eventname">
+                <input type="text" name="eventname" required>
                 <h3>Event Description</h3>
-                <textarea name="eventdesc" placeholder="Post content" rows="3"></textarea>
+                <textarea name="eventdesc" rows="3" required></textarea>
             </section>
             <section class="grid-2-1">
                 <h3>Event type</h3>
@@ -73,19 +74,19 @@
                 </select>
                 <span class="icon-arrow-down select-icon select-icon--small"></span>
                 <h3>Date</h3>
-                <input type="date" name="eventdate">
+                <input type="date" name="eventdate" required>
                 <section class="flex-grid">
                     <article class="grid-2-1">
                         <h3>Start time</h3>
-                        <input type="time" name="starttime">
+                        <input type="time" name="starttime" required>
                     </article>
                     <article class="grid-2-1">
                         <h3>End time</h3>
-                        <input type="time" name="endtime">
+                        <input type="time" name="endtime" required>
                     </article>
                 </section>
                 <h3>Location</h3>
-                <input type="text" name="location">
+                <input type="text" name="location" required>
             </section>
             <input class="button button--primary-green center-button" type="submit" name="add" value="Add meetup">
             <input class="button button--primary-green center-button hide" type="submit" name="update" value="Update meetup">
