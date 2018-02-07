@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
-
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/events.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 
       <header class="header--big">
         <h1>Find Events</h1>
-        <h2>Networking and workshop events to learn new skills.
+        <h2>Networking and workshop events to learn new skills.</h2>
       </header>
 
         <section class="wrapper flex-grid">
