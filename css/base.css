@@ -363,11 +363,7 @@ input, select{
 input:focus, select:focus, textarea:focus{
     outline:0;
 }
-<<<<<<< HEAD
-input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea{
-=======
 input[type='text'], input[type='password'], input[type='date'], input[type='time'], textarea, input[type='number'], input[type='month'], input[type='email']{
->>>>>>> 42504c15ed73dfbc886372ac76cfd8bd83caaf83
     background: #fff;
     border: solid 1px #F0F4F8;
     border-radius: 20px !important;
@@ -618,6 +614,23 @@ MISCELLANEOUS
 }
 .interest-message a:visited, .interest-message a:active{
     color: inherit;
+}
+.sidebar{
+    background: #fff;
+}
+.forum-post{
+    margin: 40px 0 0 0;
+}
+.forum-post:last-child{
+    margin: 40px 0;
+}
+.forum-post__content{
+    margin: 0 0 20px 0;
+}
+.new-post-content{
+    position: relative;
+    bottom: 20px;
+    margin-bottom: 0 !important;
 }
 /*--------------------------
 MEDIA QUERIES

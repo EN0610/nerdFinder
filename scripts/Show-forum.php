@@ -1,44 +1,40 @@
-
 <?php
-  // Setting the development enviroment to show errors
-  require_once('set-environment.php');
-  // Connecting to the Database
-  require_once('database-connection.php');
+    /* CREATED BY DAL */
 
+    // Setting the development enviroment to show errors
+    require_once('set-environment.php');
+    // Connecting to the Database
+    require_once('database-connection.php');
 
-  $postSQL = "SELECT *
-              FROM nf_posts INNER JOIN nf_forums
-              ON (nf_posts.forumid = nf_forums.forumid) ";
+    $postSQL = "SELECT *
+                FROM nf_posts INNER JOIN nf_forums
+                ON (nf_posts.forumid = nf_forums.forumid)
+                ORDER BY posttime DESC";
 
+    $postResults = mysqli_query($conn, $postSQL) or die (mysqli_error($conn));
 
+    $posts = '';
 
-  $postResults = mysqli_query($conn, $postSQL) or die (mysqli_error($conn));
+    if (mysqli_num_rows($postResults) > 0){
+    // At least one row
+        while ($row = mysqli_fetch_assoc($postResults)) {
 
-  $posts = '';
+            $postid = $row['postid'];
+            $forumid = $row['forumid'];
+            $postcontent = $row['postcontent'];
+            $forumname = $row['forumname'];
+            $posttime = $row['posttime'];
 
-  if (mysqli_num_rows($postResults) > 0){
-      // At least one row of technical issues
-      while ($row = mysqli_fetch_assoc($postResults)) {
+            $posts .= <<<POSTS
 
-
-          $postid = $row['postid'];
-          $forumid = $row['forumid'];
-          $postcontent = $row['postcontent'];
-          $forumname = $row['forumname'];
-
-
-
-          $posts.= <<<CONTENT
-                  <section class= "wrapper-forum main soft-box-forum">
-                    <article>
-                      <a href=forum-post.php?postid={$postid}&forumid={$forumid} class="wrapper">
-                        {$postcontent}
-                      </a><br>
-                        {$forumname}
+                <a href=forum-post.php?postid={$postid}&forumid={$forumid} class="wrapper">
+                    <article class="soft-box soft-box--padded forum-post">
+                        <h2 class="forum-post__content">{$postcontent}</h2>
+                        <p>In topic: {$forumname}</p>
                     </article>
-                  </section>
+                </a>
 
-CONTENT;
+POSTS;
         }
-      }
+    }
 ?>

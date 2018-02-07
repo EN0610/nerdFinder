@@ -1,36 +1,36 @@
 <?php
-// Setting the development enviroment to show errors
-require_once('set-environment.php');
-// Connecting to the Database
-include('database-connection.php');
-// php code to Insert data into mysql database from input text
-$postid = isset($_REQUEST['postid']) ? $_REQUEST['postid'] : null;
-$forumid = isset($_REQUEST['forumid']) ? $_REQUEST['forumid'] : null;
-$postid = filter_var($postid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-$forumid = filter_var($forumid, FILTER_SANITIZE_SPECIAL_CHARS);
-$postid = filter_var($postid);
-$forumid = filter_var($forumid);
-}
-if(isset($_POST['insert']))
-{
+    /* CREATED BY DAL */
 
-    $postcontent = $_POST['postcontent'];
-    $posttime = $_POST['posttime'];
-    $forumid = $_POST{'forumid'};
-    $postid = $_POST{'postid'};
-    $userid = $_POST{'userid'};
-
-
-
-    $query =   "INSERT INTO `nf_posts`(`postid`, `userid`, `commentcontent`, `posted`, `approved`)
-      VALUES (7,8,'$commentcontent','$posted',0)";
-
-    if (mysqli_query($conn, $query)) {
-          ;
-      } else {
-          echo "Error: " . $query . "<br>" . mysqli_error($conn);
-      }
-      mysqli_close($conn);
-}
-
+    // Defining path to session data folder where all session data will be saved/found
+    require_once('session-save-path.php');
+    // Resuming current session
+    session_start();
+    // Setting the development enviroment to show errors
+    require_once('set-environment.php');
+    // Connecting to the Database
+    include('database-connection.php');
+    // Pulling entered data from request stream
+    $forumid = isset($_REQUEST['forumid']) ? $_REQUEST['forumid'] : null;
+    $postcontent = isset($_REQUEST['postcontent']) ? $_REQUEST['postcontent'] : null;
+    // Validating
+    $forumid = filter_var($forumid, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $postcontent = filter_var($postcontent, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $forumid = filter_var($forumid, FILTER_SANITIZE_SPECIAL_CHARS);
+    $postcontent = filter_var($postcontent, FILTER_SANITIZE_SPECIAL_CHARS);
+    $forumid = trim($forumid);
+    $postcontent = trim($postcontent);
+    // Making current time
+    date_default_timezone_set('Europe/London');
+    $currentTime = date('Y-m-d H:i:s');
+    // Getting user's ID
+    $userid = $_SESSION['userid'];
+    // SQL for entering post content into database
+    $sql = "INSERT INTO nf_posts (userid, forumid, postcontent, posttime)
+            VALUES ($userid, $forumid, '$postcontent','$currentTime')";
+    // Applying SQL to database
+    $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
+    // Closing DB connection
+    mysqli_close($conn);
+    // Returning user to last page
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

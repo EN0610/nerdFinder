@@ -4,48 +4,47 @@
     // Resuming current session
     session_start();
     // get the relevant script
-    require_once('scripts/Show-forum.php');
+    require_once('scripts/show-forum.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
-    <title>| Nerd Finder</title>
+    <title>Forum | Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/event.css">
+    <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-<?php require_once('elements/nav.php'); ?>
-        <header class="background-gradient">
-
-    <article class="wrapper">
-        <h1>Forum</h1>
-    </article>
+    <?php require_once('elements/nav.php'); ?>
+    <header class="header background-gradient">
+        <article class="wrapper">
+            <h1>Forum</h1>
+            <h4>Post questions and learn how to use Nerd Finder</h4>
+        </article>
     </header>
-
-      <?php echo($posts);?>
-
-    <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] = 1)){
-        //checking from the session, what usertype is and only displaying for 1 (admin)
-    ?>
-    <section class = "soft-box soft-box--padded wrapper-forum main">
-      <form class="flex-grid full-width-form" action="scripts/add-forum-post.php" method="post">
-        <input class="full-width-form__field" type="text" name="postcontent" required placeholder="text"><br><br>
-        <input  class="full-width-form__field" type="date" name="posted" required placeholder="date"><br><br>
-        <input class="button button--primary-green center-button" type="submit" name="insert" value="Add Data To Database">
-      </form>
+    <section class="wrapper flex-grid">
+        <section class="sidebar grid-3-1--small soft-box--padded">
+            <h2>New post</h2>
+            <form class="full-width-form" action="scripts/add-forum-post.php" method="post">
+                <h3>In Topic</h3>
+                <select class="full-width-form__field" name="forumid" required>
+                    <optgroup label="Topics">
+                        <option value="1">Tips &amp; Tricks</option>
+                        <option value="2">Miscellaneous</option>
+                        <option value="3">Frequently asked questions</option>
+                        <option value="4">Service problems</option>
+                    </optgroup>
+                </select><span class="icon-arrow-down select-icon"></span>
+                <textarea class="full-width-form__field new-post-content" name="postcontent" placeholder="What would you like to post?" required rows="3"></textarea>
+                <input class="button button--primary-green" type="submit" value="Post in forum">
+            </form>
+        </section>
+        <section class="grid-3-2--small">
+            <?php echo($posts);?>
+        </section>
     </section>
-
-    <?php
-        }
-        else{
-            // For all users not signed in as the admin, this message will be displayed
-            echo('Not signed in to create q');
-          }
-    ?>
-
     <?php require_once('elements/footer--big.php');?>
 </body>
 </html>
