@@ -31,7 +31,7 @@
   ));
 
   $sql = "UPDATE nf_users
-          SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', dob='$dob', userpassword='$userpassword', passwordhint='$passwordhint', profilepic='$profilepic', experience='$experience', hourlyrate='$rate', nerdcv='$nerdcv', portfolioimg1='$portfolioimg1', specialismid='$specialismid'
+          SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', dob='$dob', userpassword='$hashedpassword', passwordhint='$passwordhint', profilepic='$profilepic', experience='$experience', hourlyrate='$rate', nerdcv='$nerdcv', portfolioimg1='$portfolioimg1', specialismid='$specialismid'
           WHERE userid='$userid'";
 
   if (mysqli_query($conn, $sql)) {
