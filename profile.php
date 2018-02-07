@@ -30,13 +30,15 @@ require_once('scripts/database-connection.php');
               $nerdcv = $row['nerdcv'];
               $portfolioimg1 = $row['portfolioimg1'];
             }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
-    <title>Edit profile | Nerd Finder</title>
-    <link rel="stylesheet" href="css/reset.css">   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <title><?php echo $firstname . " " . $lastname;?> | Nerd Finder</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/profile.css">
@@ -54,6 +56,7 @@ require_once('scripts/database-connection.php');
         <form action='scripts/edit-profie-process-nerd.php' method='get' class='flex-grid'>
             <section class = 'soft-box soft-box--padded grid-3-1--small'>
                 <aside>
+
                   <!--  NERD User
                         PROFILE Picture
                         Username
@@ -64,7 +67,7 @@ require_once('scripts/database-connection.php');
                         download cv-->
 
                     <h2 class='full-width-form__heading'>NERD USER</h2>
-                    <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="User profile picture">
+                    <img class="nav__user-profile" src=img/profile-pics/pedro-dacantus.jpg alt="Profile picture">
                     <h2><?php echo $firstname . " " . $lastname;?></h2>
                     <h3><?php echo $specialismid;?> Specialist</h3>
                     <h3>with <?php echo $experience;?> Years of experience</h3>
@@ -72,7 +75,7 @@ require_once('scripts/database-connection.php');
                 </aside>
             </section>
             <section>
-                <h3 class = 'full-width-form__heading'>PORTFOLIO IMAGES</h3>
+                <h3>PORTFOLIO IMAGES</h3>
             </section>
         </form>
     </section>
