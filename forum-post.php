@@ -3,9 +3,8 @@
     require_once('scripts/session-save-path.php');
     // Resuming current session
     session_start();
-
+    //
     require_once('scripts/show-forum-post.php');
-    require_once('scripts/add-forum-comments.php');
 
     $postid = isset($_REQUEST['postid']) ? $_REQUEST['postid'] : null;
 ?>
@@ -21,15 +20,11 @@
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
-
-    <header class="background-gradient">
-
-    <h1>  <?php
-      echo ($postcontent);
-      ?>
-    </h1>
-
-  </header>
+    <header class="header background-gradient">
+        <article class="wrapper">
+          <h1 class="center-heading"><?php echo ($postcontent);?></h1>
+        </article>
+    </header>
 
   <section class="wrapper flex-grid">
       <section class="sidebar grid-3-1--small soft-box--padded">

@@ -16,44 +16,49 @@
     $userid = filter_var($userid, FILTER_SANITIZE_SPECIAL_CHARS);
     $userid = trim($userid);
     //
-    $lockCheck = "SELECT locked
-                  FROM nf_users
-                  WHERE userid = $userid";
+    if (isset($_POST['delete'])) {
+        # code...
+    } else if (isset($_POST['lock'])) {
+        
+        $lockCheck = "SELECT locked
+                      FROM nf_users
+                      WHERE userid = $userid";
 
-    $lockCheckResult = mysqli_query($conn, $lockCheck) or die (mysqli_error($conn));
+        $lockCheckResult = mysqli_query($conn, $lockCheck) or die (mysqli_error($conn));
 
-    if (mysqli_num_rows($lockCheckResult) > 0){
+        if (mysqli_num_rows($lockCheckResult) > 0){
 
-        while ($row = mysqli_fetch_assoc($lockCheckResult)) {
+            while ($row = mysqli_fetch_assoc($lockCheckResult)) {
 
-            $locked = $row['locked'];
+                $locked = $row['locked'];
 
-            if ($locked == 1) {
-                // User already locked
-                $_SESSION['admin-feedback'] = 2;
-                // 
-                $_SESSION['feedback-message'] = 'User already locked';
+                if ($locked == 1) {
+                    // User already locked
+                    $_SESSION['admin-feedback'] = 2;
+                    // 
+                    $_SESSION['feedback-message'] = 'User already locked';
 
-            } else{
-                // User not locked
-                $sql = "UPDATE nf_users
-                SET locked = 1 
-                WHERE userid = $userid";
-                // Applying the SQL query to the database
-                $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
-                // Changing the session variable of admin-feedback to approved
-                $_SESSION['admin-feedback'] = 1;
-                //
-                $_SESSION['feedback-message'] = 'User locked';
+                } else{
+                    // User not locked
+                    $sql = "UPDATE nf_users
+                    SET locked = 1 
+                    WHERE userid = $userid";
+                    // Applying the SQL query to the database
+                    $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
+                    // Changing the session variable of admin-feedback to approved
+                    $_SESSION['admin-feedback'] = 1;
+                    //
+                    $_SESSION['feedback-message'] = 'User locked';
+                }
             }
+        } else{
+            $_SESSION['admin-feedback'] = 2;
+            // 
+            $_SESSION['feedback-message'] = 'User not locked, system error';
         }
-    } else{
-        $_SESSION['admin-feedback'] = 2;
-        // 
-        $_SESSION['feedback-message'] = 'User not locked, system error';
     }
 
     mysqli_close($conn);
     // Sending user back to the admin dashboard
-    header('Location: ../admin-dashboard.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

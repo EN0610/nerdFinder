@@ -560,7 +560,7 @@ MODAL
     width: 70%;
     left: 15%;
     top: 80px;
-    position: absolute;
+    position: fixed;
 }
 .modal--big input[type='text'], .modal--big input[type='password'], .modal--big input[type='date'], .modal--big input[type='time'], .modal--big textarea{
     width: 100%;

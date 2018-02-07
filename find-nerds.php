@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <?php require_once('scripts/analytics-tracking.php');?>
-    <title>| Nerd Finder</title>
+    <title>Find nerds | Nerd Finder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -21,7 +21,7 @@
     <header class="header background-gradient">
         <article class="wrapper">
             <h1>Find Nerds</h1>
-            <h4>Accelerate your project'success </h4>
+            <h4>Accelerate your project's success </h4>
         </article>
     </header>
     <section class="wrapper main flex-grid">

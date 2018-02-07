@@ -8,8 +8,7 @@
   $eventSQL = "SELECT * FROM nf_events ORDER BY eventname";
   $eventResults = mysqli_query($conn, $eventSQL) or die (mysqli_error($conn));
 
-
-
+  $events = '';
   if (mysqli_num_rows($eventResults) > 0){
       // At least one row of events
       while ($row = mysqli_fetch_assoc($eventResults)) {
@@ -29,29 +28,21 @@
           } else if ($eventtype == 2) {
               $eventtype = '<img src="img/events/Workshop.png" class="rating" title="Fresh" alt="Fresh" /> Workshop event.';
           }
-
-
-
-
           // need to retrive customer ID for the details page and not display is though
           $events .= <<<CONTENT
             <a href=meetup-details.php?eventid={$eventid}>
-              <section class= "forum-soft-box ">
-
+              <section class="forum-soft-box">
                 <div class="flex-grid full-width-form">
-                <div class= grid-1>
-                    $eventtype
-                    </div>
-                      <div class="grid-1">
-                        <h2>{$eventname} </h2>
-                      </div>
-                    <div class= grid-1>
-                      <h4 class=event-box_location>
-                        $eventlocation
-                      </h4>
+                  <div class="grid-1">
+                    <p>$eventtype</p>
+                  </div>
+                  <div class="grid-1">
+                    <h2>{$eventname}</h2>
+                  </div>
+                  <div class= grid-1>
+                    <h4 class=event-box_location>$eventlocation</h4>
+                  </div>
                 </div>
-                </div>
-
               </section>
             </a>
 CONTENT;

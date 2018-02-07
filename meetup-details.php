@@ -7,10 +7,7 @@
     require_once('scripts/event-individual.php');
 
     $eventid = isset($_REQUEST['eventid']) ? $_REQUEST['eventid'] : null;
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +16,17 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
     <?php require_once('elements/nav.php'); ?>
 
-<header class="header--big">
-<h1>  <?php echo($eventname); ?></h1>
+<header class="header background-gradient">
+    <article class="wrapper">
+        <h1><?php echo($eventname); ?></h1>
+        <h4></h4>
+    </article>
 </header>
 
     <section class="soft-box soft-box--padded wrapper main flex-grid">

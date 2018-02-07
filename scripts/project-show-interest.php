@@ -47,7 +47,7 @@
     $currentTime = date('Y-m-d H:i:s');
 
     $sql = "INSERT INTO nf_messages (senderid, recieverid, opened, messagecontent, messagesent)
-    		VALUES ($userid, $clientid, 0, '$message', '$currentTime')";
+    		VALUES ($clientid, $userid, 0, '$message', '$currentTime')";
 
     $sqlResults = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 

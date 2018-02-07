@@ -29,13 +29,10 @@
 
     if ($sqlResults){
 
-<<<<<<< HEAD
-=======
         $messageUserSql = "INSERT INTO nf_messages (senderid, recieverid, opened, messagecontent, messagesent)
                            VALUES (13, $userid, 0, 'Your project &#39;$projectname&#39; has been approved and will now appear in searches for nerds', '$messageSent')";
 
         mysqli_query($conn, $messageUserSql) or die (mysqli_error($conn));
->>>>>>> 42504c15ed73dfbc886372ac76cfd8bd83caaf83
         // Changing the session variable of admin-feedback to approved
         $_SESSION['admin-feedback'] = 1;
         //

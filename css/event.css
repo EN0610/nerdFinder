@@ -35,7 +35,7 @@ events
 .event-box_location {
     display: contents;
     vertical-align: top;
-    font: 400 14px/70px 'Facit-Regular', sans-serif;
+    font: 400 14px/26px 'Facit-Regular', sans-serif;
     text-transform: uppercase;
     color: #414B6B;
 }

@@ -3,7 +3,6 @@
 require_once('session-save-path.php');
 // Resuming current session
 session_start();
-// Setting the development enviroment to show errors
 require_once('set-environment.php');
 // Connecting to the Database
 include('database-connection.php');

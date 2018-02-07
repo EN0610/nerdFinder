@@ -1,4 +1,3 @@
-
 <?php
     // Defining path to session data folder where all session data will be saved/found
     require_once('scripts/session-save-path.php');
@@ -28,7 +27,6 @@
         <p class="full-width-form__field">Add the date to your diary.</p><br>
         <a class="button button--primary-green" href="Meetups.php">Return to meetup Page</a>
     </section>
-
     <?php require_once('elements/footer--big.php'); ?>
 </body>
 </html>

@@ -88,7 +88,7 @@
         <section class="wrapper">
             <article class="headline__container">
                 <h2 class="headline">Save money like Debbie by using Nerd Finder to make an award-winning website for just £500</h2>
-                <a class="button button--secondary-green" href="">Create a project</a>
+                <a class="button button--secondary-green" href="create-project-client.php">Create a project</a>
             </article><!--
             --><p class="callout">Debbie Michaels<br>Owner of Super Soaps</p>
         </section> 

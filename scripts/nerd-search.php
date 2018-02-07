@@ -7,7 +7,8 @@ require_once('database-connection.php');
 $nerdsql = "SELECT * 
             FROM nf_users INNER JOIN nf_specialismtypes
             ON nf_users.specialismid = nf_specialismtypes.specialismid
-            WHERE usertypeid = 2";
+            WHERE usertypeid = 2
+            ORDER BY premium DESC, experience DESC";
 
 $nerdResult = $conn->query($nerdsql);
 
@@ -24,11 +25,18 @@ if ($nerdResult->num_rows > 0) {
         $profilepic = $row["profilepic"];
         $exp = $row["experience"];
         $hourlyrate = $row["hourlyrate"];
+        $premium = $row["premium"];
         $portfolioImg1 = $row["portfolioimg1"];
         $portfolioImg2 = $row["portfolioimg2"];
         $portfolioImg3 = $row["portfolioimg3"];
 
         $hourlyrate = substr($hourlyrate, 0, 2);
+
+        if ($premium == 1) {
+            $premiumStatus = '*';
+        } else{
+            $premiumStatus = '';
+        }
 
         $nerds .= <<<NERDS
 
@@ -42,7 +50,7 @@ if ($nerdResult->num_rows > 0) {
                 <section class="user-box__wrapper">
                     <article>
                         <img class="user-box__profilepic" src="img/profile-pics/$profilepic" alt="User Box Picture">
-                        <h3 class="user-box__name">$firstname $lastname</h3>
+                        <h3 class="user-box__name">$firstname $lastname $premiumStatus</h3>
                     </article>
                     <p class="user-box__experience"> $specialismdesc <br> $exp years experience</p><!--
                     --><h2 class="user-box__rate">£$hourlyrate/ph</h2>

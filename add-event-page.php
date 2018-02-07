@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
@@ -28,7 +29,7 @@
                <h3>Event Type</h3>
 
                   <input type="radio" name="eventtype" value="1">network</input>
-                    <input type="radio"name="eventtype" value="2">meetup</input>
+                    <input type="radio" name="eventtype" value="2">meetup</input>
 
 
 
