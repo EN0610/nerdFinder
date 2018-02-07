@@ -62,7 +62,7 @@ require_once('scripts/database-connection.php');
                       experience
                       Hourlyrate
                       MESSAGE
-                      download cv-->
+                      download cv -->
 
                   <h2 class='full-width-form__heading'>NERD USER</h2>
                   <img class="nav__user-profile" src=img/profile-pics/pedro-dacantus.jpg alt="Profile picture">

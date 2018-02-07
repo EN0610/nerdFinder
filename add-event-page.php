@@ -19,10 +19,6 @@
 <body>
     <?php require_once('elements/nav.php'); ?>
 
-<header class="header--big">
-<h1>Add an Event</h1>
-</header>
-
 <section class="soft-box soft-box--padded wrapper main">
   <form class="flex-grid full-width-form" action="scripts/add-meetup.php" method="post">
    <h2>New Event</h2>
