@@ -41,6 +41,48 @@ require_once('scripts/database-connection.php');
               $jobtitle = $row['jobtitle'];
               $businessarea = $row['businessarea'];
             }
+            // SQL using the ID in request stream to pull rest of project info from the Database
+            $projectSql = "SELECT *
+                               FROM nf_projects INNER JOIN nf_users
+                               ON (nf_projects.nerdid = nf_users.userid) INNER JOIN nf_specialismtypes
+                               ON (nf_projects.specialismid = nf_specialismtypes.specialismid)
+                               WHERE userid = $userid";
+
+            $projectSqlResults = mysqli_query($conn, $projectSql) or die (mysqli_error($conn));
+
+            if (mysqli_num_rows($projectSqlResults) > 0) {
+
+                // Project found
+                while ($row = mysqli_fetch_assoc($projectSqlResults)) {
+                    // Project details
+                    $projectname = $row['projectname'];
+                    $specialismid = $row['specialismid'];
+                    $specialismdesc = $row['specialismdesc'];
+                    $projectdescription = $row['projectdescription'];
+                    $budget = $row['budget'];
+                    $deadline = $row['deadline'];
+                    $inspirationimg1 = $row['inspirationimg1'];
+                    $inspirationimg2 = $row['inspirationimg2'];
+                    $inspirationimg3 = $row['inspirationimg3'];
+                    // User details
+                    $userid = $row['clientid'];
+                    $firstname = $row['firstname'];
+                    $lastname = $row['lastname'];
+                    $username = $row['username'];
+                    $profilepic = $row['profilepic'];
+                }
+                if ($specialismdesc = 'Websites') {
+                    $specialismdesc = 'Website';
+
+                 } else if ($specialismdesc = 'Mobile apps') {
+                     $specialismdesc = 'Mobile app';
+                 } else if ($specialismdesc = 'Tablet apps') {
+                    $specialismdesc = 'Tablet app';
+                 }
+
+            } else {
+
+            }
 
 ?>
 <!DOCTYPE html>
@@ -78,27 +120,31 @@ require_once('scripts/database-connection.php');
                   <h2 class="full-width-form__heading"NERD USER</h2>
                   <img class="nav__user-profile" src="img/profile-pics/$profilepic" alt="Profile picture">
                   <h2>$firstname $lastname</h2>
-                  <h3>$specialismid Specialist</h3>
+                  <h3>$specialismdesc Specialist</h3>
                   <h3>with $experience Years of experience</h3>
                   <h3>HIRE for £$hourlyrate/hr</h3>
                   <a class="button button--secondary-red center-button" href="messages.php">MESSAGE</a>
               </aside>
           </section>
-          <section>
+          <section class="user-box__wrapper">
             <h3>PORTFOLIO IMAGES</h3>
-            <article class="user-box">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
+            <article>
+                <img class="user-box__pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image"><!--
+                --><img class="user-box__pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image"><!--
+                --><img class="user-box__pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
             </article>
           </section>
           <section>
-            <h3>PORTFOLIO IMAGES</h3>
-            <article class="user-box">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
-            </article>
+            <article class="grid-3-2">
+                <h3 class="grid__row">$specialismdesc project</h3>
+                <h2 class="grid__row">$projectname</h2>
+                <p class="grid__row">$projectdescription</p>
+                <h3 class="grid__row">Inspiration images</h3>
+                <article class="grid__row">
+                    <img class="grid__row-image" src="img/projects/$inspirationimg1" alt="Project Inspiration Image 1">
+                    <img class="grid__row-image" src="<?php echo(img/projects/$inspirationimg2" alt="Project Inspiration Image 2">
+                    <img class="grid__row-image" src="<?php echo(img/projects/$inspirationimg3" alt="Project Inspiration Image 3">
+                </article>            </article>
           </section>
       </section>
 CONTENT;
@@ -122,7 +168,7 @@ CONTENT;
     </section>
 CONTENT;
   } echo($profilepage);
-    require_once('elements/footer--small.php');?>
+    require_once('elements/footer--big.php');?>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

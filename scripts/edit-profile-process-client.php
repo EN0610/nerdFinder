@@ -74,7 +74,7 @@
           WHERE userid='$userid'";
 
   if (mysqli_query($conn, $sql)) {
-      header('Location: ../profile.php');
+    header('Location: ../profile.php?userid=' . $userid);
   } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
