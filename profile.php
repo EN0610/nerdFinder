@@ -30,8 +30,8 @@ require_once('scripts/database-connection.php');
               $profilepic = $row['profilepic'];
               $experience = $row['experience'];
               $portfolioImg1 = $row['portfolioimg1'];
-              // $portfolioimg2 = $row['portfolioimg2'];
-              // $portfolioimg3 = $row['portfolioimg3'];
+              $portfolioImg2 = $row['portfolioimg2'];
+              $portfolioImg3 = $row['portfolioimg3'];
               $specialismid = $row['specialismid'];
               $hourlyrate = $row['hourlyrate'];
               $nerdcv = $row['nerdcv'];
@@ -86,6 +86,8 @@ require_once('scripts/database-connection.php');
             <h3>PORTFOLIO IMAGES</h3>
             <article class="user-box">
                 <img class="user-box_pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image">
+                <img class="user-box_pic" src="img/portfolios/$portfolioImg2" alt="Portfolio Image">
+                <img class="user-box_pic" src="img/portfolios/$portfolioImg3" alt="Portfolio Image">
             </article>
           </section>
       </section>

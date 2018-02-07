@@ -19,6 +19,9 @@
   $rate = isset($_REQUEST['rate']) ? $_REQUEST['rate'] : null;
   $nerdcv = isset($_REQUEST['nerdcv']) ? $_REQUEST['nerdcv'] : null;
   $portfolioimg1 = isset($_REQUEST['portfolioimg1']) ? $_REQUEST['portfolioimg1'] : null;
+  $portfolioimg2 = isset($_REQUEST['portfolioimg2']) ? $_REQUEST['portfolioimg2'] : null;
+  $portfolioimg3 = isset($_REQUEST['portfolioimg3']) ? $_REQUEST['portfolioimg3'] : null;
+
   // Sanitising data but not encoding quotes
   $firstname = filter_var($firstname, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   $lastname = filter_var($lastname, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
@@ -33,6 +36,8 @@
   $rate = filter_var($rate, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   $nerdcv = filter_var($nerdcv, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   $portfolioimg1 = filter_var($portfolioimg1, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  $portfolioimg2 = filter_var($portfolioimg2, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  $portfolioimg3 = filter_var($portfolioimg3, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   // Escaping <,>,& and all ASCII characters with a value below 32
   $firstname = filter_var($firstname, FILTER_SANITIZE_SPECIAL_CHARS);
   $lastname = filter_var($lastname, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -47,6 +52,9 @@
   $rate = filter_var($rate, FILTER_SANITIZE_STRING, FILTER_SANITIZE_SPECIAL_CHARS);
   $nerdcv = filter_var($nerdcv, FILTER_SANITIZE_STRING, FILTER_SANITIZE_SPECIAL_CHARS);
   $portfolioimg1 = filter_var($portfolioimg1, FILTER_SANITIZE_STRING, FILTER_SANITIZE_SPECIAL_CHARS);
+  $portfolioimg2 = filter_var($portfolioimg2, FILTER_SANITIZE_STRING, FILTER_SANITIZE_SPECIAL_CHARS);
+  $portfolioimg3 = filter_var($portfolioimg3, FILTER_SANITIZE_STRING, FILTER_SANITIZE_SPECIAL_CHARS);
+
   // Trimming data to remove and white/ empty space
   $firstname = trim($firstname);
   $lastname = trim($lastname);
@@ -61,14 +69,16 @@
   $rate = trim($rate);
   $nerdcv = trim($nerdcv);
   $portfolioimg1 = trim($portfolioimg1);
+  $portfolioimg2 = trim($portfolioimg1);
+  $portfolioimg3 = trim($portfolioimg1);
   // Any data left by this point will not be harmful to the database
 
   $hashedpassword = password_hash($userpassword, PASSWORD_BCRYPT, array(
     'cost' => 11
   ));
 
-  $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, experience, hourlyrate, nerdcv, portfolioimg1, specialismid)
-  VALUES (null, '2', '$firstname', '$lastname', '$email', '$username', '$dob', '$hashedpassword', '$passwordhint', '0', '0', '$profilepic', '$experience', '$rate', '$nerdcv', '$portfolioimg1', '$specialismid')";
+  $sql = "INSERT INTO nf_users (userid, usertypeid, firstname, lastname, email, username, dob, userpassword, passwordhint, premium, locked, profilepic, experience, hourlyrate, nerdcv, portfolioimg1, portfolioimg2, portfolioimg3, specialismid)
+  VALUES (null, '2', '$firstname', '$lastname', '$email', '$username', '$dob', '$hashedpassword', '$passwordhint', '0', '0', '$profilepic', '$experience', '$rate', '$nerdcv', '$portfolioimg1', '$portfolioimg2', '$portfolioimg3', '$specialismid')";
   if (mysqli_query($conn, $sql)) {
       header('Location: ../congratulations.php');
   } else {
