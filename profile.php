@@ -7,6 +7,7 @@ session_start();
 require_once('scripts/set-environment.php');
 // Connecting to the Database
 require_once('scripts/database-connection.php');
+
   $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : 1;
   $usertypeid = isset($_REQUEST['usertypeid']) ? $_REQUEST['usertypeid'] : null;
 
@@ -80,6 +81,7 @@ require_once('scripts/database-connection.php');
                   <h3>$specialismid Specialist</h3>
                   <h3>with $experience Years of experience</h3>
                   <h3>HIRE for £$hourlyrate/hr</h3>
+                  <a class="button button--secondary-red center-button" href="messages.php">MESSAGE</a>
               </aside>
           </section>
           <section>
@@ -111,6 +113,7 @@ CONTENT;
             <h3>$specialismid Specialist</h3>
             <h3>with $experience Years of experience</h3>
             <h3>HIRE for £$hourlyrate/hr</h3>
+            <a class="button button--secondary-red center-button" href="messages.php">MESSAGE</a>
           </aside>
       </section>
     </section>

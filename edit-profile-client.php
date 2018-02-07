@@ -86,7 +86,7 @@ require_once('scripts/database-connection.php');
                     </aside>
                 </article>
                 <input type='submit' value='SAVE CHANGES' class='button button--primary-green center-button' accesskey='12' tabindex='12'>
-                <a class="button button--primary-red" href="scripts/delete-profile-process.php">DELETE PROFILE</a>&nbsp;&nbsp;
+                <a class="button button--secondary-red center-button" href="scripts/delete-profile-process.php">DELETE PROFILE</a>
             </section>
         </form>
     </section>
