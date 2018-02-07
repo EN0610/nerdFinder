@@ -70,3 +70,9 @@ h5{
     font: 400 14px/50px 'Gesta-Regular', sans-serif;
     padding: 0 25px;
 }
+@media all and (max-width: 900px) {
+    h1{
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
