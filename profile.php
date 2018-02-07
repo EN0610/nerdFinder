@@ -8,8 +8,6 @@ require_once('scripts/set-environment.php');
 // Connecting to the Database
 require_once('scripts/database-connection.php');
   $userid = isset($_REQUEST['userid']) ? $_REQUEST['userid'] : 1;
-  $usertypeid = isset($_REQUEST['usertypeid']) ? $_REQUEST['usertypeid'] : null;
-
 
 
     // SQL using the ID in request stream to pull rest of project info from the Database
@@ -18,7 +16,6 @@ require_once('scripts/database-connection.php');
     $editprofile = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 
             while ($row =mysqli_fetch_assoc($editprofile)) {
-              $usertypeid = $row['usertypeid'];
               $userid = $row['userid'];
               $firstname = $row['firstname'];
               $lastname = $row['lastname'];
@@ -29,16 +26,10 @@ require_once('scripts/database-connection.php');
               $passwordhint = $row['passwordhint'];
               $profilepic = $row['profilepic'];
               $experience = $row['experience'];
-              $portfolioImg1 = $row['portfolioimg1'];
-              // $portfolioimg2 = $row['portfolioimg2'];
-              // $portfolioimg3 = $row['portfolioimg3'];
               $specialismid = $row['specialismid'];
               $hourlyrate = $row['hourlyrate'];
               $nerdcv = $row['nerdcv'];
               $portfolioimg1 = $row['portfolioimg1'];
-              $company = $row['company'];
-              $jobtitle = $row['jobtitle'];
-              $businessarea = $row['businessarea'];
             }
 
 ?>
@@ -72,44 +63,21 @@ require_once('scripts/database-connection.php');
                       Hourlyrate
                       MESSAGE
                       download cv -->
-                  <?php if ($usertypeid == 2) {
-                    $profilepage = <<<CONTENT
-                  <h2 class="full-width-form__heading"NERD USER</h2>
-                  <img class="nav__user-profile" src="img/profile-pics/$profilePicURL" alt="Profile picture">
-                  <h2>$firstname $lastname</h2>
-                  <h3>$specialismid Specialist</h3>
-                  <h3>with $experience Years of experience</h3>
-                  <h3>HIRE for £$hourlyrate/hr</h3>
+
+                  <h2 class='full-width-form__heading'>NERD USER</h2>
+                  <img class="nav__user-profile" src=img/profile-pics/pedro-dacantus.jpg alt="Profile picture">
+                  <h2><?php echo $firstname . " " . $lastname;?></h2>
+                  <h3><?php echo $specialismid;?> Specialist</h3>
+                  <h3>with <?php echo $experience;?> Years of experience</h3>
+                  <h3>HIRE for £<?php echo $hourlyrate ;?>/hr</h3>
               </aside>
-          </section>
-          <section>
-            <h3>PORTFOLIO IMAGES</h3>
-            <article class="user-box">
-                <img class="user-box_pic" src="img/portfolios/$portfolioImg1" alt="Portfolio Image">
-            </article>
-          </section>
-      </section>
-CONTENT;
-    } else if ($usertypeid == 3) {
-    $profilepage = <<<CONTENT
-    <section class='wrapper main'>
-      <section class = 'soft-box soft-box--padded grid-3-1--small'>
-          <aside>
-            <h2 class='full-width-form__heading'>CLIENT USER</h2>
-            <img class="nav__user-profile" src=img/profile-pics/pedro-dacantus.jpg alt="Profile picture">
-            <h2>$firstname $lastname</h2>
-            <h3>$specialismid Specialist</h3>
-            <h3>with $experience Years of experience</h3>
-            <h3>HIRE for £$hourlyrate/hr</h3>
-          </aside>
-      </section>
+            </section>
+            <section>
+                <h3>PORTFOLIO IMAGES</h3>
+            </section>
+        </form>
     </section>
-    <section>
-      <h3>CLIENT</h3>
-    </section>
-CONTENT;
-  } echo($profilepage);
-    require_once('elements/footer--small.php');?>
+    <?php require_once('elements/footer--small.php'); ?>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
