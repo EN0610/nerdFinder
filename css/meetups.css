@@ -1,4 +1,15 @@
+/*--------------------------
 
+Created by: EN0610 Group 4 (Nerd Finder)
+Description: Monolithic base stylesheet for Nerd Finder to be included on every page
+
+CSS Naming Convention: BEM (Block, Element, Modifier)
+Naming Convention Documentation: http://getbem.com/naming/
+
+--------------------------*/
+
+
+/
 /*--------------------------
 events
 --------------------------*/
@@ -10,9 +21,8 @@ events
     text-align: center;
     background: white;
     border-radius: 10px;
-    width: 100%;
+    width: 62%;
 }
-
 .event-soft-box--padded{
     padding: 40px;
 }
@@ -39,7 +49,6 @@ events
     text-transform: uppercase;
     color: #414B6B;
 }
-
 .event_button {
     margin: 48px 52px;
     text-align: right;

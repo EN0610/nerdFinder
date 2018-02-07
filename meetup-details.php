@@ -5,7 +5,12 @@
     session_start();
     //
     require_once('scripts/event-individual.php');
+
+    $eventid = isset($_REQUEST['eventid']) ? $_REQUEST['eventid'] : null;
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +30,8 @@
 
     <section class="soft-box soft-box--padded wrapper main flex-grid">
   <article class="grid-3-2">
-
-      <h2 class="grid__row"><?php echo($eventdate); ?></h2>
+      <h2>Event Date</h2>
+      <h3 class="grid__row"><?php echo($eventdate); ?></h3>
       <p class="grid__row"><?php echo($eventdescription); ?></p>
 </article>
       <aside class="grid-3-1">
@@ -44,9 +49,12 @@
 <?php if (isset($_SESSION['userType']) && ($_SESSION['userType'] = 3)){
     // user SIGNED IN
 ?>
+
 <form method="post"  action="scripts/attend-event.php">
-    <input type="submit" name="submit" value="submt"/>
+    <input type="hidden" value="<?php echo($eventid);?>" name="eventid">
+    <input class="button button--primary-green center-button" type="submit" name="submit" value="Attend Event"/>
 </form>
+
 <?php
 }
 else{
