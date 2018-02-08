@@ -59,7 +59,7 @@
                         <input type="text" name="businessarea" id="businessarea" accesskey="10" tabindex="10">
                     </aside>
                 </article>
-                <input type="checkbox" name="terms"><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
+                <input type="checkbox" name="terms" required><p class="terms__text">I agree to the Nerd Finder website service terms and conditions</p>
                 <input type="submit" value="HIRE NERDS" class="button button--primary-green center-button" required accesskey="12" tabindex="12">
             </section>
         </form>

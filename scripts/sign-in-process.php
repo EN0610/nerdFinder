@@ -87,12 +87,12 @@
                 // Nerd user
                 $_SESSION['userType'] = 2;
                 // Redirecting user back to homepage as signed in
-                header('Location: ../profile.php?userid=' . $userid);
+                header('Location: ../index.php');
             } else{
                 // Client user
                 $_SESSION['userType'] = 3;
                 // Redirecting user back to homepage as signed in
-                header('Location: ../profile.php?userid=' . $userid);
+                header('Location: ../index.php');
             }
 
         } else{
