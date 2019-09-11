@@ -1,0 +1,78 @@
+/*--------------------------
+FACIT
+--------------------------*/
+@font-face{
+    font-family: 'Facit-Light';
+    src: url("../fonts/Facit-Light.woff2") format("woff2"), url("../fonts/Facit-Light.woff") format("woff");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Facit-Regular';
+    src: url("../fonts/Facit-Regular.woff2") format("woff2"), url("../fonts/Facit-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face{
+    font-family: 'Facit-Semibold';
+    src: url("../fonts/Facit-Semibold.woff2") format("woff2"), url("../fonts/Facit-Semibold.woff") format("woff");
+    font-style: normal;
+    font-weight: 600;
+}
+/*--------------------------
+GESTA
+--------------------------*/
+@font-face{
+    font-family: 'Gesta-Light';
+    src: url("../fonts/GestaW01-Light.woff2") format("woff2"), url("../fonts/GestaW01-Light.woff") format("woff");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Gesta-Regular';
+    src: url("../fonts/GestaW01-Regular.woff2") format("woff2"), url("../fonts/GestaW01-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+/*--------------------------
+PAGE ELEMENTS
+--------------------------*/
+body, p{
+    font: 300 16px/26px 'Gesta-Light', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 1px;
+    color: #5E7991;
+}
+h1{
+    font: 600 64px/82px 'Facit-Semibold', sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+    padding: 70px 0 0 0;
+}
+h2, .footer__heading{
+    font: 600 24px/32px 'Facit-Semibold', sans-serif;
+    color: #414B6B;
+    letter-spacing: 1px;
+}
+h3, .nav__item, .nav__admin-text{
+    font: 400 14px/32px 'Facit-Regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+h4{
+    font: 300 24px/32px 'Facit-Light', sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 20px 0 70px 0;
+}
+h5{
+    font: 400 14px/50px 'Gesta-Regular', sans-serif;
+    padding: 0 25px;
+}
+@media all and (max-width: 900px) {
+    h1{
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
